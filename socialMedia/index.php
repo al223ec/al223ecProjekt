@@ -3,7 +3,7 @@
 define('ROOT_DIR', realpath(dirname(__FILE__)));
 
 require_once("../common/HTMLView.php");
-require_once(ROOT_DIR . "/SocialMediaController.php");
+require_once(ROOT_DIR . "/src/controller/SocialMediaController.php");
 
 session_start();
 $view = new HTMLView();
