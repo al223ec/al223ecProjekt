@@ -29,15 +29,27 @@ class Twitter{
 			$decode = json_decode($twitter->setGetfield($getfield)
 			             ->buildOauth($url, $requestMethod)
 			             ->performRequest(), true);
-
-
-			$author = $decode[0]['user']['name']; 
-			$text = $decode[0]['text']; 
-			$tweet = new Tweet($author, $text); 
-
-			var_dump($tweet); 
 		}
 
+		public function getTweets(){
+			$ret = array();
+			$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+			$getfield = '?screen_name=al223ec';
+			$requestMethod = 'GET';
+			$twitter = new TwitterAPIExchange($this->twitterSettings);
+			$decode = json_decode($twitter->setGetfield($getfield)
+			             ->buildOauth($url, $requestMethod)
+			             ->performRequest(), true);
+
+			if($decode){
+				foreach ($decode as $key => $value) {
+					if($value['user'] && $value['text']){
+						$ret[] = new Tweet($value['user']['name'], $value['text'], $value['user']['screen_name']); 
+					}
+				}
+			}
+			return $ret; 
+		}
 /*
 		array(1) { 
 			[0]=> array(22) 

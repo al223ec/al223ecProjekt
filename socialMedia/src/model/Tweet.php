@@ -3,21 +3,25 @@
 namespace model; 
 
 class Tweet{
-	private $author; 
+	private $name;
+	private $screenName;  
 	private $text; 
 
-	public function __construct($author, $text){
-
-		$this->author = $author; 
+	public function __construct($name, $text, $screenName){
+		$this->name = $name; 
 		$this->text = $text; 
-
+		$this->screenName = $screenName; 
 	}
 
 	public function getText(){
 		return $this->text; 
 	}
-	public function getAuthor(){
-		return $this->author; 
+	public function getName(){
+		return $this->name; 
+	}
+
+	public function getScreenName(){
+		return $this->screenName; 
 	}
 	
 }

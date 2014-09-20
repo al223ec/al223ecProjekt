@@ -67,15 +67,18 @@ class Instagram{
 			  */
 		}
 
-		public function getInstagram(){
+		public function getInstagramImages(){
 			// Pulls and parses data.
 			$result = $this->fetchData("https://api.instagram.com/v1/users/" .$this->userid . "/media/recent/?access_token=" . $this->accessToken);
 			$result = json_decode($result);
-			
+			$ret = ""; 
 			foreach ($result->data as $post){
-				echo "<img src=" . $post->images->thumbnail->url . ">"; 
-				echo "<img src=" . $post->images->low_resolution->url . ">";
-				echo "<img src=" . $post->images->standard_resolution->url . ">";
+
+				$ret .= "<img src=" . $post->images->thumbnail->url . ">"; 
+				$ret .= "<img src=" . $post->images->low_resolution->url . ">";
+				$ret .= "<img src=" . $post->images->standard_resolution->url . ">";
 			}
+			return $ret; 
+
 		}
 }
