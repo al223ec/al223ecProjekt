@@ -1,9 +1,9 @@
 <?php 
 namespace controller; 
 
-require_once(ROOT_DIR . "/src/model/Twitter.php");
-require_once(ROOT_DIR . "/src/model/Instagram.php");
-require_once(ROOT_DIR . "/src/view/SocialMedia.php");
+require_once(ROOT_DIR . "/socialMedia/src/model/Twitter.php");
+require_once(ROOT_DIR . "/socialMedia/src/model/Instagram.php");
+require_once(ROOT_DIR . "/socialMedia/src/view/SocialMedia.php");
 
 class SocialMediaController{
 	

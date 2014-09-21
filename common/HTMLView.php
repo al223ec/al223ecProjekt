@@ -16,7 +16,6 @@ class HTMLView {
 	public function setTitel($pageTitel){
 		$this->pageTitel = $pageTitel; 
 	}
-
 	
 	public function addMetaTag($metaTag){
 		if($metaTag == NULL){
@@ -24,6 +23,7 @@ class HTMLView {
 		}
 		$this->metaArray[] = $metaTag; //Otestad
 	}
+
 	public function addCss($css){
 		if($css == NULL){
 			throw new Exception("HTMLView::addCss does not allow an css to be null");
@@ -46,6 +46,7 @@ class HTMLView {
 		<title> $this->pageTitel </title>
 		</head>
 		<body>
+
 			<div class='wrapper'>
 				$body
 			</div>

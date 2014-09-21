@@ -2,8 +2,8 @@
 
 namespace model; 
 
-require_once(ROOT_DIR . "/src/model/TwitterAPIExchange.php");
-require_once(ROOT_DIR . "/src/model/Tweet.php");
+require_once(ROOT_DIR . "/socialMedia/src/model/TwitterAPIExchange.php");
+require_once(ROOT_DIR . "/socialMedia/src/model/Tweet.php");
 
 class Twitter{
 		private $twitterSettings = array(

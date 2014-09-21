@@ -1,6 +1,7 @@
 <?php 
 
 namespace model; 
+
 class BloggPost{
 	private $bloggPostID; 
 	private $userID; //Nfk 

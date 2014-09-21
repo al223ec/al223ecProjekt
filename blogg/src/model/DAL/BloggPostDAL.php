@@ -2,8 +2,8 @@
 
 namespace DAL; 
 
-require_once(ROOT_DIR . "/src/model/DAL/DBConfig.php"); 
-require_once(ROOT_DIR . "/src/model/BloggPost.php"); 
+require_once(ROOT_DIR . "/blogg/src/model/DAL/DBConfig.php"); 
+require_once(ROOT_DIR . "/blogg/src/model/BloggPost.php"); 
 
 class BloggPostDAL{
 	
@@ -120,5 +120,31 @@ class BloggPostDAL{
             throw new \Exception("execute of $sql failed " . $statement->error);
         }
         return true; 
+    }
+
+    public function getBloggPost($bloggPostID){
+        if(!is_numeric($bloggPostID) || $bloggPostID < 1){
+            throw new \Exception("BloggPostDAL::getBloggPost wrong argument sent");            
+        }
+
+        $ret = null; 
+        //http://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php
+        $sql = "SELECT * FROM " . DBConfig::TBL_NAME . " WHERE BloggPostID = ?";
+        $statement = $this->mysqli->prepare($sql);//Förhindrar sql injections
+
+        if ($statement === FALSE) {
+            throw new \Exception("prepare of $sql failed " . $this->mysqli->error);
+        }   
+        $statement->bind_param("i", $bloggPostID); 
+
+        //http://www.php.net/manual/en/mysqli-stmt.execute.php
+        if ($statement->execute() === FALSE) {
+            throw new \Exception("execute of $sql failed " . $statement->error);
+        }
+ 
+        if($result = $statement->get_result()->fetch_object()){ 
+            $ret = new \model\BloggPost($result->UserID, $result->Author, $result->Titel, $result->Text, $result->Time, $result->BloggPostID);
+        }
+        return $ret;
     }
 }

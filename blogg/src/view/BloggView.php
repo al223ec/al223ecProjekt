@@ -2,11 +2,11 @@
 
 namespace view; 
 
-require_once(ROOT_DIR. "/src/model/BloggPost.php");
+require_once(ROOT_DIR. "/blogg/src/model/BloggPost.php");
 
-class Blogg{
+class BloggView{
 
-	private $errormessage; 
+	private $errorMessages; 
 
 	const Action = "a"; 
 	const ActionSave = "Save"; 
@@ -25,9 +25,12 @@ class Blogg{
 	private $bloggModel; 
 	public static $AdminIsLoggedIn = true; 
 
+	private $currentBloggPost = null; 
+
 	public function __construct(\model\Blogg $bloggModel){
-		$this->errormessage = array();
-		$this->bloggModel = $bloggModel; 
+		$this->errorMessages = array();
+		$this->bloggModel = $bloggModel;
+		$this->currentBloggPost = $this->getCurrentBloggPost();  
 	}	
 
 	public function getCurrentAction(){
@@ -38,19 +41,28 @@ class Blogg{
 		return isset($_GET[self::BloggPostID]) ? $_GET[self::BloggPostID] : 0;
 	}
 
+	public function getCurrentBloggPost(){
+		return $this->currentBloggPost = $this->getCurrentID() !== 0 ? $this->bloggModel->getBloggPost($this->getCurrentID()) : null; 
+	}
+
 	public function getBloggPostForm(){
+			$titel = $this->currentBloggPost !== null ? $this->currentBloggPost->getTitel() : "Skriv titeln här";  
+			$text = $this->currentBloggPost !== null ? $this->currentBloggPost->getText() : "Skriv texten här"; 
+			var_dump($this->errorMessages); 
 			return "
 				<form action='?". self::Action ."=". self::ActionSave ."' method='post' enctype='multipart/form-data'>
 				<fieldset>
 					<legend>Posta en post - Skriv in titel och text</legend>
 					<fieldset>
 						<label for='Titel' >Titel :</label>
-						<input type='text' size='20' name='" . self::Titel ."' id='Titel' value='Enter title here' />
+						<input type='text' size='20' name='" . self::Titel ."' id='Titel' 
+						value='Enter title here' />
 						<span class='errormessage'>" . $this->getErrorMessages(self::TitelErrorKey) ."</span>
 					</fieldset>
 					<fieldset>
 						<label for='Text' >Text  :</label>
-						<textarea name='" . self::Text ."' id='Text' value=''>
+						<textarea name='" . self::Text ."' id='Text' 
+						value=''>
 						</textarea>
 						<span class='errormessage'>" . $this->getErrorMessages(self::TextErrorKey) . "</span>
 					</fieldset>
@@ -65,10 +77,22 @@ class Blogg{
 		}
 	}
 
-	public function saveBloggPost(){
+	public function saveBloggPost(){ 
 		$titel = $this->getCleanInput(self::Titel); 
 		$text = $this->getCleanInput(self::Text); 
-		return new \model\BloggPost(3, "Anton", $titel, $text, time(), 0); 
+		
+		if($titel === ""){
+			$this->errorMessages[self::TitelErrorKey] = "Titel saknas!"; 
+		}
+		if(($text === "")){
+			$this->errorMessages[self::TextErrorKey] = "Text saknas!"; 
+		}
+
+		if($this->currentBloggPost !== null){
+			var_dump($this->currentBloggPost); 
+			die();
+		}
+		return $titel && $text ? new \model\BloggPost(3, "Anton", $titel, $text, time(), 0) : null;  
 	}
 
 	public function confirmDelete(){
@@ -112,92 +136,3 @@ class Blogg{
 		return "<a href='?". self::Action . "=" . $action . "&" . self::BloggPostID . "=". $id . "'>" . $text ."</a>"; 
 	}
 }
-/*
-
-                 <form action='http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi' method='post'>
-				  <div>
-				    <label for='name'>Name:</label>
-				    <input type='text' id='name' name='user_name'>
-				  </div>
-
-				  <div>
-				    <label for='mail'>E-mail:</label>
-				    <input type='email' id='mail' name='user_email'>
-				  </div>
-
-				  <div>
-				    <label for='msg'>Message:</label>
-				    <textarea id='msg' name='user_message'></textarea>
-				  </div>
-				 
-				  <div class='button'>
-				    <button type='submit'>Send your message</button>
-				  </div>
-				</form>
-
-    Just to center the form on the page   
-  margin: 0 auto;
-  width: 400px;
-
-    To see the limits of the form   
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-}
-
-div + div {
-  margin-top: 1em;
-}
-
-label {
-    To make sure that all label have the same size and are properly align   
-  display: inline-block;
-  width: 90px;
-  text-align: right;
-}
-
-input, textarea {
-    To make sure that all text field have the same font settings
-     By default, textarea are set with a monospace font   
-  font: 1em sans-serif;
-
-    To give the same size to all text field   
-  width: 300px;
-
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
-
-    To harmonize the look & feel of text field border   
-  border: 1px solid #999;
-}
-
-input:focus, textarea:focus {
-    To give a little highligh on active elements   
-  border-color: #000;
-}
-
-textarea {
-    To properly align multiline text field with their label   
-  vertical-align: top;
-
-    To give enough room to type some text   
-  height: 5em;
-
-    To allow users to resize any textarea vertically
-     It works only on Chrome, Firefox and Safari   
-  resize: vertical;
-}
-
-.button {
-    To position the buttons to the same position of the text fields   
-  padding-left: 90px;   same size as the label elements   
-}
-
-button {
-    This extra magin represent the same space as the space between
-     the labels and their text fields   
-  margin-left: .5em;
-}
-
-
-				*/

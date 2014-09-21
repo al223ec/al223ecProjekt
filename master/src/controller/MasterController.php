@@ -2,8 +2,8 @@
 
 namespace controller; 
 
-require_once(ROOT_DIR . "/src/controller/SocialMediaController.php");
-require_once(ROOT_DIR . "/src/controller/BloggController.php");
+require_once(ROOT_DIR . "/socialMedia/src/controller/SocialMediaController.php");
+require_once(ROOT_DIR . "/blogg/src/controller/BloggController.php");
 
 class MasterController{
 	
