@@ -77,11 +77,48 @@ class BloggPostDAL{
         return true;//Allt har gått väl
     }
 
-    public function deletePost($bloggPostID){
+    public function deleteBloggPost($bloggPostID){
+        if(!is_numeric($bloggPostID) || $bloggPostID < 1){
+            throw new \Exception("BloggPostDAL::deletePost wrong argument sent");            
+        }
 
+        $sql = "DELETE FROM " . DBConfig::TBL_NAME . " WHERE BloggPostID = ?";
+        $statement = $this->mysqli->prepare($sql);
+
+        if ($statement === FALSE) {
+            throw new \Exception("prepare of $sql failed " . $this->mysqli->error);
+        }   
+        $statement->bind_param("i", $bloggPostID); 
+
+        //http://www.php.net/manual/en/mysqli-stmt.execute.php
+        if ($statement->execute() === FALSE) {
+            throw new \Exception("execute of $sql failed " . $statement->error);
+        }
+ 
+        return true; 
     }
 
-    public function updatePost($bloggPostID){
+    public function updatePost(\model\BloggPost $bloggPost){
+        if($bloggPost === null){
+            throw new \Exception("BloggPostDAL::updatePost wrong argument sent");            
+        }
+        $author = $bloggPost->getAuthor(); 
+        $titel = $bloggPost->getTitel(); 
+        $text = $bloggPost->getText(); 
+        $time = $bloggPost->getTime(); 
 
+        $sql = "UPDATE " . DBConfig::TBL_NAME . " SET Author = ?, Titel = ?, `Text` = ?, Time = ? WHERE BloggPostID = ?";
+        $statement = $this->mysqli->prepare($sql);
+
+        if ($statement === FALSE) {
+            throw new \Exception("prepare of $sql failed " . $this->mysqli->error);
+        }   
+        $statement->bind_param("sssi", $cookieValue, $cookieExpiration, $bloggPostID); 
+
+        //http://www.php.net/manual/en/mysqli-stmt.execute.php
+        if ($statement->execute() === FALSE) {
+            throw new \Exception("execute of $sql failed " . $statement->error);
+        }
+        return true; 
     }
 }

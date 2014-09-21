@@ -12,6 +12,7 @@ class Blogg{
 	const ActionSave = "Save"; 
 	const ActionEdit = "Edit"; 
 	const ActionDelete = "Delete"; 
+	const ActionDeletionConfirmed = "DeletionConfirmed"; 
 
 	const BloggPostID = "BloggPostID"; 
 
@@ -49,7 +50,7 @@ class Blogg{
 					</fieldset>
 					<fieldset>
 						<label for='Text' >Text  :</label>
-						<textarea name='" . self::Text ."' rows=3 cols=30 id='Text' value=''>
+						<textarea name='" . self::Text ."' id='Text' value=''>
 						</textarea>
 						<span class='errormessage'>" . $this->getErrorMessages(self::TextErrorKey) . "</span>
 					</fieldset>
@@ -68,6 +69,18 @@ class Blogg{
 		$titel = $this->getCleanInput(self::Titel); 
 		$text = $this->getCleanInput(self::Text); 
 		return new \model\BloggPost(3, "Anton", $titel, $text, time(), 0); 
+	}
+
+	public function confirmDelete(){
+		$id = $this->getCurrentID(); 
+		echo "<script>"; 
+		echo "if(confirm('Bekräfta borttagning av post $id'))"; 
+		echo "location.href = '?a=" . self::ActionDeletionConfirmed . "&" . self::BloggPostID . "=". $id . "'"; 
+		echo "</script>"; 
+	}
+
+	public function redirect(){
+		header("Location: " . $_SERVER["PHP_SELF"]); 
 	}
 
 	private function getCleanInput($inputName) {

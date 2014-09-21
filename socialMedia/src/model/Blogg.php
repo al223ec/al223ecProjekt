@@ -19,6 +19,12 @@ class Blogg{
 	public function saveBloggPost(\model\BloggPost $bloggPost){
 		//Docontrolls
 		$this->bloggPostDAL->saveBloggPost($bloggPost); 
+	}
 
+	public function deleteBloggPost($bloggPostID){
+		if(!is_numeric($bloggPostID)|| $bloggPostID < 1){
+			throw new \Exception("BloggModel::deleteBloggPost Wrong argument sent from view"); 
+		}
+		return $this->bloggPostDAL->deleteBloggPost($bloggPostID); 
 	}
 }

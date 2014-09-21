@@ -27,26 +27,37 @@ class BloggController{
 				return $this->editBloggPost();
 			case \view\Blogg::ActionDelete :
 				return $this->deleteBloggPost();
+			case \view\Blogg::ActionDeletionConfirmed :
+				return $this->deleteBloggPostConfirmed();
 			default : 
 				return $this->getBlogg();
 		}
 	}
 
-	public function saveBloggPost(){
+	private function saveBloggPost(){
 		$bloggPost = $this->bloggView->saveBloggPost(); 
 		$this->bloggModel->saveBloggPost($bloggPost);
 		return $this->getBlogg(); 
 	}
 
-	public function editBloggPost(){
+	private function editBloggPost(){
 		return $this->bloggView->getCurrentID(); 
 	}
 
-	public function deleteBloggPost(){
-		return $this->bloggView->getCurrentID(); 
+	private function deleteBloggPost(){
+		$this->bloggView->confirmDelete(); 
+		return $this->getBlogg(); 
 	}
 
-	public function getBlogg(){
+	private function deleteBloggPostConfirmed(){
+		if($this->bloggModel->deleteBloggPost($this->bloggView->getCurrentID())){
+			$this->bloggView->redirect(); 
+			//Visa successmeddelande
+		}
+		return $this->getBlogg(); 
+	}
+
+	private function getBlogg(){
 		$ret = $this->bloggView->getAllBloggPosts(); 
 		if(\view\Blogg::$AdminIsLoggedIn)
 		{
