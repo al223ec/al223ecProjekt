@@ -68,6 +68,7 @@ Enskilt projekt
 	3-5. Studenten har producerat koden själv. Extern kod är angiven med källhänvisning och bibliotek ligger i utmärkt katalog ex. /vendors/
 
 Projekt
+https://docs.google.com/document/d/1Ajvv6el25APgUmSdfPb31AG7uhWWeE9iaKLg3c5faE0/pub
 -------------------
 	Social network 
 		Skicka meddelande
@@ -87,8 +88,13 @@ Projekt
 
 Beskrivning 
 Blogg för ett bryggeri, användaren ska kunna uppdatera en blogg med hjälp av ett PHP gränssnitt. Full CRUD funktionallitet på inläggen.  
-Bloggen visar också Instagram och Twitter flöde. 
+Bloggen visar också Instagram och Twitter flöden. 
+Kommer finnas två roller, en user och en admin. En admin har möjlighet att redigera inställningar som db connection och socialmedia nycklar
+och användarnamn. 
 
+User har full crud möjlighet på sina egna inlägg, admin har full crud på alla inlägg. 
+Vet inte om det är möjligt att skapa inlägg till Instagram med det nuvarande API. 
+Admin kommer också ha möjlighet att skapa nya användare. 
 
 Krav
 ------------
@@ -100,21 +106,23 @@ Krav
 		med bilder??
 		Blogginlägg och Instagram inlägg hamnar på samma sida
 
+Supplementary specification
+Krav
 
 UC
 ------------
 1. Logga in Autentisera
+Precondition
+-
 Main scenario
-Starts when a user wants to authenticate.
-System asks for username, password, and if system should save the user credentials
-User provides username and password
-System authenticates the user and presents that authentication succeeded
+	1. Systemet frågar efter username och password
+	2. Användaren fyller i username och password
+	3. Systemet autentiserar användaren och informerar
 
 Alternate Scenarios
-1. The system authenticates the user and presents that the authentication succeeded and that the user credentials was saved.
-4a. User could not be authenticated
-1. System presents an error message
-2. Step 2 in main scenario
+	3a. Användaren kunde inte autenticeras
+		1. Systemet presenterar ett felmeddelande
+		2. Steg 2
 
 --Grund för nästan alla UC
 
@@ -125,40 +133,62 @@ Precondition
 
 Main scenario
 	1. UC.1 Logga in
-	2. Välg Blogg sida
+	2. Välg Bloggsida
 	3. Fyll i relevanta fällt
 	4. Posta inlägg
 	5. Bekräfta att inlägget uppdaterats 
 
 Alternate Scenarios
-	3.b Tagga inlägget
-	5.b bekräfta att inlägget har korrekt tag
+	3.a Tagga inlägget
+	5.a Bekräfta att inlägget har korrekt tag
 
 
 3. Redigera ett blogginlägg
+Precondition
+(UC 1 genomfört)
+
+Main scenario
+	1. Välg bloggsida
+	2. Redigera ett inlägg
+	3. Spara
+	4. Bekräfta att inlägget är uppdaterat
+
+Alternate Scenarios
 
 4. Ta bort ett blogginlägg
+Precondition
+(UC 1 genomfört)
 
+Main scenario
+	1. Välg bloggsida
+	2. Ta bort ett inlägg
+	3. Bekräfta att du vill ta bort inlägget
+	4. Bekräfta att inlägget är borttaget
 
 5. Posta tweet
+Precondition
+-
 	1. Twitter.com
 	2. Posta tweet
 	3. Bekräfta att tweeten kan ses på bloggen den nya tweeten ska synas överst
 
-
 6. Posta Instagrambild/text
+Precondition
+-
 	1. Logga in på Instagram.com
 	2. Posta Inlägg
 	3. Bloggen är uppdaterad med den nya instagram posten överst
 
 7. Lika/dislika ett inlägg
+Precondition
+-
 	1. Surfa in på bloggen
 	2. lika/dislika ett inlägg
 	3. Räknaren uppdateras
 	4. En ip adress kan endast lika en gång
 
 8. Redigera hur ett inlägg ser ut med styckeindelning samt "media" bilder etc
-9. Rediger sin Instgram nyckel via UI 
-10. Rediger sin Twitter nyckel via UI 
+9. Redigera sin Instgram nyckel via UI 
+10. Redigera sin Twitter nyckel via UI 
 
 
