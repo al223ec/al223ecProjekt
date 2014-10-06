@@ -4,15 +4,11 @@ namespace core;
 
 class Router{
 
-	//public static $route;
-
 	private $controller;
 	private $action;
 	private $params;
 
 	public function __construct(){
-		//self::initRoutes(); 
-
 		$route = isset($_GET['url']) ? $_GET['url'] : '';
 
 		//Se till att inte otillåtna tecken skickas med i urlen

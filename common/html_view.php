@@ -14,11 +14,11 @@ class HTMLView{
 
 				<link href="' . ROOT_PATH . 'css/bootstrap.min.css" rel="stylesheet" />
 				<link href="' . ROOT_PATH . 'css/style.css" rel="stylesheet" />
-				<title> Workshop 2 - Design </title>
+				<title> Projekt </title>
 			</head>
 			<body>
 				<div class="wrapper">
-					<h1>Workshop 2 - Design</h1>
+					<h1>Projekt - ytterligare en blogg</h1>
 					' . $body . '
 				</div>
 			</body>
