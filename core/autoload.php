@@ -1,4 +1,5 @@
 <?php
+//Andreas funktion
 function AutoLoadClasses($class){
 	$class = ltrim($class, '\\');
 	

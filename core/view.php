@@ -3,6 +3,32 @@
 namespace core; 
 
 class View{
+/**
+*otestad funktionalitet, 
+*tänkt att fungera som grupperade felmeddelanden inspiation från Andreas
+*/
+	const MessageError = 'error';
+	const MessageSuccess = 'success';
+	const MessageWarning = 'warning';
+
+	protected $strMessagesKey = 'View::strMessagesKey';
+		
+	public function addMessage($strMessage, $strType){
+		$_SESSION[$this->strMessagesKey][$strType][] = $strMessage;
+	}
+	protected function renderFlash(){
+		$arrTypes = (isset($_SESSION[$this->strMessagesKey])) ? $_SESSION[$this->strMessagesKey] : array();
+		$messagesHtml = '';
+		foreach($arrTypes as $type => $arrMessages){
+			$strMessages = '';
+			foreach($arrMessages as $strMessage){
+				$strMessages .= '<span class="flash-message flash-' . $type . '">' . $strMessage . '</span>';
+			}
+			$messagesHtml .= '<p class="flash" />' . $strMessages . '</p>';
+		}
+		unset($_SESSION[$this->strMessagesKey]);
+		return $messagesHtml;
+	}
 
 	protected function getInput($inputName){
 		return isset($_POST[$inputName]) ? $_POST[$inputName] : '';
