@@ -1,0 +1,17 @@
+<?php
+$coverage = new PHP_CodeCoverage;
+$coverage->setData(array (
+));
+$coverage->setTests(array (
+));
+
+$filter = $coverage->filter();
+$filter->setBlacklistedFiles(array (
+  'C:\\bin\\phpunit.phar' => true,
+  'C:\\ProjektPHP\\al223ecProjekt\\tests\\first_test.php' => true,
+  0 => true,
+));
+$filter->setWhitelistedFiles(array (
+));
+
+return $coverage;

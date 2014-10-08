@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="user" tests="6" assertions="8" failures="0" errors="0" time="0.030548">
+    <testsuite name="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" tests="6" assertions="8" failures="0" errors="0" time="0.030548">
+      <testcase name="testValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="22" assertions="2" time="0.008062"/>
+      <testcase name="testInValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="27" assertions="1" time="0.002118"/>
+      <testcase name="testCreatedPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="32" assertions="2" time="0.011521"/>
+      <testcase name="testEmptyPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="38" assertions="1" time="0.004283"/>
+      <testcase name="testValidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="43" assertions="1" time="0.002296"/>
+      <testcase name="testInvalidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="48" assertions="1" time="0.002268"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

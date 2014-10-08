@@ -1,0 +1,99 @@
+{
+    "event": "suiteStart",
+    "suite": "user",
+    "tests": 6
+}{
+    "event": "suiteStart",
+    "suite": "ApplicationTest\\UserTest",
+    "tests": 6
+}{
+    "event": "testStart",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testValidInput"
+}{
+    "event": "test",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testValidInput",
+    "status": "pass",
+    "time": 0.0080621242523193,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testInValidInput"
+}{
+    "event": "test",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testInValidInput",
+    "status": "pass",
+    "time": 0.0021178722381592,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testCreatedPassword"
+}{
+    "event": "test",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testCreatedPassword",
+    "status": "pass",
+    "time": 0.011521100997925,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testEmptyPassword"
+}{
+    "event": "test",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testEmptyPassword",
+    "status": "pass",
+    "time": 0.0042831897735596,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testValidPassword"
+}{
+    "event": "test",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testValidPassword",
+    "status": "pass",
+    "time": 0.002295970916748,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testInvalidPassword"
+}{
+    "event": "test",
+    "suite": "ApplicationTest\\UserTest",
+    "test": "ApplicationTest\\UserTest::testInvalidPassword",
+    "status": "pass",
+    "time": 0.0022680759429932,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}

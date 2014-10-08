@@ -1,0 +1,8 @@
+TAP version 13
+ok 1 - ApplicationTest\UserTest::testValidInput
+ok 2 - ApplicationTest\UserTest::testInValidInput
+ok 3 - ApplicationTest\UserTest::testCreatedPassword
+ok 4 - ApplicationTest\UserTest::testEmptyPassword
+ok 5 - ApplicationTest\UserTest::testValidPassword
+ok 6 - ApplicationTest\UserTest::testInvalidPassword
+1..6

@@ -3,20 +3,20 @@
 namespace view; 
 
 class SocialMediaView {
+
 	private $twitterModel;  
 	private $instagramModel; 
 
-
-	public function __construct(\model\Twitter $twitterModel, \model\Instagram $instagramModel){
+	public function __construct(\model\Twitter $twitterModel, \model\instagram\InstagramModel $instagramModel){
 		$this->twitterModel = $twitterModel; 
 		$this->instagramModel = $instagramModel; 
-		
 	}
+
 	public function getInstagramImages(){
 		return $this->instagramModel->getInstagramImages(); 
 	}
 
-	public function getTweet(){
+	public function getTweets(){
 		$tweets =$this->twitterModel->getTweets(); 
 		$ret = ""; 
 
@@ -27,7 +27,8 @@ class SocialMediaView {
 				$ret .= "<h5>" . $value->getScreenName() . "</h5>"; 
 			}
 		}
-
 		return $ret; 
 	}
+
+
 }
