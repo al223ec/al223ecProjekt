@@ -13,10 +13,12 @@ class BloggController extends \core\controller implements Icrud{
 		$this->twitterModel = new \model\Twitter(); 
 		$this->instagramModel = new \model\instagram\InstagramModel(); 
 		$this->socialMediaView = new \view\SocialMediaView($this->twitterModel, $this->instagramModel); 
+		$this->bloggView = new \view\BloggView(); 
+
 	}
 	
 	public function main(){
-		return $this->socialMediaView->getInstagramImages() . $this->socialMediaView->getTweets(); 
+		return $this->bloggView->getBloggPostForm() . $this->socialMediaView->getInstagramImages() . $this->socialMediaView->getTweets(); 
 	}
 
 	public function edit(){

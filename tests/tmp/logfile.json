@@ -1,7 +1,7 @@
 {
     "event": "suiteStart",
     "suite": "user",
-    "tests": 6
+    "tests": 10
 }{
     "event": "suiteStart",
     "suite": "ApplicationTest\\UserTest",
@@ -15,7 +15,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testValidInput",
     "status": "pass",
-    "time": 0.0080621242523193,
+    "time": 0.0033779144287109,
     "trace": [
 
     ],
@@ -30,7 +30,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testInValidInput",
     "status": "pass",
-    "time": 0.0021178722381592,
+    "time": 0.0040280818939209,
     "trace": [
 
     ],
@@ -45,7 +45,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testCreatedPassword",
     "status": "pass",
-    "time": 0.011521100997925,
+    "time": 0.015542984008789,
     "trace": [
 
     ],
@@ -60,7 +60,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testEmptyPassword",
     "status": "pass",
-    "time": 0.0042831897735596,
+    "time": 0.0059299468994141,
     "trace": [
 
     ],
@@ -75,7 +75,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testValidPassword",
     "status": "pass",
-    "time": 0.002295970916748,
+    "time": 0.0035800933837891,
     "trace": [
 
     ],
@@ -90,7 +90,77 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testInvalidPassword",
     "status": "pass",
-    "time": 0.0022680759429932,
+    "time": 0.0026009082794189,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "UTest",
+    "tests": 4
+}{
+    "event": "testStart",
+    "suite": "UTest",
+    "test": "UTest::testAddition"
+}{
+    "event": "test",
+    "suite": "UTest",
+    "test": "UTest::testAddition",
+    "status": "pass",
+    "time": 0.0043768882751465,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UTest",
+    "test": "UTest::testSubtraction"
+}{
+    "event": "test",
+    "suite": "UTest",
+    "test": "UTest::testSubtraction",
+    "status": "fail",
+    "time": 0.0049529075622559,
+    "trace": [
+        {
+            "file": "C:\\ProjektPHP\\al223ecProjekt\\tests\\first_test.php",
+            "line": 8,
+            "function": "assertEquals",
+            "class": "PHPUnit_Framework_Assert",
+            "type": "::"
+        }
+    ],
+    "message": "Failed asserting that -0.83000000000000007 matches expected 0.17000000000000001.",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UTest",
+    "test": "UTest::testMultiplication"
+}{
+    "event": "test",
+    "suite": "UTest",
+    "test": "UTest::testMultiplication",
+    "status": "pass",
+    "time": 0.0035569667816162,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "UTest",
+    "test": "UTest::testDivision"
+}{
+    "event": "test",
+    "suite": "UTest",
+    "test": "UTest::testDivision",
+    "status": "pass",
+    "time": 0.0022730827331543,
     "trace": [
 
     ],

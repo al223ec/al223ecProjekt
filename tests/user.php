@@ -3,6 +3,7 @@
 
 	/** * Class User * @package Application */ 
 	class User {    
+		
 		public $userId;   
 		 public $firstName;    
 		 public $lastName;    

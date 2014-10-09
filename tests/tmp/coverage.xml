@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1412790818">
-  <project timestamp="1412790818">
+<coverage generated="1412791136">
+  <project timestamp="1412791136">
     <package name="Application">
       <file name="C:\ProjektPHP\al223ecProjekt\tests/user.php">
         <class name="User" namespace="Application" fullPackage="Application" package="Application">
-          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
+          <metrics methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="12" elements="17" coveredelements="15"/>
         </class>
         <line num="13" type="method" name="__construct" crap="3" count="6"/>
         <line num="14" type="stmt" count="6"/>
@@ -13,19 +13,19 @@
         <line num="17" type="stmt" count="6"/>
         <line num="18" type="stmt" count="6"/>
         <line num="19" type="stmt" count="6"/>
-        <line num="24" type="method" name="isInputValid" crap="6" count="2"/>
-        <line num="25" type="stmt" count="2"/>
-        <line num="26" type="stmt" count="2"/>
-        <line num="28" type="stmt" count="1"/>
+        <line num="24" type="method" name="isInputValid" crap="7.33" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="0"/>
         <line num="34" type="method" name="createPassword" crap="1" count="4"/>
         <line num="35" type="stmt" count="4"/>
         <line num="36" type="stmt" count="4"/>
         <line num="37" type="stmt" count="4"/>
         <line num="42" type="method" name="verifyPassword" crap="1" count="2"/>
         <line num="43" type="stmt" count="2"/>
-        <metrics loc="44" ncloc="31" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
+        <metrics loc="44" ncloc="31" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="12" elements="17" coveredelements="15"/>
       </file>
     </package>
-    <metrics files="1" loc="44" ncloc="31" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
+    <metrics files="1" loc="44" ncloc="31" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="12" elements="17" coveredelements="15"/>
   </project>
 </coverage>

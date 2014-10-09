@@ -24,6 +24,7 @@ class InstagramModel {
 			// Pulls and parses data.
 			$result = $this->fetchData("https://api.instagram.com/v1/users/" .$this->userid . "/media/recent/?access_token=" . $this->accessToken);
 			$result = json_decode($result);
+			
 			$ret = ""; 
 			foreach ($result->data as $post){
 

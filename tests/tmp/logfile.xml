@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="user" tests="6" assertions="8" failures="0" errors="0" time="0.030548">
-    <testsuite name="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" tests="6" assertions="8" failures="0" errors="0" time="0.030548">
-      <testcase name="testValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="22" assertions="2" time="0.008062"/>
-      <testcase name="testInValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="27" assertions="1" time="0.002118"/>
-      <testcase name="testCreatedPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="32" assertions="2" time="0.011521"/>
-      <testcase name="testEmptyPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="38" assertions="1" time="0.004283"/>
-      <testcase name="testValidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="43" assertions="1" time="0.002296"/>
-      <testcase name="testInvalidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="48" assertions="1" time="0.002268"/>
+  <testsuite name="user" tests="10" assertions="10" failures="1" errors="0" time="0.050220">
+    <testsuite name="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" tests="6" assertions="6" failures="0" errors="0" time="0.035060">
+      <testcase name="testValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="22" assertions="0" time="0.003378"/>
+      <testcase name="testInValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="28" assertions="1" time="0.004028"/>
+      <testcase name="testCreatedPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="33" assertions="2" time="0.015543"/>
+      <testcase name="testEmptyPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="39" assertions="1" time="0.005930"/>
+      <testcase name="testValidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="44" assertions="1" time="0.003580"/>
+      <testcase name="testInvalidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="49" assertions="1" time="0.002601"/>
+    </testsuite>
+    <testsuite name="UTest" file="C:\ProjektPHP\al223ecProjekt\tests\first_test.php" tests="4" assertions="4" failures="1" errors="0" time="0.015160">
+      <testcase name="testAddition" class="UTest" file="C:\ProjektPHP\al223ecProjekt\tests\first_test.php" line="4" assertions="1" time="0.004377"/>
+      <testcase name="testSubtraction" class="UTest" file="C:\ProjektPHP\al223ecProjekt\tests\first_test.php" line="7" assertions="1" time="0.004953">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">UTest::testSubtraction
+Failed asserting that -0.83000000000000007 matches expected 0.17000000000000001.
+
+C:\ProjektPHP\al223ecProjekt\tests\first_test.php:8
+</failure>
+      </testcase>
+      <testcase name="testMultiplication" class="UTest" file="C:\ProjektPHP\al223ecProjekt\tests\first_test.php" line="10" assertions="1" time="0.003557"/>
+      <testcase name="testDivision" class="UTest" file="C:\ProjektPHP\al223ecProjekt\tests\first_test.php" line="13" assertions="1" time="0.002273"/>
     </testsuite>
   </testsuite>
 </testsuites>

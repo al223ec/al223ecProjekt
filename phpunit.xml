@@ -11,6 +11,7 @@
    <testsuites>
     <testsuite name="user">
       <file>tests/user_test.php</file>
+      <file>tests/first_test.php</file>
     </testsuite>
   </testsuites>
   <!-- ... -->

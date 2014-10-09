@@ -5,4 +5,15 @@ ok 3 - ApplicationTest\UserTest::testCreatedPassword
 ok 4 - ApplicationTest\UserTest::testEmptyPassword
 ok 5 - ApplicationTest\UserTest::testValidPassword
 ok 6 - ApplicationTest\UserTest::testInvalidPassword
-1..6
+ok 7 - UTest::testAddition
+not ok 8 - Failure: UTest::testSubtraction
+  ---
+  message: 'Failed asserting that -0.83000000000000007 matches expected 0.17000000000000001.'
+  severity: fail
+  data:
+      got: -0.83
+      expected: 0.17
+  ...
+ok 9 - UTest::testMultiplication
+ok 10 - UTest::testDivision
+1..10

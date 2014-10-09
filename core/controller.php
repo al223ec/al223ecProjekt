@@ -12,7 +12,7 @@ abstract class Controller{
 		$this->params = $params; 
 	}
 	
-	protected function redirectTo($controller = '', $action = ''){ //Bör lägga till möjligheter att skicka med args
+	protected function redirectTo($controller = '', $action = ''){ //Bör lägga till möjligheter att skicka med args??
 		header('Location: ' . ROOT_PATH . $controller . '/' . $action);
 		exit;
 	}
