@@ -3,42 +3,68 @@
 namespace core\validation; 
 
 class Validation{
-
+	/**
+	*	Generic validation methods
+	*/
+	public static $not_empty = "_not_empty"; 
+	public static $regex = "_regex";	
+	/**
+	*	String validation methods
+	*/
+	public static $is_string = "_is_string"; 
+	public static $min_length = "_min_length"; 
 	public static $max_length = "_max_length"; 
-	
+	public static $alpha_num = "_alpha_num"; 
+	/**
+	*	Numeric validation methods
+	*/
+	public static $is_numeric = "_is_numeric"; 
+	public static $is_int = "_is_int"; 
+	public static $max_value = "_max_value"; 
+	public static $min_value = "_min_value"; 
+
 	private $errorMessages; 
-	private $fields; 
+	private $properties; 
 
 	public function __construct(){
 		$this->errorMessages = array();
-		$this->fields = array();   
+		$this->properties = array();   
 	}
 
-	public function setFieldToValidate($field, $method, $arg, $message){
+	public function setFieldToValidate($property, $method, $arg = null, $message = "Error on property!"){
 		//kontrollera om rulen redan är sattt
-		$this->fields[$field][] = new ValidationMethod($method, $arg, $message); 
+		$this->properties[$property][] = new ValidationMethod($method, $arg, $message); 
 	}
 
 	public function validate($that){
-		foreach ($this->fields as $field => $validationMethods) {
-			if(!method_exists($that,'get' . $field)){ 
-				throw new \Exception("Validation::validate funktion get" . $field . " saknas");
-			}
 
-			$valueToValidate = call_user_func_array(array($that, 'get' . $field), array());
+		foreach ($this->properties as $property => $validationMethods) {
+			if(!method_exists($that,'get' . $property)){ //Fältet är privat 
+				$reflection = new \ReflectionClass($that);
+
+				$reflectedProperty = $reflection->getProperty($property);
+				$reflectedProperty->setAccessible(true); //Ordna så den privata variabeln går att komma åt
+	
+				//$objStr = "\\" . $reflection->getName(); tror inte denna är nödvändig
+				$obj = new $that(); 
+				$valueToValidate = $reflectedProperty->getValue($obj); //Läs den privata variabeln
+
+			} else {
+				$valueToValidate = call_user_func_array(array($that, 'get' . $property), array());
+			}		
 			
 			foreach ($validationMethods as $validationMethod) {
 				$method = $validationMethod->getMethod(); 
 
 				if(!method_exists($this, $method)){ 
-					throw new \Exception("Validation::validate Validation Saknar $method funktionene");
+					throw new \Exception("Validation::validate Validation Saknar $method funktionen");
 				}
 
 				$result = $this->$method($valueToValidate, $validationMethod->getArg());
 				$validationMethod->setValid($result);
 
 				if(!$result){ 
-					$this->errorMessages[$field][] = $validationMethod->getMessage(); 
+					$this->errorMessages[$property][] = $validationMethod->getMessage(); 
 				}
 			}
 		}
@@ -47,7 +73,7 @@ class Validation{
 	}
 	
 	private function isValid(){
-		foreach ($this->fields as $validationMethods) {
+		foreach ($this->properties as $validationMethods) {
 			foreach ($validationMethods as $validationMethod) {
 				if(!$validationMethod->isValid()){
 					return false; 
@@ -56,11 +82,15 @@ class Validation{
 		}
 		return true; 
 	}
-
+	/* Jävligt oklart om jag ska ha denna funktionen 
 	public function getErrors(){
 		return $this->errorMessages; 
 	}
-
+	*/
+	public function getErrorsOnProperty($property){
+		//throw errors
+		return isset($this->errorMessages[$property]) ? $this->errorMessages[$property] : array(0 => ""); //konsekvent alltid en array
+	}
 	/**
 	*	Generic validation methods
 	*/
@@ -104,14 +134,14 @@ class Validation{
 	}
 }
 
-class ValidationMethod {
+class ValidationMethod { //Bättre namn på gång? 
 	
 	private $method; 
 	private $arg;
 	private $message;
 	private $valid; 
 
-	public function __construct($method, $arg = null, $message = "Ett error message"){
+	public function __construct($method, $arg, $message){
 		$this->method = $method; 
 		$this->arg = $arg; 
 		$this->message = $message;  

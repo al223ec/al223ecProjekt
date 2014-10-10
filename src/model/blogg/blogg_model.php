@@ -7,7 +7,7 @@ class BloggModel {
 
 	public function __construct(){
 		$this->bloggRepository = new \model\BloggRepository();
-		
+	
 	}
 	
 	public function getBloggPosts(){

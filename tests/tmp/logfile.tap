@@ -5,15 +5,21 @@ ok 3 - ApplicationTest\UserTest::testCreatedPassword
 ok 4 - ApplicationTest\UserTest::testEmptyPassword
 ok 5 - ApplicationTest\UserTest::testValidPassword
 ok 6 - ApplicationTest\UserTest::testInvalidPassword
-ok 7 - UTest::testAddition
-not ok 8 - Failure: UTest::testSubtraction
-  ---
-  message: 'Failed asserting that -0.83000000000000007 matches expected 0.17000000000000001.'
-  severity: fail
-  data:
-      got: -0.83
-      expected: 0.17
-  ...
-ok 9 - UTest::testMultiplication
-ok 10 - UTest::testDivision
-1..10
+ok 7 - test\validation\ValidationTest::testValidation
+ok 8 - test\validation\ValidationTest::testPropertyWithGetter
+ok 9 - test\validation\ValidationTest::testNotEmpty
+ok 10 - test\validation\ValidationTest::testValidString
+ok 11 - test\validation\ValidationTest::testMinLength
+ok 12 - test\validation\ValidationTest::testMaxLength
+ok 13 - test\validation\ValidationTest::testAlphaNum
+ok 14 - test\validation\ValidationTest::testRegex
+ok 15 - test\validation\ValidationTest::testErrorMessage
+ok 16 - test\validation\ValidationTest::testSeveralErrorMessagesOnProperty
+ok 17 - test\validation\ValidationTest::testSeveralErrorMessagesOnSeveralProperties
+ok 18 - test\validation\ValidationTest::testIsNumeric
+ok 19 - test\validation\ValidationTest::testIsNotNumeric
+ok 20 - test\validation\ValidationTest::testIsInt
+ok 21 - test\validation\ValidationTest::testIsNotInt
+ok 22 - test\validation\ValidationTest::testMaxValue
+ok 23 - test\validation\ValidationTest::testMinValue
+1..23

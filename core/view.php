@@ -7,9 +7,9 @@ class View{
 *otestad funktionalitet, 
 *tänkt att fungera som grupperade felmeddelanden inspiation från Andreas
 */
-	const MessageError = 'error';
-	const MessageSuccess = 'success';
-	const MessageWarning = 'warning';
+	protected static $messageError = 'error';
+	protected static $messageSuccess = 'success';
+	protected static $messageWarning = 'warning';
 
 	protected $strMessagesKey = 'View::strMessagesKey';
 		
@@ -39,8 +39,8 @@ class View{
 	protected function sanitize($input) {
         $temp = trim($input);
         return filter_var($temp, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    }	
-
+    }		
+    //Flytta denna?? 
     public function redirect(){
 		header('Location: ' . ROOT_PATH);
     }

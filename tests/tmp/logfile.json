@@ -1,7 +1,11 @@
 {
     "event": "suiteStart",
+    "suite": "",
+    "tests": 23
+}{
+    "event": "suiteStart",
     "suite": "user",
-    "tests": 10
+    "tests": 6
 }{
     "event": "suiteStart",
     "suite": "ApplicationTest\\UserTest",
@@ -15,7 +19,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testValidInput",
     "status": "pass",
-    "time": 0.0033779144287109,
+    "time": 0.0036919116973877,
     "trace": [
 
     ],
@@ -30,7 +34,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testInValidInput",
     "status": "pass",
-    "time": 0.0040280818939209,
+    "time": 0.0046329498291016,
     "trace": [
 
     ],
@@ -45,7 +49,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testCreatedPassword",
     "status": "pass",
-    "time": 0.015542984008789,
+    "time": 0.019929170608521,
     "trace": [
 
     ],
@@ -60,7 +64,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testEmptyPassword",
     "status": "pass",
-    "time": 0.0059299468994141,
+    "time": 0.0057859420776367,
     "trace": [
 
     ],
@@ -75,7 +79,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testValidPassword",
     "status": "pass",
-    "time": 0.0035800933837891,
+    "time": 0.0031669139862061,
     "trace": [
 
     ],
@@ -90,7 +94,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testInvalidPassword",
     "status": "pass",
-    "time": 0.0026009082794189,
+    "time": 0.0023059844970703,
     "trace": [
 
     ],
@@ -98,18 +102,22 @@
     "output": ""
 }{
     "event": "suiteStart",
-    "suite": "UTest",
-    "tests": 4
+    "suite": "validation",
+    "tests": 17
+}{
+    "event": "suiteStart",
+    "suite": "test\\validation\\ValidationTest",
+    "tests": 17
 }{
     "event": "testStart",
-    "suite": "UTest",
-    "test": "UTest::testAddition"
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testValidation"
 }{
     "event": "test",
-    "suite": "UTest",
-    "test": "UTest::testAddition",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testValidation",
     "status": "pass",
-    "time": 0.0043768882751465,
+    "time": 0.0031139850616455,
     "trace": [
 
     ],
@@ -117,33 +125,162 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "UTest",
-    "test": "UTest::testSubtraction"
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testPropertyWithGetter"
 }{
     "event": "test",
-    "suite": "UTest",
-    "test": "UTest::testSubtraction",
-    "status": "fail",
-    "time": 0.0049529075622559,
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testPropertyWithGetter",
+    "status": "pass",
+    "time": 0.0034298896789551,
     "trace": [
-        {
-            "file": "C:\\ProjektPHP\\al223ecProjekt\\tests\\first_test.php",
-            "line": 8,
-            "function": "assertEquals",
-            "class": "PHPUnit_Framework_Assert",
-            "type": "::"
-        }
+
     ],
-    "message": "Failed asserting that -0.83000000000000007 matches expected 0.17000000000000001.",
+    "message": "",
     "output": ""
 }{
     "event": "testStart",
-    "suite": "UTest",
-    "test": "UTest::testMultiplication"
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testNotEmpty"
 }{
     "event": "test",
-    "suite": "UTest",
-    "test": "UTest::testMultiplication",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testNotEmpty",
+    "status": "pass",
+    "time": 0.0029420852661133,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testValidString"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testValidString",
+    "status": "pass",
+    "time": 0.0058779716491699,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMinLength"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMinLength",
+    "status": "pass",
+    "time": 0.0048620700836182,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMaxLength"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMaxLength",
+    "status": "pass",
+    "time": 0.0037949085235596,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testAlphaNum"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testAlphaNum",
+    "status": "pass",
+    "time": 0.003309965133667,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testRegex"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testRegex",
+    "status": "pass",
+    "time": 0.0031881332397461,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testErrorMessage"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testErrorMessage",
+    "status": "pass",
+    "time": 0.010123014450073,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnProperty"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnProperty",
+    "status": "pass",
+    "time": 0.005702018737793,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnSeveralProperties"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnSeveralProperties",
+    "status": "pass",
+    "time": 0.0020720958709717,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsNumeric"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsNumeric",
     "status": "pass",
     "time": 0.0035569667816162,
     "trace": [
@@ -153,14 +290,74 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "UTest",
-    "test": "UTest::testDivision"
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsNotNumeric"
 }{
     "event": "test",
-    "suite": "UTest",
-    "test": "UTest::testDivision",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsNotNumeric",
     "status": "pass",
-    "time": 0.0022730827331543,
+    "time": 0.0023179054260254,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsInt"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsInt",
+    "status": "pass",
+    "time": 0.002500057220459,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsNotInt"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testIsNotInt",
+    "status": "pass",
+    "time": 0.0028939247131348,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMaxValue"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMaxValue",
+    "status": "pass",
+    "time": 0.006321907043457,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMinValue"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationTest",
+    "test": "test\\validation\\ValidationTest::testMinValue",
+    "status": "pass",
+    "time": 0.0057768821716309,
     "trace": [
 
     ],

@@ -99,6 +99,7 @@ https://docs.google.com/document/d/1Ajvv6el25APgUmSdfPb31AG7uhWWeE9iaKLg3c5faE0/
 				http://css-tricks.com/give-designers-tools-get-need/
 
 Beskrivning 
+----
 Blogg för ett bryggeri, användaren ska kunna uppdatera en blogg med hjälp av ett PHP gränssnitt. Full CRUD funktionallitet på inläggen.  
 Bloggen visar också Instagram och Twitter flöden. 
 Kommer finnas två roller, en user och en admin. En admin har möjlighet att redigera inställningar som db connection och socialmedia nycklar
@@ -108,8 +109,14 @@ User har full crud möjlighet på sina egna inlägg, admin har full crud på all
 Vet inte om det är möjligt att skapa inlägg till Instagram med det nuvarande API. 
 Admin kommer också ha möjlighet att skapa nya användare. 
 
+Jag kommer att fokusera mycket på att få till en så bra applikations struktur som möjligt och att denna har lätt att anpassa för nya projekt. 
+MAO stor tyngdpunkt på att försöka få till något som liknar ett ramverk. 
+Vill också ha välutvecklad och genomtänkt testning av applikation, detta är något jag inte jobbat så mycket med tidigare. Mer TDD tänk. 
+
 Krav
 ------------
+	Koden kan lätt användas till nya projekt
+		Ramverksliknande funktionalitet
 	Uppdatera med hjälp av Instagram
 	Uppdatera Twitter
 	Uppdatera Blog
