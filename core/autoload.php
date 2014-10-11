@@ -1,8 +1,8 @@
 <?php
 //Andreas funktion
 function AutoLoadClasses($class){
-	$class = ltrim($class, '\\');
-	
+
+	$class = ltrim($class, '\\');	
 	$classFile = lcfirst(substr($class, strripos($class, '\\') + 1));
 	preg_match_all( '/[A-Z]/', $classFile, $matches, PREG_OFFSET_CAPTURE );
 	if(!empty($matches)){

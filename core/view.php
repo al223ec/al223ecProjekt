@@ -3,10 +3,10 @@
 namespace core; 
 
 class View{
-/**
-*otestad funktionalitet, 
-*tänkt att fungera som grupperade felmeddelanden inspiation från Andreas
-*/
+	/**
+	*otestad funktionalitet, 
+	*tänkt att fungera som grupperade felmeddelanden inspiation från Andreas
+	*/
 	protected static $messageError = 'error';
 	protected static $messageSuccess = 'success';
 	protected static $messageWarning = 'warning';

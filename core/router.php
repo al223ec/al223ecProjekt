@@ -3,18 +3,24 @@
 namespace core; 
 
 class Router{
+	/**
+	* Routens uppgift är att dela upp url:en och disturbera dessa delar
+	*/
 
 	private $controller;
 	private $action;
 	private $params;
 
-	public function __construct(){
+	public function __construct($routeForTesting = ""){
+		//För att göra det möjligt att testa denna klass utifrån 
 		$route = isset($_GET['url']) ? $_GET['url'] : '';
-
+		$route = $routeForTesting !== "" ? $routeForTesting : $route; 
 		//Se till att inte otillåtna tecken skickas med i urlen
-		$route = preg_replace(\Config::ALLOWED_URL_CHARS, '', $route);
-		$routeParts = explode('/', $route);
+		if(preg_match(\Config::ALLOWED_URL_CHARS, $route)){
+			$route = ""; 
+		}
 
+		$routeParts = explode('/', $route);
 
 		$this->controller = $routeParts[0];
 		$this->action = isset($routeParts[1]) ? $routeParts[1] : \Config::DEFAULT_ACTION;
@@ -23,9 +29,6 @@ class Router{
 		array_shift($routeParts);
 		array_shift($routeParts);
 		
-		if($this->controller === ''){
-			$this->controller = \Config::DEFAULT_CONTROLLER; 
-		}
 		$this->params = $routeParts;
 	}
 
@@ -54,9 +57,31 @@ class Router{
 		$action = $this->getAction();
 		$params = $this->getParams();
 
-		$controllerfile = CONTROLLER_DIR . $controller . '_controller.php';
-		$controller = '\\controller\\' . ucfirst($controller) . 'Controller'; //Alltid stor första bokstav på objekt
+		//Tar fram alla mappar i src mappen
+		if(!file_exists(SRC_DIR)){
+			throw new \Exception("Something wrong with the configuration of this project check global SRC_DIR in definer.php");
+		}
 
+		$files = scandir(SRC_DIR, 1);
+		$controllerfile = "";
+		$namespace = ""; 
+		//Loopa dessa 
+		foreach ($files as $file) {
+			$controllerDir = SRC_DIR . $file . DS . 'controller';
+			if (file_exists($controllerDir)){ //Om man hittar controller mappen 
+				$filesInControllerDir = scandir($controllerDir, 1);//Hämta alla filnamn i den mappen 
+
+				foreach ($filesInControllerDir as $fileInControllerDir) { 
+					if (0 === strpos($fileInControllerDir, $controller)) {
+						$controllerfile = SRC_DIR . $file . DS . 'controller' . DS . $fileInControllerDir; 
+						$namespace = $file; 
+						break; 
+					}
+				}	
+			}
+		}
+
+		$controller = '\\' . $namespace . '\\controller\\' . ucfirst($controller) . 'Controller'; //Alltid stor första bokstav på objekt
 		if (file_exists($controllerfile)){
 			require_once($controllerfile);
 			$app =  new $controller();

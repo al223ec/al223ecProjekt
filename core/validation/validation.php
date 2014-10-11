@@ -31,7 +31,7 @@ class Validation{
 		$this->properties = array();   
 	}
 
-	public function setFieldToValidate($property, $method, $arg = null, $message = "Error on property!"){
+	public function setPropertyToValidate($property, $method, $arg = null, $message = "Error on property!"){
 		//kontrollera om rulen redan är sattt
 		$this->properties[$property][] = new ValidationMethod($method, $arg, $message); 
 	}
@@ -89,7 +89,7 @@ class Validation{
 	*/
 	public function getErrorsOnProperty($property){
 		//throw errors
-		return isset($this->errorMessages[$property]) ? $this->errorMessages[$property] : array(0 => ""); //konsekvent alltid en array
+		return isset($this->errorMessages[$property]) ? $this->errorMessages[$property] : array(); //konsekvent alltid en array
 	}
 	/**
 	*	Generic validation methods

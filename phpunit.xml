@@ -14,6 +14,12 @@
     </testsuite>
     <testsuite name="validation">
       <file>tests/validation/validation_test.php</file>
+      <file>tests/validation/validation_strings_test.php</file>
+      <file>tests/validation/validation_error_messages_test.php</file>
+      <file>tests/validation/validation_numeric_test.php</file>
+    </testsuite>
+    <testsuite name="router">
+      <file>tests/router/router_test.php</file>
     </testsuite>
   </testsuites>
   <!-- ... -->

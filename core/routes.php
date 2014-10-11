@@ -1,8 +1,10 @@
-	<?php
+<?php
+
+namespace core;
 
 class Routes{
 	public static $routes = array(
-		'master' => array(
+		'blogg' => array(
 			'main' => 'blogg/'
 		),
 	);

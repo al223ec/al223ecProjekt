@@ -1,7 +1,7 @@
 {
     "event": "suiteStart",
     "suite": "",
-    "tests": 23
+    "tests": 29
 }{
     "event": "suiteStart",
     "suite": "user",
@@ -19,7 +19,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testValidInput",
     "status": "pass",
-    "time": 0.0036919116973877,
+    "time": 0.0034379959106445,
     "trace": [
 
     ],
@@ -34,7 +34,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testInValidInput",
     "status": "pass",
-    "time": 0.0046329498291016,
+    "time": 0.0030310153961182,
     "trace": [
 
     ],
@@ -49,7 +49,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testCreatedPassword",
     "status": "pass",
-    "time": 0.019929170608521,
+    "time": 0.016561031341553,
     "trace": [
 
     ],
@@ -64,7 +64,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testEmptyPassword",
     "status": "pass",
-    "time": 0.0057859420776367,
+    "time": 0.0041279792785645,
     "trace": [
 
     ],
@@ -79,7 +79,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testValidPassword",
     "status": "pass",
-    "time": 0.0031669139862061,
+    "time": 0.003119945526123,
     "trace": [
 
     ],
@@ -94,7 +94,7 @@
     "suite": "ApplicationTest\\UserTest",
     "test": "ApplicationTest\\UserTest::testInvalidPassword",
     "status": "pass",
-    "time": 0.0023059844970703,
+    "time": 0.0038180351257324,
     "trace": [
 
     ],
@@ -103,11 +103,11 @@
 }{
     "event": "suiteStart",
     "suite": "validation",
-    "tests": 17
+    "tests": 13
 }{
     "event": "suiteStart",
     "suite": "test\\validation\\ValidationTest",
-    "tests": 17
+    "tests": 3
 }{
     "event": "testStart",
     "suite": "test\\validation\\ValidationTest",
@@ -117,7 +117,7 @@
     "suite": "test\\validation\\ValidationTest",
     "test": "test\\validation\\ValidationTest::testValidation",
     "status": "pass",
-    "time": 0.0031139850616455,
+    "time": 0.0052340030670166,
     "trace": [
 
     ],
@@ -132,7 +132,7 @@
     "suite": "test\\validation\\ValidationTest",
     "test": "test\\validation\\ValidationTest::testPropertyWithGetter",
     "status": "pass",
-    "time": 0.0034298896789551,
+    "time": 0.0031869411468506,
     "trace": [
 
     ],
@@ -147,7 +147,26 @@
     "suite": "test\\validation\\ValidationTest",
     "test": "test\\validation\\ValidationTest::testNotEmpty",
     "status": "pass",
-    "time": 0.0029420852661133,
+    "time": 0.0029489994049072,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "tests": 4
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testDisplayErrorMessage"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testDisplayErrorMessage",
+    "status": "pass",
+    "time": 0.0054929256439209,
     "trace": [
 
     ],
@@ -155,14 +174,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testValidString"
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testDontDisplayErrorMessages"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testValidString",
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testDontDisplayErrorMessages",
     "status": "pass",
-    "time": 0.0058779716491699,
+    "time": 0.0039200782775879,
     "trace": [
 
     ],
@@ -170,14 +189,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMinLength"
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testSeveralErrorMessagesOnProperty"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMinLength",
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testSeveralErrorMessagesOnProperty",
     "status": "pass",
-    "time": 0.0048620700836182,
+    "time": 0.0058078765869141,
     "trace": [
 
     ],
@@ -185,14 +204,33 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMaxLength"
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testSeveralErrorMessagesOnSeveralProperties"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMaxLength",
+    "suite": "test\\validation\\ValidationErrorMessagesTest",
+    "test": "test\\validation\\ValidationErrorMessagesTest::testSeveralErrorMessagesOnSeveralProperties",
     "status": "pass",
-    "time": 0.0037949085235596,
+    "time": 0.0023550987243652,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "tests": 6
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsNumeric"
+}{
+    "event": "test",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsNumeric",
+    "status": "pass",
+    "time": 0.003180980682373,
     "trace": [
 
     ],
@@ -200,14 +238,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testAlphaNum"
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsNotNumeric"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testAlphaNum",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsNotNumeric",
     "status": "pass",
-    "time": 0.003309965133667,
+    "time": 0.0028181076049805,
     "trace": [
 
     ],
@@ -215,14 +253,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testRegex"
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsInt"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testRegex",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsInt",
     "status": "pass",
-    "time": 0.0031881332397461,
+    "time": 0.0033359527587891,
     "trace": [
 
     ],
@@ -230,14 +268,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testErrorMessage"
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsNotInt"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testErrorMessage",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testIsNotInt",
     "status": "pass",
-    "time": 0.010123014450073,
+    "time": 0.0033929347991943,
     "trace": [
 
     ],
@@ -245,14 +283,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnProperty"
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testMaxValue"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnProperty",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testMaxValue",
     "status": "pass",
-    "time": 0.005702018737793,
+    "time": 0.0044379234313965,
     "trace": [
 
     ],
@@ -260,14 +298,37 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnSeveralProperties"
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testMinValue"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testSeveralErrorMessagesOnSeveralProperties",
+    "suite": "test\\validation\\ValidationNumericTest",
+    "test": "test\\validation\\ValidationNumericTest::testMinValue",
     "status": "pass",
-    "time": 0.0020720958709717,
+    "time": 0.0034120082855225,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "suiteStart",
+    "suite": "router",
+    "tests": 10
+}{
+    "event": "suiteStart",
+    "suite": "test\\validation\\RouterTest",
+    "tests": 10
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testFallbackController"
+}{
+    "event": "test",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testFallbackController",
+    "status": "pass",
+    "time": 0.0049128532409668,
     "trace": [
 
     ],
@@ -275,14 +336,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsNumeric"
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testFallbackAction"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsNumeric",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testFallbackAction",
     "status": "pass",
-    "time": 0.0035569667816162,
+    "time": 0.005277156829834,
     "trace": [
 
     ],
@@ -290,14 +351,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsNotNumeric"
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testFallbackControllerInvalidURL"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsNotNumeric",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testFallbackControllerInvalidURL",
     "status": "pass",
-    "time": 0.0023179054260254,
+    "time": 0.0035641193389893,
     "trace": [
 
     ],
@@ -305,14 +366,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsInt"
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testSetController"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsInt",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testSetController",
     "status": "pass",
-    "time": 0.002500057220459,
+    "time": 0.0057260990142822,
     "trace": [
 
     ],
@@ -320,14 +381,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsNotInt"
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testParam"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testIsNotInt",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testParam",
     "status": "pass",
-    "time": 0.0028939247131348,
+    "time": 0.0065579414367676,
     "trace": [
 
     ],
@@ -335,14 +396,14 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMaxValue"
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testValidURL"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMaxValue",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testValidURL",
     "status": "pass",
-    "time": 0.006321907043457,
+    "time": 0.006148099899292,
     "trace": [
 
     ],
@@ -350,14 +411,59 @@
     "output": ""
 }{
     "event": "testStart",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMinValue"
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testDispatchControllerFileDoesntExists"
 }{
     "event": "test",
-    "suite": "test\\validation\\ValidationTest",
-    "test": "test\\validation\\ValidationTest::testMinValue",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testDispatchControllerFileDoesntExists",
     "status": "pass",
-    "time": 0.0057768821716309,
+    "time": 0.0060000419616699,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testDispatchActionDoesntExists"
+}{
+    "event": "test",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testDispatchActionDoesntExists",
+    "status": "pass",
+    "time": 0.0087010860443115,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testSuccessfullDispatch"
+}{
+    "event": "test",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testSuccessfullDispatch",
+    "status": "pass",
+    "time": 2.2281210422516,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
+}{
+    "event": "testStart",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testStaticRoutes"
+}{
+    "event": "test",
+    "suite": "test\\validation\\RouterTest",
+    "test": "test\\validation\\RouterTest::testStaticRoutes",
+    "status": "pass",
+    "time": 0.0022878646850586,
     "trace": [
 
     ],
