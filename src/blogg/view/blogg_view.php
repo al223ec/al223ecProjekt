@@ -2,7 +2,7 @@
 
 namespace blogg\view; 
 
-class BloggView {
+class BloggView extends \core\ View{
 
 	private static $bloggPostId = "BloggPostID"; 
 
@@ -22,7 +22,7 @@ class BloggView {
 
 	public function getBloggPostForm(){
 		return '
-				<form action="" method="post" enctype="multipart/form-data">
+				<form action="'. \core\Routes::getRoute('blogg', 'save'). '" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<legend>Posta en post - Skriv in titel och text</legend>
 					<fieldset>
@@ -48,30 +48,25 @@ class BloggView {
 		echo "</script>"; 
 	}
 
+	public function getNewBloggPost(){
+		$bloggPost = new \blogg\model\blogg\ Post(); 
+
+		$bloggPost->setTitel($this->getCleanInput(self::$titelPost)); 
+		$bloggPost->setText($this->getCleanInput(self::$textPost)); 
+
+		return $bloggPost; 
+
+	}
 
 	//Flytta dessa till en basklass
-	private function getCleanInput($inputName) {
-		return isset($_POST[$inputName]) ? $this->sanitize($_POST[$inputName]) : "";
-	}
-    private function getInput($inputName) {
-		return isset($_POST[$inputName]) ? $_POST[$inputName] : "";
-	}
-    private function sanitize($input) {
-        $temp = trim($input);
-        return filter_var($temp, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    }
 
 	public function getAllBloggPosts(){
 		$ret = "" ;
 		$posts = $this->bloggModel->getBloggPosts(); 
+
 		foreach ($posts as $key => $value) {
 			$ret .= "<h1>" . $value->getTitel() . "</h1>"; 
 			$ret .= "<p>" . $value->getText() . "</p>";
-
-			if(self::$AdminIsLoggedIn){
-				$ret.= "<p>" . $this->getActionTag(self::ActionEdit, "Redigera", $value->getBloggPostID()) . " | " 
-				. $this->getActionTag(self::ActionDelete, "Ta bort", $value->getBloggPostID()) ."</p>"; 
-			}
 			$ret .= "<h5>" . $value->getAuthor() . "</h5>"; 
 		}
 		return $ret; 
