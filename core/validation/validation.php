@@ -37,17 +37,14 @@ class Validation{
 	}
 
 	public function validate($that){
-
 		foreach ($this->properties as $property => $validationMethods) {
 			if(!method_exists($that,'get' . $property)){ //Fältet är privat 
 				$reflection = new \ReflectionClass($that);
 
 				$reflectedProperty = $reflection->getProperty($property);
 				$reflectedProperty->setAccessible(true); //Ordna så den privata variabeln går att komma åt
-	
-				//$objStr = "\\" . $reflection->getName(); tror inte denna är nödvändig
-				$obj = new $that(); 
-				$valueToValidate = $reflectedProperty->getValue($obj); //Läs den privata variabeln
+				
+				$valueToValidate = $reflectedProperty->getValue($that); //Läs den privata variabeln
 
 			} else {
 				$valueToValidate = call_user_func_array(array($that, 'get' . $property), array());

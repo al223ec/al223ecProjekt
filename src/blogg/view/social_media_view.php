@@ -16,7 +16,7 @@ class SocialMediaView {
 		return $this->instagramModel->getInstagramImages(); 
 	}
 
-	public function getTweets(){
+	public function getTweets($numberOfTweets){
 		$tweets =$this->twitterModel->getTweets(); 
 		$ret = ""; 
 

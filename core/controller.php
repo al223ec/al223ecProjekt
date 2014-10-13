@@ -2,7 +2,7 @@
 
 namespace core; 
 
-abstract class Controller{
+abstract class Controller {
 
 	protected $params; 
 

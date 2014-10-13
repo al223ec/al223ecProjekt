@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine on
-	RewriteBase /al223ecProject
+
+	RewriteBase /al223ecProjekt
 	
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d

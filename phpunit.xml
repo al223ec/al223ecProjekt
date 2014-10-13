@@ -21,6 +21,9 @@
     <testsuite name="router">
       <file>tests/router/router_test.php</file>
     </testsuite>
+      <testsuite name="model">
+      <file>tests/model/test_blogg_post.php</file>
+    </testsuite>
   </testsuites>
   <!-- ... -->
 </phpunit>

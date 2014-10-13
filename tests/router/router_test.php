@@ -2,8 +2,6 @@
 
 namespace test\validation;
 
-
-
 class RouterTest  extends \PHPUnit_Framework_TestCase {
 
 	private $validURL;      
@@ -14,6 +12,7 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 		//Det funkar att hårdkoda lokalt iaf. 
 		define('DS', DIRECTORY_SEPARATOR);
 		define('ROOT_DIR', "C:\ProjektPHP\al223ecProjekt\\" . DS);
+		define('ROOT_PATH', '/' . basename(dirname(__FILE__)) . '/');
 		//define('SRC_DIR', "C:\ProjektPHP\al223ecProjekt\src" . DS);
 		require_once ('./core/router.php');
 		require_once ('./core/definer.php');

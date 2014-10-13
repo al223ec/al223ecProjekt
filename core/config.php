@@ -10,7 +10,7 @@ abstract class Config{
 
 	const DB_PASSWORD = "";
 	const DB_USERNAME = "root";
-	const DB_CONNECTION_STRING = "mysql:host=127.0.0.1;dbname=db";
+	const DB_CONNECTION_STRING = "mysql:host=127.0.0.1;dbname=project";
 	
 	const APP_ROOT = "al223ecProject"; 	 
 }
