@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1413033154">
-  <project timestamp="1413033154">
+<coverage generated="1413043023">
+  <project timestamp="1413043023">
     <file name="C:\ProjektPHP\al223ecProjekt/common/html_view.php">
       <class name="HTMLView" namespace="global">
         <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>

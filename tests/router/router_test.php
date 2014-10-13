@@ -2,22 +2,24 @@
 
 namespace test\validation;
 
-//Ganska svår testad med tanke på alla routes som måste defineras
-//Det funkar att hårdkoda lokalt iaf. 
-define('DS', DIRECTORY_SEPARATOR);
 
-define('ROOT_DIR', "C:\ProjektPHP\al223ecProjekt\\" . DS);
-//define('SRC_DIR', "C:\ProjektPHP\al223ecProjekt\src" . DS);
-
-
-require_once ('./core/router.php');
-require_once ('./core/definer.php');
-require_once ('./core/config.php');
 
 class RouterTest  extends \PHPUnit_Framework_TestCase {
 
 	private $validURL;      
 	private $param = "123"; 
+
+ 	public static function setUpBeforeClass (){
+ 		//Ganska svårtestad med tanke på alla routes som måste defineras
+		//Det funkar att hårdkoda lokalt iaf. 
+		define('DS', DIRECTORY_SEPARATOR);
+		define('ROOT_DIR', "C:\ProjektPHP\al223ecProjekt\\" . DS);
+		//define('SRC_DIR', "C:\ProjektPHP\al223ecProjekt\src" . DS);
+		require_once ('./core/router.php');
+		require_once ('./core/definer.php');
+		require_once ('./core/config.php');
+ 	}
+
 
 	public function setUp(){
 		$this->validURL = \Config::DEFAULT_CONTROLLER . "/" . \Config::DEFAULT_ACTION . "/" . $this->param;
