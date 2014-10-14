@@ -44,4 +44,8 @@ class View{
     public function redirect(){
 		header('Location: ' . ROOT_PATH);
     }
+
+    public function pageHeader(){
+
+    }
 }

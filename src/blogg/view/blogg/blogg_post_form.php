@@ -26,7 +26,7 @@ class BloggPostForm extends BloggView{
 					<legend>Posta en post - Skriv in titel och text</legend>
 					<fieldset>
 						<label for="Titel" >Titel :</label>
-						<input type="text" size="20" name="' . self::$titelPost .'" id="Titel" value="'. $titel .'" />
+						<input type="text" size="80" name="' . self::$titelPost .'" id="Titel" value="'. $titel .'" />
 					</fieldset>
 					<input type="hidden" id="' . self::$idPost . '" name="' . self::$idPost . '" value="' . $id . '" />
 					

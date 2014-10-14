@@ -9,6 +9,13 @@ class AuthController extends \core\Controller{
 	private $userView;
 	private $authModel;
 
+	public function userIsLoggedIn(){
+		return $this->authModel->userIsLoggedIn($this->getUserAgent()); 
+	} 
+	public function getCurrentUserId(){
+		return $this->authModel->getLoggedInUserId();
+	}
+
 	public function __construct(){
       	parent::__construct();
 
@@ -16,11 +23,14 @@ class AuthController extends \core\Controller{
 		$this->authView = new \auth\view\auth\AuthView($this->authModel);
 		$this->userView = new \auth\view\auth\UserView($this->authModel);
 	}
+
+
 	/**
 	* Kontroller om användaren är inloggad
 	*/
 	public function main(){
 		$userAgent = $this->getUserAgent();
+
 		if($this->authView->userIsRemembered() && !$this->authModel->userIsLoggedIn($userAgent)){
 			$loggedInUser = $this->authModel->checkLoginWithCookies($this->authView->getUsernameCookie(), $this->authView->getPasswordCookie(), $userAgent); 
 			
@@ -33,14 +43,15 @@ class AuthController extends \core\Controller{
 		}
 
 		if($this->authModel->userIsLoggedIn($userAgent)){
-			$this->masterView->setAuthView($this->userView->showUser());
+			$this->masterPage->setAuthView($this->userView->showUser());
 			return;
 		}
-		$this->masterView->setAuthView($this->authView->showLogin());
+		$this->masterPage->setAuthView($this->authView->showLogin());
 	}
-
+	
+	//Denna funktion behöver flyttas
 	private function getUserAgent(){
-		return $_SERVER['HTTP_USER_AGENT'];
+		return isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "";
 	}
 
 	public function login(){
@@ -69,7 +80,7 @@ class AuthController extends \core\Controller{
 		} else if($clientUsername !== ""){
 			$this->authView->populateErrorMessage($user);
 		}
-		$this->masterView->setAuthView($this->authView->showLogin());
+		$this->masterPage->setAuthView($this->authView->showLogin());
 	}
 
 	public function logout(){

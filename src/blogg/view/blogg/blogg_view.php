@@ -2,7 +2,7 @@
 
 namespace blogg\view\blogg; 
 
-class BloggView extends \core\ View{
+class BloggView extends \core\View{
 
 	protected static $bloggPostId = "BloggPostID"; 
 

@@ -49,6 +49,14 @@ class Post extends \core\BaseObject {
 		$this->time = $time; 
 	}
 
+	public function setUserId($userId){
+		if($this->id !== 0){
+			throw new \Exception("Post::setUserId Can only be used on new objects");
+			
+		}
+		$this->user_id = $userId; 
+	}
+
 	public function getTitel(){
 		return $this->titel; 
 	}

@@ -31,8 +31,7 @@ ok 29 - test\validation\RouterTest::testParam
 ok 30 - test\validation\RouterTest::testValidURL
 ok 31 - test\validation\RouterTest::testDispatchControllerFileDoesntExists
 ok 32 - test\validation\RouterTest::testDispatchActionDoesntExists
-ok 33 - test\validation\RouterTest::testSuccessfullDispatch
-ok 34 - test\validation\RouterTest::testStaticRoutes
-ok 35 - test\model\TestBloggPost::testConstruct
-ok 36 - test\model\TestBloggPost::testSetters
-1..36
+ok 33 - test\validation\RouterTest::testStaticRoutes
+ok 34 - test\model\TestBloggPost::testConstruct
+ok 35 - test\model\TestBloggPost::testSetters
+1..35

@@ -11,7 +11,7 @@ class Routes{
 			'edit' => 'blogg/edit/',
 			'delete' => 'blogg/delete/',
 			'view' => 'blogg/view/',
-			'deleteConfirmed' => 'blogg/deleteConfirmed/' 
+			'deleteConfirmed' => 'blogg/deleteConfirmed/'
 		),
 		'auth' => array(
 			'main' => 'auth/',
@@ -22,7 +22,11 @@ class Routes{
 			'main' => 'register/',
 			'register' => 'register/',
 			'save' => 'register/saveNewUser/' 
+		),
+		'instagram' => array(
+			'main' => 'instagram/'
 		)
+
 	);
 	
 	public static function getRoute($controller, $action){

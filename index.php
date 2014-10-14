@@ -12,4 +12,4 @@ $router = new \core\Router();
 $router->dispatch(); 
 
 $view = new HTMLView();
-$view->echoHTML(\core\Loader::load('\\master\\view\\MasterView'));
+$view->echoHTML(\core\Loader::load('\\master\\MasterPage'));

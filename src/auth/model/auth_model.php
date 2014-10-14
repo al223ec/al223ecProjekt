@@ -21,7 +21,7 @@ class AuthModel extends \auth\model\ModelBase{
 		return $this->userRepository->getUserWithId($id); 
 	}
 
-	private function getLoggedInUserId(){
+	public function getLoggedInUserId(){
 		return \auth\model\sessionHandler::getSession($this->sessionLoginData) !== "" ? \auth\model\sessionHandler::getSession($this->sessionLoginData) : 0;
 	}
 	// Kontrollerar att inmatat användarnamn och lösenord stämmer vid eventuell inloggning.

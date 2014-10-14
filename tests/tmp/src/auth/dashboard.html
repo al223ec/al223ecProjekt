@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\ProjektPHP\al223ecProjekt/src/auth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/nv.d3.css" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../js/html5shiv.min.js"></script>
+  <script src="../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../index.html">C:\ProjektPHP\al223ecProjekt</a></li>
+        <li><a href="../index.html">src</a></li>
+        <li><a href="index.html">auth</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/auth/view/auth/user_view.php.html#4">UserView</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#5">CookieService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#5">AuthModel</a></td><td class="text-right">2%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#5">SessionHandler</a></td><td class="text-right">3%</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#5">UserRepository</a></td><td class="text-right">6%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#6">AuthView</a></td><td class="text-right">8%</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#5">AuthController</a></td><td class="text-right">14%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#5">ViewBase</a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="src/auth/model/model_base.php.html#5">ModelBase</a></td><td class="text-right">25%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#6">AuthView</a></td><td class="text-right">364</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#5">AuthModel</a></td><td class="text-right">351</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#5">SessionHandler</a></td><td class="text-right">273</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#5">AuthController</a></td><td class="text-right">217</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#5">UserRepository</a></td><td class="text-right">76</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#5">CookieService</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#5">ViewBase</a></td><td class="text-right">67</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#85"><abbr title="AuthView::setLogOutMessage">setLogOutMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#73"><abbr title="AuthView::getPassword">getPassword</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#89"><abbr title="AuthView::setFaultyCookiesMessage">setFaultyCookiesMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#93"><abbr title="AuthView::showLogin">showLogin</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/user_view.php.html#12"><abbr title="UserView::successfullLogInWithCookiesSaved">successfullLogInWithCookiesSaved</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/user_view.php.html#7"><abbr title="UserView::successfullLogIn">successfullLogIn</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#63"><abbr title="AuthView::getUsername">getUsername</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#58"><abbr title="AuthView::getPasswordCookie">getPasswordCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#36"><abbr title="AuthView::userIsRemembered">userIsRemembered</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#31"><abbr title="AuthView::RememberMeIsFilled">RememberMeIsFilled</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#41"><abbr title="AuthView::saveToCookies">saveToCookies</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#47"><abbr title="AuthView::forgetRememberedUser">forgetRememberedUser</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#53"><abbr title="AuthView::getUsernameCookie">getUsernameCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/user_view.php.html#17"><abbr title="UserView::successfullLogInWithCookiesLoad">successfullLogInWithCookiesLoad</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/user_view.php.html#22"><abbr title="UserView::showUser">showUser</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#26"><abbr title="ViewBase::getCleanInput">getCleanInput</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#23"><abbr title="ViewBase::getInput">getInput</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#29"><abbr title="ViewBase::sanitize">sanitize</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#34"><abbr title="ViewBase::setSession">setSession</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#37"><abbr title="ViewBase::getNewlyAddedUserName">getNewlyAddedUserName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#19"><abbr title="ViewBase::getMessage">getMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#15"><abbr title="ViewBase::redirect">redirect</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#17"><abbr title="CookieService::getCookieExpiration">getCookieExpiration</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#8"><abbr title="CookieService::saveCookie">saveCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#22"><abbr title="CookieService::loadCookie">loadCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#32"><abbr title="CookieService::removeCookie">removeCookie</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#40"><abbr title="CookieService::generateRandomString">generateRandomString</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#23"><abbr title="AuthView::populateErrorMessage">populateErrorMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#59"><abbr title="SessionHandler::unsetSessions">unsetSessions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#71"><abbr title="AuthModel::saveCookieValue">saveCookieValue</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#53"><abbr title="AuthModel::checkLoginWithCookies">checkLoginWithCookies</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#80"><abbr title="AuthModel::logOut">logOut</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/model_base.php.html#13"><abbr title="ModelBase::setSessionReadOnceMessage">setSessionReadOnceMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/model_base.php.html#17"><abbr title="ModelBase::getSessionReadOnceMessage">getSessionReadOnceMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#45"><abbr title="AuthModel::saveUserToSession">saveUserToSession</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#31"><abbr title="AuthModel::checkLogin">checkLogin</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#56"><abbr title="AuthController::login">login</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#31"><abbr title="AuthController::main">main</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#85"><abbr title="AuthController::logout">logout</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#16"><abbr title="AuthModel::getLoggedInUser">getLoggedInUser</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#24"><abbr title="AuthModel::getLoggedInUserId">getLoggedInUserId</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/model_base.php.html#21"><abbr title="ModelBase::setSessionMessage">setSessionMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/model_base.php.html#25"><abbr title="ModelBase::readAndRemoveSessionMessage">readAndRemoveSessionMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#34"><abbr title="SessionHandler::readAndRemoveSession">readAndRemoveSession</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#28"><abbr title="SessionHandler::getSessionReadOnceMessage">getSessionReadOnceMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#40"><abbr title="SessionHandler::readFromSession">readFromSession</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#44"><abbr title="SessionHandler::setSession">setSession</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#52"><abbr title="SessionHandler::sessionKeyIsSet">sessionKeyIsSet</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#24"><abbr title="SessionHandler::setSessionReadOnceMessage">setSessionReadOnceMessage</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#18"><abbr title="SessionHandler::setSessionArray">setSessionArray</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#26"><abbr title="UserRepository::getUserWithUserName">getUserWithUserName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#12"><abbr title="UserRepository::addUser">addUser</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#40"><abbr title="UserRepository::getUserWithId">getUserWithId</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#55"><abbr title="UserRepository::saveCookieValue">saveCookieValue</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#62"><abbr title="UserRepository::resetCookieValues">resetCookieValues</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#15"><abbr title="AuthController::getCurrentUserId">getCurrentUserId</a></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#31"><abbr title="AuthController::main">main</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/auth/controller/auth_controller.php.html#56"><abbr title="AuthController::login">login</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#53"><abbr title="AuthModel::checkLoginWithCookies">checkLoginWithCookies</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#31"><abbr title="AuthModel::checkLogin">checkLogin</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#93"><abbr title="AuthView::showLogin">showLogin</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#59"><abbr title="SessionHandler::unsetSessions">unsetSessions</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#23"><abbr title="AuthView::populateErrorMessage">populateErrorMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#73"><abbr title="AuthView::getPassword">getPassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#36"><abbr title="AuthView::userIsRemembered">userIsRemembered</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/view/auth/auth_view.php.html#63"><abbr title="AuthView::getUsername">getUsername</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#22"><abbr title="CookieService::loadCookie">loadCookie</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#26"><abbr title="ViewBase::getCleanInput">getCleanInput</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/view/view_base.php.html#23"><abbr title="ViewBase::getInput">getInput</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#40"><abbr title="CookieService::generateRandomString">generateRandomString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/view/cookie_service.php.html#8"><abbr title="CookieService::saveCookie">saveCookie</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#28"><abbr title="SessionHandler::getSessionReadOnceMessage">getSessionReadOnceMessage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#80"><abbr title="AuthModel::logOut">logOut</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#71"><abbr title="AuthModel::saveCookieValue">saveCookieValue</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#24"><abbr title="AuthModel::getLoggedInUserId">getLoggedInUserId</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/auth_model.php.html#16"><abbr title="AuthModel::getLoggedInUser">getLoggedInUser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#12"><abbr title="UserRepository::addUser">addUser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#26"><abbr title="UserRepository::getUserWithUserName">getUserWithUserName</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#34"><abbr title="SessionHandler::readAndRemoveSession">readAndRemoveSession</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#18"><abbr title="SessionHandler::setSessionArray">setSessionArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/repository/user_repository.php.html#40"><abbr title="UserRepository::getUserWithId">getUserWithId</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="src/auth/model/session_handler.php.html#40"><abbr title="SessionHandler::readFromSession">readFromSession</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.0.11</a> using <a href="http://php.net/" target="_top">PHP 5.5.8</a> and <a href="http://phpunit.de/">PHPUnit 4.3.1</a> at Tue Oct 14 15:31:48 CEST 2014.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../js/holder.js" type="text/javascript"></script>
+  <script src="../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([2,4,2,1,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([56,0,0,0,0,0,0,0,0,0,0,10], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[14.893617021277,18,"<a href=\"src\/auth\/controller\/auth_controller.php.html#5\">AuthController<\/a>"],[2.7027027027027,19,"<a href=\"src\/auth\/model\/auth_model.php.html#5\">AuthModel<\/a>"],[25,5,"<a href=\"src\/auth\/model\/model_base.php.html#5\">ModelBase<\/a>"],[6.0606060606061,9,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#5\">UserRepository<\/a>"],[3.8461538461538,17,"<a href=\"src\/auth\/model\/session_handler.php.html#5\">SessionHandler<\/a>"],[8,21,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#6\">AuthView<\/a>"],[0,4,"<a href=\"src\/auth\/view\/auth\/user_view.php.html#4\">UserView<\/a>"],[0,8,"<a href=\"src\/auth\/view\/cookie_service.php.html#5\">CookieService<\/a>"],[16.666666666667,10,"<a href=\"src\/auth\/view\/view_base.php.html#5\">ViewBase<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"src\/auth\/controller\/auth_controller.php.html#12\">AuthController::userIsLoggedIn<\/a>"],[0,1,"<a href=\"src\/auth\/controller\/auth_controller.php.html#15\">AuthController::getCurrentUserId<\/a>"],[100,1,"<a href=\"src\/auth\/controller\/auth_controller.php.html#19\">AuthController::__construct<\/a>"],[0,6,"<a href=\"src\/auth\/controller\/auth_controller.php.html#31\">AuthController::main<\/a>"],[100,2,"<a href=\"src\/auth\/controller\/auth_controller.php.html#52\">AuthController::getUserAgent<\/a>"],[0,6,"<a href=\"src\/auth\/controller\/auth_controller.php.html#56\">AuthController::login<\/a>"],[0,1,"<a href=\"src\/auth\/controller\/auth_controller.php.html#85\">AuthController::logout<\/a>"],[100,2,"<a href=\"src\/auth\/model\/auth_model.php.html#11\">AuthModel::userIsLoggedIn<\/a>"],[0,2,"<a href=\"src\/auth\/model\/auth_model.php.html#16\">AuthModel::getLoggedInUser<\/a>"],[0,2,"<a href=\"src\/auth\/model\/auth_model.php.html#24\">AuthModel::getLoggedInUserId<\/a>"],[0,4,"<a href=\"src\/auth\/model\/auth_model.php.html#31\">AuthModel::checkLogin<\/a>"],[0,1,"<a href=\"src\/auth\/model\/auth_model.php.html#45\">AuthModel::saveUserToSession<\/a>"],[0,4,"<a href=\"src\/auth\/model\/auth_model.php.html#53\">AuthModel::checkLoginWithCookies<\/a>"],[0,2,"<a href=\"src\/auth\/model\/auth_model.php.html#71\">AuthModel::saveCookieValue<\/a>"],[0,2,"<a href=\"src\/auth\/model\/auth_model.php.html#80\">AuthModel::logOut<\/a>"],[100,1,"<a href=\"src\/auth\/model\/model_base.php.html#9\">ModelBase::__construct<\/a>"],[0,1,"<a href=\"src\/auth\/model\/model_base.php.html#13\">ModelBase::setSessionReadOnceMessage<\/a>"],[0,1,"<a href=\"src\/auth\/model\/model_base.php.html#17\">ModelBase::getSessionReadOnceMessage<\/a>"],[0,1,"<a href=\"src\/auth\/model\/model_base.php.html#21\">ModelBase::setSessionMessage<\/a>"],[0,1,"<a href=\"src\/auth\/model\/model_base.php.html#25\">ModelBase::readAndRemoveSessionMessage<\/a>"],[100,1,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#7\">UserRepository::__construct<\/a>"],[0,2,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#12\">UserRepository::addUser<\/a>"],[0,2,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#26\">UserRepository::getUserWithUserName<\/a>"],[0,2,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#40\">UserRepository::getUserWithId<\/a>"],[0,1,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#55\">UserRepository::saveCookieValue<\/a>"],[0,1,"<a href=\"src\/auth\/model\/repository\/user_repository.php.html#62\">UserRepository::resetCookieValues<\/a>"],[100,1,"<a href=\"src\/auth\/model\/session_handler.php.html#15\">SessionHandler::__construct<\/a>"],[0,2,"<a href=\"src\/auth\/model\/session_handler.php.html#18\">SessionHandler::setSessionArray<\/a>"],[0,1,"<a href=\"src\/auth\/model\/session_handler.php.html#24\">SessionHandler::setSessionReadOnceMessage<\/a>"],[0,2,"<a href=\"src\/auth\/model\/session_handler.php.html#28\">SessionHandler::getSessionReadOnceMessage<\/a>"],[0,2,"<a href=\"src\/auth\/model\/session_handler.php.html#34\">SessionHandler::readAndRemoveSession<\/a>"],[0,2,"<a href=\"src\/auth\/model\/session_handler.php.html#40\">SessionHandler::readFromSession<\/a>"],[0,1,"<a href=\"src\/auth\/model\/session_handler.php.html#44\">SessionHandler::setSession<\/a>"],[100,2,"<a href=\"src\/auth\/model\/session_handler.php.html#48\">SessionHandler::getSession<\/a>"],[0,1,"<a href=\"src\/auth\/model\/session_handler.php.html#52\">SessionHandler::sessionKeyIsSet<\/a>"],[0,3,"<a href=\"src\/auth\/model\/session_handler.php.html#59\">SessionHandler::unsetSessions<\/a>"],[100,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#17\">AuthView::__construct<\/a>"],[0,3,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#23\">AuthView::populateErrorMessage<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#31\">AuthView::RememberMeIsFilled<\/a>"],[0,2,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#36\">AuthView::userIsRemembered<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#41\">AuthView::saveToCookies<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#47\">AuthView::forgetRememberedUser<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#53\">AuthView::getUsernameCookie<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#58\">AuthView::getPasswordCookie<\/a>"],[0,2,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#63\">AuthView::getUsername<\/a>"],[0,3,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#73\">AuthView::getPassword<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#85\">AuthView::setLogOutMessage<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#89\">AuthView::setFaultyCookiesMessage<\/a>"],[0,3,"<a href=\"src\/auth\/view\/auth\/auth_view.php.html#93\">AuthView::showLogin<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/user_view.php.html#7\">UserView::successfullLogIn<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/user_view.php.html#12\">UserView::successfullLogInWithCookiesSaved<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/user_view.php.html#17\">UserView::successfullLogInWithCookiesLoad<\/a>"],[0,1,"<a href=\"src\/auth\/view\/auth\/user_view.php.html#22\">UserView::showUser<\/a>"],[0,2,"<a href=\"src\/auth\/view\/cookie_service.php.html#8\">CookieService::saveCookie<\/a>"],[0,1,"<a href=\"src\/auth\/view\/cookie_service.php.html#17\">CookieService::getCookieExpiration<\/a>"],[0,2,"<a href=\"src\/auth\/view\/cookie_service.php.html#22\">CookieService::loadCookie<\/a>"],[0,1,"<a href=\"src\/auth\/view\/cookie_service.php.html#32\">CookieService::removeCookie<\/a>"],[0,2,"<a href=\"src\/auth\/view\/cookie_service.php.html#40\">CookieService::generateRandomString<\/a>"],[100,1,"<a href=\"src\/auth\/view\/view_base.php.html#11\">ViewBase::__construct<\/a>"],[0,1,"<a href=\"src\/auth\/view\/view_base.php.html#15\">ViewBase::redirect<\/a>"],[0,1,"<a href=\"src\/auth\/view\/view_base.php.html#19\">ViewBase::getMessage<\/a>"],[0,2,"<a href=\"src\/auth\/view\/view_base.php.html#23\">ViewBase::getInput<\/a>"],[0,2,"<a href=\"src\/auth\/view\/view_base.php.html#26\">ViewBase::getCleanInput<\/a>"],[0,1,"<a href=\"src\/auth\/view\/view_base.php.html#29\">ViewBase::sanitize<\/a>"],[0,1,"<a href=\"src\/auth\/view\/view_base.php.html#34\">ViewBase::setSession<\/a>"],[0,1,"<a href=\"src\/auth\/view\/view_base.php.html#37\">ViewBase::getNewlyAddedUserName<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

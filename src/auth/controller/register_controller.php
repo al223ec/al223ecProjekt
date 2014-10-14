@@ -14,7 +14,7 @@ class RegisterController extends \core\Controller{
 		$this->registerUserView = new \auth\view\register\RegisterUserView($this->registerUserModel);
 	}
 	public function main(){
-		$this->masterView->setAuthView($this->registerUserView->getRegisterForm()); 
+		$this->masterPage->setAuthView($this->registerUserView->getRegisterForm()); 
 	}
 
 	public function saveNewUser(){
@@ -26,7 +26,7 @@ class RegisterController extends \core\Controller{
 			return; 
 		}
 		$this->registerUserView->setFailMessage(); 
-		$this->masterView->setAuthView($this->registerUserView->getRegisterForm()); 
+		$this->masterPage->setAuthView($this->registerUserView->getRegisterForm()); 
 	}
 	//Flytta denna till vyn?? 
 	private function getNewUser(){

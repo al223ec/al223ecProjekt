@@ -1,10 +1,11 @@
 <?php
 
-namespace master\view;
+namespace master;
 
-class MasterView{
-	private $instagramImages; 
-	private $tweets; 
+class MasterPage {
+	
+	private $instagramView; 
+	private $twitterView; 
 	
 	private $authView; 
 	private $bloggView; 
@@ -15,12 +16,16 @@ class MasterView{
 
 	public function __construct(){} 
 
-	public function setInstagramImages($instagramImages){
-		$this->instagramImages($instagramImages); 
+	public function setInstagramView($instagramView){
+		$this->instagramView = $instagramView; 
 	}	
 
 	public function setAuthView($authView){
 		$this->authView = $authView; 
+	}
+
+	public function setTwitterView($twitterView){
+		$this->twitterView = $twitterView;
 	}
 
 	public function setBloggView($bloggView){
@@ -31,22 +36,23 @@ class MasterView{
 		$this->bloggFormView = $bloggFormView; 
 	}
 
+	public function getInstagramView(){
+		return $this->instagramView; 
+	}
+
+	public function getTwitterView(){
+		return $this->twitterView; 
+	}
+
 	public function getAuthView(){
 		if(!isset($this->authView)){
 			$controller = \core\Loader::load('\auth\controller\AuthController');
 			$controller->main(); 
 		}
-
 		return $this->authView; 
 	}
 
 	public function getBloggView(){
-
-		if(!isset($this->bloggView)){
-			$controller = \core\Loader::load('\blogg\controller\BloggController'); //Detta måste skötas någon annan stans känns det som
-			$controller->main(); 
-		}
-
 		return $this->bloggView; 
 	}
 	

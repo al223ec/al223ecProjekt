@@ -16,19 +16,7 @@ class SocialMediaView {
 		return $this->instagramModel->getInstagramImages(); 
 	}
 
-	public function getTweets($numberOfTweets){
-		$tweets =$this->twitterModel->getTweets(); 
-		$ret = ""; 
 
-		if($tweets){
-			foreach ($tweets as $key => $value) {
-				$ret .= "<h1>" . $value->getName() . "</h1>"; 
-				$ret .="<p>". $value->getText() ."</p>"; 
-				$ret .= "<h5>" . $value->getScreenName() . "</h5>"; 
-			}
-		}
-		return $ret; 
-	}
 
 
 }

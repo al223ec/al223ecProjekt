@@ -1,62 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="36" assertions="49" failures="0" errors="0" time="0.133154">
-    <testsuite name="user" tests="6" assertions="6" failures="0" errors="0" time="0.026901">
-      <testsuite name="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" tests="6" assertions="6" failures="0" errors="0" time="0.026901">
-        <testcase name="testValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="22" assertions="0" time="0.003109"/>
-        <testcase name="testInValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="28" assertions="1" time="0.003169"/>
-        <testcase name="testCreatedPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="33" assertions="2" time="0.011775"/>
-        <testcase name="testEmptyPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="39" assertions="1" time="0.004003"/>
-        <testcase name="testValidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="44" assertions="1" time="0.002623"/>
-        <testcase name="testInvalidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="49" assertions="1" time="0.002222"/>
+  <testsuite name="" tests="35" assertions="48" failures="0" errors="0" time="0.142659">
+    <testsuite name="user" tests="6" assertions="6" failures="0" errors="0" time="0.027256">
+      <testsuite name="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" tests="6" assertions="6" failures="0" errors="0" time="0.027256">
+        <testcase name="testValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="22" assertions="0" time="0.003063"/>
+        <testcase name="testInValidInput" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="28" assertions="1" time="0.002987"/>
+        <testcase name="testCreatedPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="33" assertions="2" time="0.011699"/>
+        <testcase name="testEmptyPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="39" assertions="1" time="0.003830"/>
+        <testcase name="testValidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="44" assertions="1" time="0.002607"/>
+        <testcase name="testInvalidPassword" class="ApplicationTest\UserTest" file="C:\ProjektPHP\al223ecProjekt\tests\user_test.php" line="49" assertions="1" time="0.003070"/>
       </testsuite>
     </testsuite>
-    <testsuite name="validation" tests="18" assertions="27" failures="0" errors="0" time="0.055197">
-      <testsuite name="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" tests="3" assertions="4" failures="0" errors="0" time="0.008052">
-        <testcase name="testValidation" class="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" line="17" assertions="1" time="0.002818"/>
-        <testcase name="testPropertyWithGetter" class="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" line="28" assertions="1" time="0.002454"/>
-        <testcase name="testNotEmpty" class="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" line="40" assertions="2" time="0.002780"/>
+    <testsuite name="validation" tests="18" assertions="27" failures="0" errors="0" time="0.058355">
+      <testsuite name="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" tests="3" assertions="4" failures="0" errors="0" time="0.009320">
+        <testcase name="testValidation" class="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" line="17" assertions="1" time="0.003097"/>
+        <testcase name="testPropertyWithGetter" class="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" line="28" assertions="1" time="0.003211"/>
+        <testcase name="testNotEmpty" class="test\validation\ValidationTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_test.php" line="40" assertions="2" time="0.003012"/>
       </testsuite>
-      <testsuite name="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" tests="5" assertions="10" failures="0" errors="0" time="0.017665">
-        <testcase name="testValidString" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="15" assertions="2" time="0.002887"/>
-        <testcase name="testMinLength" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="26" assertions="2" time="0.003353"/>
-        <testcase name="testMaxLength" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="36" assertions="2" time="0.003695"/>
-        <testcase name="testAlphaNum" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="49" assertions="2" time="0.003821"/>
-        <testcase name="testRegex" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="62" assertions="2" time="0.003909"/>
+      <testsuite name="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" tests="5" assertions="10" failures="0" errors="0" time="0.018609">
+        <testcase name="testValidString" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="15" assertions="2" time="0.003990"/>
+        <testcase name="testMinLength" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="26" assertions="2" time="0.002955"/>
+        <testcase name="testMaxLength" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="36" assertions="2" time="0.005146"/>
+        <testcase name="testAlphaNum" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="49" assertions="2" time="0.003543"/>
+        <testcase name="testRegex" class="test\validation\ValidationStringsTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_strings_test.php" line="62" assertions="2" time="0.002975"/>
       </testsuite>
-      <testsuite name="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" tests="4" assertions="5" failures="0" errors="0" time="0.014307">
-        <testcase name="testDisplayErrorMessage" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="17" assertions="2" time="0.004622"/>
-        <testcase name="testDontDisplayErrorMessages" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="27" assertions="1" time="0.002483"/>
-        <testcase name="testSeveralErrorMessagesOnProperty" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="36" assertions="2" time="0.005291"/>
-        <testcase name="testSeveralErrorMessagesOnSeveralProperties" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="48" assertions="0" time="0.001911"/>
+      <testsuite name="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" tests="4" assertions="5" failures="0" errors="0" time="0.014640">
+        <testcase name="testDisplayErrorMessage" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="17" assertions="2" time="0.004491"/>
+        <testcase name="testDontDisplayErrorMessages" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="27" assertions="1" time="0.002438"/>
+        <testcase name="testSeveralErrorMessagesOnProperty" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="36" assertions="2" time="0.005370"/>
+        <testcase name="testSeveralErrorMessagesOnSeveralProperties" class="test\validation\ValidationErrorMessagesTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_error_messages_test.php" line="48" assertions="0" time="0.002341"/>
       </testsuite>
-      <testsuite name="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" tests="6" assertions="8" failures="0" errors="0" time="0.015173">
-        <testcase name="testIsNumeric" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="19" assertions="1" time="0.002373"/>
-        <testcase name="testIsNotNumeric" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="25" assertions="1" time="0.002351"/>
-        <testcase name="testIsInt" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="31" assertions="1" time="0.002545"/>
-        <testcase name="testIsNotInt" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="38" assertions="1" time="0.002297"/>
-        <testcase name="testMaxValue" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="43" assertions="2" time="0.002871"/>
-        <testcase name="testMinValue" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="54" assertions="2" time="0.002736"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="router" tests="10" assertions="12" failures="0" errors="0" time="0.041217">
-      <testsuite name="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" tests="10" assertions="12" failures="0" errors="0" time="0.041217">
-        <testcase name="testFallbackController" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="30" assertions="1" time="0.003514"/>
-        <testcase name="testFallbackAction" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="35" assertions="1" time="0.003564"/>
-        <testcase name="testFallbackControllerInvalidURL" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="44" assertions="1" time="0.003438"/>
-        <testcase name="testSetController" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="53" assertions="2" time="0.005011"/>
-        <testcase name="testParam" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="67" assertions="3" time="0.006352"/>
-        <testcase name="testValidURL" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="81" assertions="1" time="0.003785"/>
-        <testcase name="testDispatchControllerFileDoesntExists" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="90" assertions="1" time="0.003237"/>
-        <testcase name="testDispatchActionDoesntExists" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="97" assertions="1" time="0.006550"/>
-        <testcase name="testSuccessfullDispatch" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="105" assertions="1" time="0.003731"/>
-        <testcase name="testStaticRoutes" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="116" assertions="0" time="0.002035"/>
+      <testsuite name="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" tests="6" assertions="8" failures="0" errors="0" time="0.015786">
+        <testcase name="testIsNumeric" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="19" assertions="1" time="0.002378"/>
+        <testcase name="testIsNotNumeric" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="25" assertions="1" time="0.002451"/>
+        <testcase name="testIsInt" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="31" assertions="1" time="0.002430"/>
+        <testcase name="testIsNotInt" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="38" assertions="1" time="0.002406"/>
+        <testcase name="testMaxValue" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="43" assertions="2" time="0.003243"/>
+        <testcase name="testMinValue" class="test\validation\ValidationNumericTest" file="C:\ProjektPHP\al223ecProjekt\tests\validation\validation_numeric_test.php" line="54" assertions="2" time="0.002878"/>
       </testsuite>
     </testsuite>
-    <testsuite name="model" tests="2" assertions="4" failures="0" errors="0" time="0.009839">
-      <testsuite name="test\model\TestBloggPost" file="C:\ProjektPHP\al223ecProjekt\tests\model\test_blogg_post.php" tests="2" assertions="4" failures="0" errors="0" time="0.009839">
-        <testcase name="testConstruct" class="test\model\TestBloggPost" file="C:\ProjektPHP\al223ecProjekt\tests\model\test_blogg_post.php" line="23" assertions="1" time="0.002731"/>
-        <testcase name="testSetters" class="test\model\TestBloggPost" file="C:\ProjektPHP\al223ecProjekt\tests\model\test_blogg_post.php" line="28" assertions="3" time="0.007108"/>
+    <testsuite name="router" tests="9" assertions="11" failures="0" errors="0" time="0.047125">
+      <testsuite name="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" tests="9" assertions="11" failures="0" errors="0" time="0.047125">
+        <testcase name="testFallbackController" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="30" assertions="1" time="0.003669"/>
+        <testcase name="testFallbackAction" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="35" assertions="1" time="0.003535"/>
+        <testcase name="testFallbackControllerInvalidURL" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="44" assertions="1" time="0.003526"/>
+        <testcase name="testSetController" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="53" assertions="2" time="0.005014"/>
+        <testcase name="testParam" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="67" assertions="3" time="0.006294"/>
+        <testcase name="testValidURL" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="81" assertions="1" time="0.003622"/>
+        <testcase name="testDispatchControllerFileDoesntExists" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="90" assertions="1" time="0.003756"/>
+        <testcase name="testDispatchActionDoesntExists" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="97" assertions="1" time="0.015784"/>
+        <testcase name="testStaticRoutes" class="test\validation\RouterTest" file="C:\ProjektPHP\al223ecProjekt\tests\router\router_test.php" line="117" assertions="0" time="0.001925"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="model" tests="2" assertions="4" failures="0" errors="0" time="0.009923">
+      <testsuite name="test\model\TestBloggPost" file="C:\ProjektPHP\al223ecProjekt\tests\model\test_blogg_post.php" tests="2" assertions="4" failures="0" errors="0" time="0.009923">
+        <testcase name="testConstruct" class="test\model\TestBloggPost" file="C:\ProjektPHP\al223ecProjekt\tests\model\test_blogg_post.php" line="23" assertions="1" time="0.002647"/>
+        <testcase name="testSetters" class="test\model\TestBloggPost" file="C:\ProjektPHP\al223ecProjekt\tests\model\test_blogg_post.php" line="28" assertions="3" time="0.007276"/>
       </testsuite>
     </testsuite>
   </testsuite>

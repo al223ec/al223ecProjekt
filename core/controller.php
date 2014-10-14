@@ -6,10 +6,10 @@ abstract class Controller {
 
 	protected $params; 
 
-	protected $masterView; 
-
+	protected $masterPage; 
+	
 	public function __construct(){
-		$this->masterView = \core\Loader::load('\\master\\view\\MasterView'); 
+		$this->masterPage = \core\Loader::load('\\master\\MasterPage'); 
 	}
 
 	public abstract function main(); 

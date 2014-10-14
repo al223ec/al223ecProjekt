@@ -10,3 +10,18 @@
 label{
 	width: 180px; 
 }
+
+textarea{
+	width:70%;
+	height: 400px;
+}
+
+img{
+	max-width: 100%;
+}
+
+.jumbotron{
+	background-image: url('../img/bg.jpg');
+	color:white;
+
+}

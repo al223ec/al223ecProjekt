@@ -97,16 +97,17 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 	public function testDispatchActionDoesntExists(){
 		$controller = \Config::DEFAULT_CONTROLLER . "/unknownAction"; 
 		$url = $controller . "/";
+		
 		$router = new \core\ Router($url);
 		$router->dispatch(); 
 	}
 
-
+/*
 	public function testSuccessfullDispatch(){
 		$router = new \core\ Router($this->validURL); 
 		//Kommer nog i framtiden att returnera någon form av view objekt 
 		$this->assertTrue(is_string ($router->dispatch())); 
-	}
+	}*/
 
 
 

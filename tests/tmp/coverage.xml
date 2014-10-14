@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1413213551">
-  <project timestamp="1413213551">
+<coverage generated="1413293508">
+  <project timestamp="1413293508">
     <file name="C:\ProjektPHP\al223ecProjekt/common/html_view.php">
       <class name="HTMLView" namespace="global">
-        <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+        <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="10" coveredelements="0"/>
       </class>
       <line num="4" type="method" name="echoHTML" crap="6" count="0"/>
       <line num="5" type="stmt" count="0"/>
       <line num="6" type="stmt" count="0"/>
       <line num="15" type="stmt" count="0"/>
       <line num="16" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <metrics loc="27" ncloc="27" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <metrics loc="47" ncloc="47" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
     <file name="C:\ProjektPHP\al223ecProjekt/core/autoload.php">
-      <line num="5" type="stmt" count="2"/>
-      <line num="6" type="stmt" count="2"/>
-      <line num="7" type="stmt" count="2"/>
-      <line num="8" type="stmt" count="2"/>
-      <line num="9" type="stmt" count="2"/>
-      <line num="10" type="stmt" count="2"/>
-      <line num="11" type="stmt" count="2"/>
-      <line num="12" type="stmt" count="2"/>
-      <line num="13" type="stmt" count="2"/>
-      <line num="14" type="stmt" count="2"/>
-      <line num="15" type="stmt" count="2"/>
-      <line num="17" type="stmt" count="2"/>
-      <line num="18" type="stmt" count="2"/>
-      <line num="20" type="stmt" count="2"/>
-      <line num="21" type="stmt" count="2"/>
+      <line num="5" type="stmt" count="1"/>
+      <line num="6" type="stmt" count="1"/>
+      <line num="7" type="stmt" count="1"/>
+      <line num="8" type="stmt" count="1"/>
+      <line num="9" type="stmt" count="1"/>
+      <line num="10" type="stmt" count="1"/>
+      <line num="11" type="stmt" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="14" type="stmt" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="20" type="stmt" count="1"/>
+      <line num="21" type="stmt" count="1"/>
       <line num="22" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="2"/>
-      <line num="25" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
       <metrics loc="26" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="17" elements="18" coveredelements="17"/>
     </file>
     <package name="core">
       <file name="C:\ProjektPHP\al223ecProjekt/core/base_object.php">
         <class name="BaseObject" namespace="core">
-          <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="13" coveredelements="6"/>
+          <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="5" elements="12" coveredelements="6"/>
         </class>
         <line num="9" type="method" name="setPropertyToValidate" crap="2" count="2"/>
         <line num="10" type="stmt" count="2"/>
@@ -53,20 +55,33 @@
         <line num="20" type="stmt" count="0"/>
         <line num="23" type="method" name="validate" crap="2" count="0"/>
         <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <metrics loc="28" ncloc="28" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="5" elements="13" coveredelements="6"/>
+        <metrics loc="28" ncloc="28" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="5" elements="12" coveredelements="6"/>
       </file>
       <file name="C:\ProjektPHP\al223ecProjekt/core/controller.php">
         <class name="Controller" namespace="core">
-          <metrics methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="6" coveredelements="3"/>
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="9" coveredelements="6"/>
         </class>
-        <line num="11" type="method" name="setParams" crap="1" count="2"/>
-        <line num="12" type="stmt" count="2"/>
-        <line num="13" type="stmt" count="2"/>
-        <line num="15" type="method" name="redirectTo" crap="2" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <metrics loc="18" ncloc="16" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="6" coveredelements="3"/>
+        <line num="11" type="method" name="__construct" crap="1" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="17" type="method" name="setParams" crap="1" count="1"/>
+        <line num="18" type="stmt" count="1"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="21" type="method" name="redirectTo" crap="2" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <metrics loc="24" ncloc="22" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="4" elements="9" coveredelements="6"/>
+      </file>
+      <file name="C:\ProjektPHP\al223ecProjekt/core/loader.php">
+        <class name="Loader" namespace="core">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        </class>
+        <line num="9" type="method" name="load" crap="2" count="1"/>
+        <line num="10" type="stmt" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <metrics loc="14" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </file>
       <file name="C:\ProjektPHP\al223ecProjekt/core/repository.php">
         <class name="Repository" namespace="core">
@@ -107,73 +122,73 @@
       </file>
       <file name="C:\ProjektPHP\al223ecProjekt/core/router.php">
         <class name="Router" namespace="core">
-          <metrics methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="50" elements="56" coveredelements="54"/>
+          <metrics methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="49" elements="56" coveredelements="53"/>
         </class>
-        <line num="14" type="method" name="__construct" crap="5" count="9"/>
-        <line num="16" type="stmt" count="9"/>
-        <line num="17" type="stmt" count="9"/>
-        <line num="19" type="stmt" count="9"/>
+        <line num="14" type="method" name="__construct" crap="5" count="8"/>
+        <line num="16" type="stmt" count="8"/>
+        <line num="17" type="stmt" count="8"/>
+        <line num="19" type="stmt" count="8"/>
         <line num="20" type="stmt" count="1"/>
-        <line num="21" type="stmt" count="2"/>
-        <line num="23" type="stmt" count="9"/>
-        <line num="25" type="stmt" count="9"/>
-        <line num="26" type="stmt" count="9"/>
-        <line num="29" type="stmt" count="9"/>
-        <line num="30" type="stmt" count="9"/>
-        <line num="32" type="stmt" count="9"/>
-        <line num="33" type="stmt" count="9"/>
-        <line num="35" type="method" name="getAction" crap="2" count="4"/>
-        <line num="36" type="stmt" count="4"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="8"/>
+        <line num="25" type="stmt" count="8"/>
+        <line num="26" type="stmt" count="8"/>
+        <line num="29" type="stmt" count="8"/>
+        <line num="30" type="stmt" count="8"/>
+        <line num="32" type="stmt" count="8"/>
+        <line num="33" type="stmt" count="8"/>
+        <line num="35" type="method" name="getAction" crap="2" count="3"/>
+        <line num="36" type="stmt" count="3"/>
         <line num="37" type="stmt" count="2"/>
         <line num="38" type="stmt" count="2"/>
-        <line num="39" type="stmt" count="4"/>
-        <line num="41" type="method" name="getController" crap="2" count="7"/>
-        <line num="43" type="stmt" count="7"/>
-        <line num="45" type="stmt" count="7"/>
+        <line num="39" type="stmt" count="3"/>
+        <line num="41" type="method" name="getController" crap="2" count="6"/>
+        <line num="43" type="stmt" count="6"/>
+        <line num="45" type="stmt" count="6"/>
         <line num="46" type="stmt" count="2"/>
         <line num="47" type="stmt" count="2"/>
-        <line num="48" type="stmt" count="7"/>
-        <line num="51" type="method" name="getParams" crap="1" count="4"/>
-        <line num="52" type="stmt" count="4"/>
-        <line num="55" type="method" name="dispatch" crap="8" count="3"/>
-        <line num="56" type="stmt" count="3"/>
-        <line num="57" type="stmt" count="3"/>
-        <line num="58" type="stmt" count="3"/>
-        <line num="61" type="stmt" count="3"/>
+        <line num="48" type="stmt" count="6"/>
+        <line num="51" type="method" name="getParams" crap="1" count="3"/>
+        <line num="52" type="stmt" count="3"/>
+        <line num="55" type="method" name="dispatch" crap="8.02" count="2"/>
+        <line num="56" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="2"/>
         <line num="62" type="stmt" count="0"/>
-        <line num="65" type="stmt" count="3"/>
-        <line num="66" type="stmt" count="3"/>
-        <line num="67" type="stmt" count="3"/>
-        <line num="69" type="stmt" count="3"/>
-        <line num="70" type="stmt" count="3"/>
-        <line num="71" type="stmt" count="3"/>
-        <line num="72" type="stmt" count="3"/>
-        <line num="74" type="stmt" count="3"/>
-        <line num="75" type="stmt" count="3"/>
-        <line num="76" type="stmt" count="2"/>
-        <line num="77" type="stmt" count="2"/>
-        <line num="78" type="stmt" count="2"/>
-        <line num="80" type="stmt" count="3"/>
-        <line num="81" type="stmt" count="3"/>
-        <line num="82" type="stmt" count="3"/>
-        <line num="84" type="stmt" count="3"/>
-        <line num="85" type="stmt" count="3"/>
-        <line num="86" type="stmt" count="2"/>
-        <line num="87" type="stmt" count="2"/>
-        <line num="88" type="stmt" count="2"/>
-        <line num="90" type="stmt" count="2"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="66" type="stmt" count="2"/>
+        <line num="67" type="stmt" count="2"/>
+        <line num="69" type="stmt" count="2"/>
+        <line num="70" type="stmt" count="2"/>
+        <line num="71" type="stmt" count="2"/>
+        <line num="72" type="stmt" count="2"/>
+        <line num="74" type="stmt" count="2"/>
+        <line num="75" type="stmt" count="2"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="80" type="stmt" count="2"/>
+        <line num="81" type="stmt" count="2"/>
+        <line num="82" type="stmt" count="2"/>
+        <line num="84" type="stmt" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
         <line num="91" type="stmt" count="1"/>
-        <line num="93" type="stmt" count="1"/>
-        <line num="95" type="stmt" count="1"/>
-        <metrics loc="97" ncloc="76" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="50" elements="56" coveredelements="54"/>
+        <line num="92" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="96" type="stmt" count="1"/>
+        <metrics loc="98" ncloc="77" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="49" elements="56" coveredelements="53"/>
       </file>
       <file name="C:\ProjektPHP\al223ecProjekt/core/routes.php">
         <class name="Routes" namespace="core">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
         </class>
-        <line num="14" type="method" name="getRoute" crap="1" count="1"/>
-        <line num="15" type="stmt" count="1"/>
-        <metrics loc="16" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <line num="28" type="method" name="getRoute" crap="2" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <metrics loc="30" ncloc="30" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
       </file>
       <file name="C:\ProjektPHP\al223ecProjekt/core/view.php">
         <class name="View" namespace="core">
@@ -292,67 +307,517 @@
         <metrics loc="182" ncloc="129" classes="2" methods="21" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="53" elements="74" coveredelements="74"/>
       </file>
     </package>
-    <package name="blogg\controller">
-      <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/controller/blogg_controller.php">
-        <class name="BloggController" namespace="blogg\controller">
-          <metrics methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="7" elements="17" coveredelements="9"/>
+    <package name="auth\controller">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/controller/auth_controller.php">
+        <class name="AuthController" namespace="auth\controller">
+          <metrics methods="7" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="7" elements="54" coveredelements="10"/>
         </class>
-        <line num="12" type="method" name="__construct" crap="1" count="2"/>
-        <line num="13" type="stmt" count="2"/>
-        <line num="14" type="stmt" count="2"/>
-        <line num="15" type="stmt" count="2"/>
-        <line num="16" type="stmt" count="2"/>
-        <line num="17" type="stmt" count="2"/>
-        <line num="19" type="method" name="main" crap="1" count="1"/>
-        <line num="21" type="stmt" count="1"/>
+        <line num="12" type="method" name="userIsLoggedIn" crap="1" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="15" type="method" name="getCurrentUserId" crap="2" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="19" type="method" name="__construct" crap="1" count="1"/>
+        <line num="20" type="stmt" count="1"/>
         <line num="22" type="stmt" count="1"/>
-        <line num="25" type="method" name="edit" crap="2" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="28" type="method" name="delete" crap="2" count="0"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="31" type="method" name="main" crap="42" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="52" type="method" name="getUserAgent" crap="2" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="56" type="method" name="login" crap="42" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="85" type="method" name="logout" crap="2" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <metrics loc="92" ncloc="81" classes="1" methods="7" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="7" elements="54" coveredelements="10"/>
+      </file>
+    </package>
+    <package name="auth\model">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/model/auth_model.php">
+        <class name="AuthModel" namespace="auth\model">
+          <metrics methods="8" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="1" elements="45" coveredelements="2"/>
+        </class>
+        <line num="11" type="method" name="userIsLoggedIn" crap="2" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="16" type="method" name="getLoggedInUser" crap="6" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="24" type="method" name="getLoggedInUserId" crap="6" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="31" type="method" name="checkLogin" crap="20" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="45" type="method" name="saveUserToSession" crap="2" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="53" type="method" name="checkLoginWithCookies" crap="20" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="71" type="method" name="saveCookieValue" crap="6" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="80" type="method" name="logOut" crap="6" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="83" type="stmt" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <metrics loc="87" ncloc="65" classes="1" methods="8" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="1" elements="45" coveredelements="2"/>
+      </file>
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/model/model_base.php">
+        <class name="ModelBase" namespace="auth\model">
+          <metrics methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="2" elements="13" coveredelements="3"/>
+        </class>
+        <line num="9" type="method" name="__construct" crap="1" count="1"/>
+        <line num="10" type="stmt" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="13" type="method" name="setSessionReadOnceMessage" crap="2" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="method" name="getSessionReadOnceMessage" crap="2" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="21" type="method" name="setSessionMessage" crap="2" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="25" type="method" name="readAndRemoveSessionMessage" crap="2" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <metrics loc="27" ncloc="27" classes="1" methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="2" elements="13" coveredelements="3"/>
+      </file>
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/model/session_handler.php">
+        <class name="SessionHandler" namespace="auth\model">
+          <metrics methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="1" elements="35" coveredelements="2"/>
+        </class>
+        <line num="18" type="method" name="setSessionArray" crap="6" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="24" type="method" name="setSessionReadOnceMessage" crap="2" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="28" type="method" name="getSessionReadOnceMessage" crap="6" count="0"/>
+        <line num="29" type="stmt" count="0"/>
         <line num="30" type="stmt" count="0"/>
-        <line num="31" type="method" name="save" crap="2" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="34" type="method" name="readAndRemoveSession" crap="6" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="40" type="method" name="readFromSession" crap="6" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="44" type="method" name="setSession" crap="2" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="48" type="method" name="getSession" crap="2" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="52" type="method" name="sessionKeyIsSet" crap="2" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="59" type="method" name="unsetSessions" crap="12" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <metrics loc="69" ncloc="59" classes="1" methods="9" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="1" elements="35" coveredelements="2"/>
+      </file>
+    </package>
+    <package name="auth\model\repository">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/model/repository/user_repository.php">
+        <class name="UserRepository" namespace="auth\model\repository">
+          <metrics methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="2" elements="39" coveredelements="3"/>
+        </class>
+        <line num="7" type="method" name="__construct" crap="1" count="1"/>
+        <line num="8" type="stmt" count="1"/>
+        <line num="9" type="stmt" count="1"/>
+        <line num="12" type="method" name="addUser" crap="6" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="26" type="method" name="getUserWithUserName" crap="6" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
         <line num="32" type="stmt" count="0"/>
         <line num="33" type="stmt" count="0"/>
         <line num="34" type="stmt" count="0"/>
-        <metrics loc="36" ncloc="34" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="7" elements="17" coveredelements="9"/>
-      </file>
-    </package>
-    <package name="blogg\model\blogg">
-      <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/model/blogg/post.php">
-        <class name="Post" namespace="blogg\model\blogg">
-          <metrics methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="15" elements="30" coveredelements="19"/>
-        </class>
-        <line num="14" type="method" name="__construct" crap="4" count="2"/>
-        <line num="15" type="stmt" count="2"/>
-        <line num="16" type="stmt" count="1"/>
-        <line num="18" type="stmt" count="2"/>
-        <line num="19" type="stmt" count="2"/>
-        <line num="21" type="stmt" count="2"/>
-        <line num="22" type="stmt" count="2"/>
-        <line num="24" type="stmt" count="2"/>
-        <line num="25" type="stmt" count="2"/>
-        <line num="26" type="stmt" count="2"/>
-        <line num="28" type="method" name="setTitel" crap="1" count="1"/>
-        <line num="29" type="stmt" count="1"/>
-        <line num="30" type="stmt" count="1"/>
-        <line num="32" type="method" name="setText" crap="1" count="1"/>
-        <line num="33" type="stmt" count="1"/>
-        <line num="34" type="stmt" count="1"/>
-        <line num="36" type="method" name="setTime" crap="1" count="1"/>
-        <line num="37" type="stmt" count="1"/>
-        <line num="38" type="stmt" count="1"/>
-        <line num="40" type="method" name="getErrors" crap="12" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="40" type="method" name="getUserWithId" crap="6" count="0"/>
         <line num="41" type="stmt" count="0"/>
         <line num="42" type="stmt" count="0"/>
         <line num="43" type="stmt" count="0"/>
         <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
         <line num="46" type="stmt" count="0"/>
         <line num="47" type="stmt" count="0"/>
         <line num="48" type="stmt" count="0"/>
         <line num="49" type="stmt" count="0"/>
-        <line num="52" type="method" name="isValid" crap="2" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="55" type="method" name="saveCookieValue" crap="2" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="62" type="method" name="resetCookieValues" crap="2" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <metrics loc="64" ncloc="64" classes="1" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="2" elements="39" coveredelements="3"/>
+      </file>
+    </package>
+    <package name="auth\view\auth">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/view/auth/auth_view.php">
+        <class name="AuthView" namespace="auth\view\auth">
+          <metrics methods="13" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="50" coveredstatements="4" elements="63" coveredelements="5"/>
+        </class>
+        <line num="17" type="method" name="__construct" crap="1" count="1"/>
+        <line num="18" type="stmt" count="1"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="20" type="stmt" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="23" type="method" name="populateErrorMessage" crap="12" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="method" name="RememberMeIsFilled" crap="2" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="36" type="method" name="userIsRemembered" crap="6" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="41" type="method" name="saveToCookies" crap="2" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="47" type="method" name="forgetRememberedUser" crap="2" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="53" type="method" name="getUsernameCookie" crap="2" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="58" type="method" name="getPasswordCookie" crap="2" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="63" type="method" name="getUsername" crap="6" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="73" type="method" name="getPassword" crap="12" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="79" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="85" type="method" name="setLogOutMessage" crap="2" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="89" type="method" name="setFaultyCookiesMessage" crap="2" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="93" type="method" name="showLogin" crap="12" count="0"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="0"/>
+        <line num="99" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="103" type="stmt" count="0"/>
+        <line num="106" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="113" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="0"/>
+        <line num="117" type="stmt" count="0"/>
+        <line num="120" type="stmt" count="0"/>
+        <line num="125" type="stmt" count="0"/>
+        <line num="127" type="stmt" count="0"/>
+        <metrics loc="128" ncloc="92" classes="1" methods="13" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="50" coveredstatements="4" elements="63" coveredelements="5"/>
+      </file>
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/view/auth/user_view.php">
+        <class name="UserView" namespace="auth\view\auth">
+          <metrics methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="16" coveredelements="0"/>
+        </class>
+        <line num="7" type="method" name="successfullLogIn" crap="2" count="0"/>
+        <line num="8" type="stmt" count="0"/>
+        <line num="9" type="stmt" count="0"/>
+        <line num="12" type="method" name="successfullLogInWithCookiesSaved" crap="2" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="17" type="method" name="successfullLogInWithCookiesLoad" crap="2" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="22" type="method" name="showUser" crap="2" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <metrics loc="36" ncloc="28" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="16" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="auth\view">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/view/cookie_service.php">
+        <class name="CookieService" namespace="auth\view">
+          <metrics methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="23" coveredelements="0"/>
+        </class>
+        <line num="8" type="method" name="saveCookie" crap="6" count="0"/>
+        <line num="9" type="stmt" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="method" name="getCookieExpiration" crap="2" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="22" type="method" name="loadCookie" crap="6" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="32" type="method" name="removeCookie" crap="2" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="40" type="method" name="generateRandomString" crap="6" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <metrics loc="48" ncloc="38" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="23" coveredelements="0"/>
+      </file>
+      <file name="C:\ProjektPHP\al223ecProjekt/src/auth/view/view_base.php">
+        <class name="ViewBase" namespace="auth\view">
+          <metrics methods="8" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="2" elements="20" coveredelements="3"/>
+        </class>
+        <line num="11" type="method" name="__construct" crap="1" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
+        <line num="15" type="method" name="redirect" crap="2" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="19" type="method" name="getMessage" crap="2" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="23" type="method" name="getInput" crap="6" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="26" type="method" name="getCleanInput" crap="6" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="29" type="method" name="sanitize" crap="2" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="34" type="method" name="setSession" crap="2" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="method" name="getNewlyAddedUserName" crap="2" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <metrics loc="39" ncloc="39" classes="1" methods="8" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="2" elements="20" coveredelements="3"/>
+      </file>
+    </package>
+    <package name="blogg\controller">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/controller/blogg_controller.php">
+        <class name="BloggController" namespace="blogg\controller">
+          <metrics methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="10" elements="54" coveredelements="11"/>
+        </class>
+        <line num="16" type="method" name="__construct" crap="1" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="18" type="stmt" count="1"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="31" type="method" name="main" crap="6" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="43" type="method" name="edit" crap="12" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="53" type="method" name="view" crap="6" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="59" type="method" name="delete" crap="12" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="69" type="method" name="deleteConfirmed" crap="12" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="80" type="method" name="save" crap="42" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="87" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="91" type="stmt" count="0"/>
+        <line num="92" type="stmt" count="0"/>
+        <line num="96" type="stmt" count="0"/>
+        <line num="97" type="stmt" count="0"/>
+        <metrics loc="98" ncloc="88" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="47" coveredstatements="10" elements="54" coveredelements="11"/>
+      </file>
+    </package>
+    <package name="blogg\model\blogg">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/model/blogg/blogg_model.php">
+        <class name="BloggModel" namespace="blogg\model\blogg">
+          <metrics methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="2" elements="15" coveredelements="3"/>
+        </class>
+        <line num="8" type="method" name="__construct" crap="1" count="1"/>
+        <line num="9" type="stmt" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="13" type="method" name="getBloggPosts" crap="2" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="16" type="method" name="getBloggPostById" crap="2" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="20" type="method" name="delete" crap="2" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="24" type="method" name="saveBloggPost" crap="12" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <metrics loc="34" ncloc="34" classes="1" methods="5" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="2" elements="15" coveredelements="3"/>
+      </file>
+      <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/model/blogg/post.php">
+        <class name="Post" namespace="blogg\model\blogg">
+          <metrics methods="12" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="17" elements="50" coveredelements="21"/>
+        </class>
+        <line num="14" type="method" name="__construct" crap="2" count="2"/>
+        <line num="15" type="stmt" count="2"/>
+        <line num="16" type="stmt" count="2"/>
+        <line num="18" type="stmt" count="2"/>
+        <line num="19" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="28" type="stmt" count="2"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="32" type="method" name="getUserId" crap="2" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="36" type="method" name="getId" crap="2" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="40" type="method" name="setTitel" crap="1" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="44" type="method" name="setText" crap="1" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="48" type="method" name="setTime" crap="1" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="52" type="method" name="setUserId" crap="6" count="0"/>
         <line num="53" type="stmt" count="0"/>
-        <metrics loc="54" ncloc="54" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="15" elements="30" coveredelements="19"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="60" type="method" name="getTitel" crap="2" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="63" type="method" name="getText" crap="2" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="66" type="method" name="getTime" crap="6" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="74" type="method" name="getErrors" crap="12" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="76" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
+        <line num="84" type="stmt" count="0"/>
+        <line num="87" type="method" name="isValid" crap="2" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <metrics loc="89" ncloc="89" classes="1" methods="12" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="17" elements="50" coveredelements="21"/>
       </file>
     </package>
     <package name="blogg\model\instagram">
@@ -380,6 +845,59 @@
         <line num="34" type="stmt" count="0"/>
         <line num="35" type="stmt" count="0"/>
         <metrics loc="37" ncloc="31" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="19" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="blogg\model\repository">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/model/repository/blogg_repository.php">
+        <class name="BloggRepository" namespace="blogg\model\repository">
+          <metrics methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="2" elements="45" coveredelements="3"/>
+        </class>
+        <line num="7" type="method" name="__construct" crap="1" count="1"/>
+        <line num="8" type="stmt" count="1"/>
+        <line num="9" type="stmt" count="1"/>
+        <line num="11" type="method" name="getBloggPosts" crap="12" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="29" type="method" name="getBloggPostById" crap="6" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="42" type="method" name="deletePost" crap="2" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="49" type="method" name="savePost" crap="2" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="61" type="method" name="updatePost" crap="2" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <metrics loc="71" ncloc="71" classes="1" methods="6" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="39" coveredstatements="2" elements="45" coveredelements="3"/>
       </file>
     </package>
     <package name="blogg\model">
@@ -410,43 +928,75 @@
     <package name="blogg\view\blogg">
       <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/view/blogg/blogg_post_form.php">
         <class name="BloggPostForm" namespace="blogg\view\blogg">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="0" elements="26" coveredelements="0"/>
         </class>
-        <line num="7" type="method" name="getBloggPostForm" crap="1" count="1"/>
-        <line num="9" type="stmt" count="1"/>
-        <line num="14" type="stmt" count="1"/>
-        <line num="19" type="stmt" count="1"/>
-        <line num="25" type="stmt" count="1"/>
-        <metrics loc="26" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        <line num="7" type="method" name="getBloggPostAddEditForm" crap="6" count="0"/>
+        <line num="8" type="stmt" count="0"/>
+        <line num="9" type="stmt" count="0"/>
+        <line num="10" type="stmt" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="44" type="method" name="populateErrorList" crap="6" count="0"/>
+        <line num="45" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <metrics loc="56" ncloc="56" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="0" elements="26" coveredelements="0"/>
       </file>
       <file name="C:\ProjektPHP\al223ecProjekt/src/blogg/view/blogg/blogg_view.php">
         <class name="BloggView" namespace="blogg\view\blogg">
-          <metrics methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="2" elements="23" coveredelements="3"/>
+          <metrics methods="8" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="2" elements="34" coveredelements="3"/>
         </class>
-        <line num="14" type="method" name="__construct" crap="1" count="2"/>
-        <line num="15" type="stmt" count="2"/>
-        <line num="16" type="stmt" count="2"/>
-        <line num="18" type="method" name="confirmDelete" crap="2" count="0"/>
-        <line num="19" type="stmt" count="0"/>
+        <line num="15" type="method" name="__construct" crap="1" count="1"/>
+        <line num="16" type="stmt" count="1"/>
+        <line num="17" type="stmt" count="1"/>
+        <line num="19" type="method" name="confirmDelete" crap="2" count="0"/>
         <line num="20" type="stmt" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
         <line num="23" type="stmt" count="0"/>
-        <line num="25" type="method" name="getNewBloggPost" crap="2" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="28" type="method" name="viewBloggPost" crap="12" count="0"/>
         <line num="29" type="stmt" count="0"/>
         <line num="31" type="stmt" count="0"/>
-        <line num="34" type="method" name="getAllBloggPosts" crap="6" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="37" type="method" name="getBloggPostHTML" crap="6" count="0"/>
         <line num="38" type="stmt" count="0"/>
-        <line num="39" type="stmt" count="0"/>
         <line num="40" type="stmt" count="0"/>
         <line num="41" type="stmt" count="0"/>
         <line num="42" type="stmt" count="0"/>
         <line num="43" type="stmt" count="0"/>
-        <metrics loc="44" ncloc="44" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="2" elements="23" coveredelements="3"/>
+        <line num="47" type="method" name="getViewEditDeleteLinks" crap="2" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="52" type="method" name="getPostFooter" crap="2" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="56" type="method" name="getNewBloggPost" crap="2" count="0"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="64" type="method" name="viewAllPosts" crap="6" count="0"/>
+        <line num="65" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="0"/>
+        <metrics loc="70" ncloc="70" classes="1" methods="8" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="2" elements="34" coveredelements="3"/>
       </file>
     </package>
     <package name="blogg\view">
@@ -454,10 +1004,10 @@
         <class name="SocialMediaView" namespace="blogg\view">
           <metrics methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="3" elements="17" coveredelements="4"/>
         </class>
-        <line num="10" type="method" name="__construct" crap="1" count="2"/>
-        <line num="11" type="stmt" count="2"/>
-        <line num="12" type="stmt" count="2"/>
-        <line num="13" type="stmt" count="2"/>
+        <line num="10" type="method" name="__construct" crap="1" count="1"/>
+        <line num="11" type="stmt" count="1"/>
+        <line num="12" type="stmt" count="1"/>
+        <line num="13" type="stmt" count="1"/>
         <line num="15" type="method" name="getInstagramImages" crap="2" count="0"/>
         <line num="16" type="stmt" count="0"/>
         <line num="19" type="method" name="getTweets" crap="12" count="0"/>
@@ -472,6 +1022,40 @@
         <line num="29" type="stmt" count="0"/>
         <line num="30" type="stmt" count="0"/>
         <metrics loc="33" ncloc="33" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="3" elements="17" coveredelements="4"/>
+      </file>
+    </package>
+    <package name="master">
+      <file name="C:\ProjektPHP\al223ecProjekt/src/master/master_page.php">
+        <class name="MasterPage" namespace="master">
+          <metrics methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="26" coveredelements="0"/>
+        </class>
+        <line num="19" type="method" name="setInstagramImages" crap="2" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="method" name="setAuthView" crap="2" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="27" type="method" name="setBloggView" crap="2" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="method" name="setBloggFormView" crap="2" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="35" type="method" name="getAuthView" crap="6" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="44" type="method" name="getBloggView" crap="6" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="54" type="method" name="getBloggFormView" crap="2" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <metrics loc="59" ncloc="57" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="26" coveredelements="0"/>
       </file>
     </package>
     <package name="Application">
@@ -499,6 +1083,6 @@
         <metrics loc="45" ncloc="32" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="12" elements="17" coveredelements="15"/>
       </file>
     </package>
-    <metrics files="17" loc="807" ncloc="692" classes="17" methods="68" coveredmethods="40" conditionals="0" coveredconditionals="0" statements="310" coveredstatements="171" elements="378" coveredelements="211"/>
+    <metrics files="30" loc="1769" ncloc="1545" classes="30" methods="166" coveredmethods="50" conditionals="0" coveredconditionals="0" statements="704" coveredstatements="199" elements="870" coveredelements="249"/>
   </project>
 </coverage>
