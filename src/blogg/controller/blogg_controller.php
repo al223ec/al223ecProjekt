@@ -34,8 +34,8 @@ class BloggController extends \core\Controller implements Icrud{
 	}
 
 	public function edit(){
-
-
+		$id = isset($this->params[0]) ? $this->params[0] : 0; 
+		return $this->formView->getBloggPostAddEditForm($this->bloggModel->getBloggPostById($id)); 
 	}
 
 	public function view(){
@@ -45,10 +45,19 @@ class BloggController extends \core\Controller implements Icrud{
 
 
 	public function delete(){
+		$id = isset($this->params[0]) ? $this->params[0] : 0; 
+		$post = $this->bloggModel->getBloggPostById($id); 
+		
+		return $this->bloggView->confirmDelete($post); 
+	}
+	public function deleteConfirmed(){
+		$id = isset($this->params[0]) ? $this->params[0] : 0; 
+		$this->bloggModel->delete($id); 
 
+		return $this->main(); 
 	}
 
-	
+
 	public function save(){
 		$post = $this->bloggView->getNewBloggPost(); 
 		if($post !== null && $this->bloggModel->saveBloggPost($post)){

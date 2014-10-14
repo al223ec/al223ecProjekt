@@ -1,12 +1,9 @@
 <?php
 
-namespace view; 
+namespace auth\view\auth; 
 
-require_once("src/view/cookie_service.php");
-require_once("src/config/config.php");
-require_once("src/view/view_base.php");
 
-class AuthView extends ViewBase{
+class AuthView extends \auth\view\ViewBase{
 	
 	private $cookieUsername;						// Instans av CookieStorage för att lagra användarnamn.
 	private $cookiePassword;						// Instans av CookieStorage för att lagra lösenord.
@@ -17,10 +14,10 @@ class AuthView extends ViewBase{
 	//Min uppdatering ta bort strängberoende
 	private static $RememberMe = "LoginView::checked"; 
 
-	public function __construct(\model\AuthModel $model){
+	public function __construct(\auth\model\AuthModel $model){
 		parent::__construct($model);
-		$this->cookieUsername = new \CookieService();
-		$this->cookiePassword = new \CookieService();
+		$this->cookieUsername = new \auth\view\CookieService();
+		$this->cookiePassword = new \auth\view\CookieService();
 	}
 
 	public function populateErrorMessage($user){
@@ -94,7 +91,7 @@ class AuthView extends ViewBase{
 	}
 	// Slutlig presentation av utdata.
 	public function showLogin(){
-		$ret = 	"<a href='" . \router::$route['register']['register'] . "'> Registrera ny användare </a>";  
+		$ret = 	"<a href='" . \core\routes::getRoute('register','register') . "'> Registrera ny användare </a>";  
 		$ret .= "<h2>Ej inloggad!</h2>";
 
 		$ret .= "
@@ -106,7 +103,7 @@ class AuthView extends ViewBase{
 		$ret .= "<p>" . $this->errorMessage . "</p>";
 
 		$ret .= "
-				<form action='". \router::$route['auth']['login'] . "' method='post' >";
+				<form action='". \core\routes::getRoute('auth','login') . "' method='post' >";
 		
 		// Om det inte finns något inmatat användarnamn så visa tom input.
 		// Annars visa det tidigare inmatade användarnamnet i input.

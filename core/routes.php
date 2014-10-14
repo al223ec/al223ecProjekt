@@ -10,8 +10,19 @@ class Routes{
 			'save' => 'blogg/save/',
 			'edit' => 'blogg/edit/',
 			'delete' => 'blogg/delete/',
-			'view' => 'blogg/view/'
+			'view' => 'blogg/view/',
+			'deleteConfirmed' => 'blogg/deleteConfirmed/' 
 		),
+		'auth' => array(
+			'main' => 'auth/',
+			'login' => 'auth/login/',
+			'logout' => 'auth/logout/'
+		),
+		'register' => array(
+			'main' => 'register/',
+			'register' => 'register/',
+			'save' => 'register/saveNewUser/' 
+		)
 	);
 	
 	public static function getRoute($controller, $action){

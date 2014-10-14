@@ -1,9 +1,7 @@
 <?php
-namespace view; 
+namespace auth\view\auth; 
 
-require_once('src/view/view_base.php'); 
-
-class UserView extends ViewBase{
+class UserView extends \auth\view\ViewBase{
 
 	// Skickar rättmeddelandet till setSessionMessage.
 	public function successfullLogIn(){
@@ -23,11 +21,11 @@ class UserView extends ViewBase{
 	// Slutlig presentation av utdata.
 	public function showUser(){
 		$user = $this->model->getLoggedInUser();
-		$ret = "<h2>$user är nu inloggad!</h2>";
+		$ret = "<h2>Du är nu inloggad!</h2>";
 		
 		$ret .= $this->getMessage();
 		$ret .= "
-					<form action='". \router::$route['auth']['logout'] . "' method='post' >
+					<form action='". \core\routes::getRoute('auth','logout') . "' method='post' >
 					<input type='submit' value='Logga ut' name=''>
 					</form>
 				";		

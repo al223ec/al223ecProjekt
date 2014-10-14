@@ -1,6 +1,6 @@
 <?php
 
-
+namespace auth\view; 
 
 class CookieService{
 	private $cookieExpiration;  

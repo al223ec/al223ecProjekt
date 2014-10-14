@@ -1,8 +1,7 @@
 <?php
 
-namespace model; 
+namespace auth\model; 
 
-require_once('src/config/config.php');  
 
 class User{
 
@@ -51,7 +50,7 @@ class User{
 		return $this->passwordHash; 
 	}
 	public function setUserName($userName){
-		if(strlen($userName) < \config\Config::UserNameMinLength){
+		if(strlen($userName) < \auth\config\Config::UserNameMinLength){
 			throw new \Exception("User::setUserName to short user name!"); 
 		} 
 		$this->userName = $userName;
@@ -61,7 +60,7 @@ class User{
 		$this->passwordHash = $passwordHash; 
 	}
 	public function setPassword($password){
-		if(strlen($password) < \config\Config::PasswordMinLength){
+		if(strlen($password) < \auth\config\Config::PasswordMinLength){
 			throw new \Exception("User::setPassword to short password!"); 
 		} 
 		if($this->userID === 0){

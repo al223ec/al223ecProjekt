@@ -16,32 +16,45 @@ class BloggView extends \core\ View{
 		$this->bloggModel = $bloggModel;
 	}	
 
-	public function confirmDelete(){
+	public function confirmDelete($post){
+		$ret = $this->getBloggPostHTML($post, false);
 
+		$ret .= '<p> Detta kommer att ta bort inlägget</p>
+		<a href="' . \core\Routes::getRoute('blogg', 'deleteConfirmed')  . $post->getId() .'"> Bekräfta borttagning </a>'; 
+		
+		return $ret; 
 	}
 
 	public function viewBloggPost($post, $displayfull = false){
-		$text =  $displayfull ? $post->getText() : substr($post->getText(), 0, 100); 
+		$ret = $this->getBloggPostHTML($post, $displayfull);
 
-		$ret = '<h1>'. $post->getTitel() .' </h1>
-			<p>' . $text  . '</p>
-			<h5>Skrivet: '. gmdate("Y-m-d H:i:s", $post->getTime()) . '</h5>
-
-		'; 
-		
+		$ret .= $displayfull ? $this->getPostFooter() : ""; 
 		$ret .= \blogg\controller\BloggController::$userIsloggedIn ? $this->getViewEditDeleteLinks($post->getId())  : '';
 
 		return $ret; 
 	}
+
+	private function getBloggPostHTML($post, $displayfull){
+		$text =  $displayfull ? $post->getText() : substr($post->getText(), 0, 120); 
+
+		return '<h1> <a href="' . \core\Routes::getRoute('blogg', 'view')  . $post->getId() .'">'. $post->getTitel() .' </a></h1>
+				<p>' . $text  . '</p>
+				<h5>Skrivet: '. gmdate("Y-m-d H:i:s", $post->getTime()) . '</h5>
+			'; 
+	}
+
+
 	private function getViewEditDeleteLinks($id){
-		 return "<a href='" . \core\Routes::getRoute('blogg', 'view')  . $id ."'> Visa</a> | 
-                <a href='" . \core\Routes::getRoute('blogg', 'edit')  . $id ."'> Redigera</a>  | 
+		 return "<a href='" . \core\Routes::getRoute('blogg', 'edit')  . $id ."'> Redigera</a>  | 
                 <a href='" . \core\Routes::getRoute('blogg', 'delete')  . $id ."'> Ta bort</a>";
 	}
 
-	public function getNewBloggPost(){
-		$bloggPost = new \blogg\model\blogg\ Post($this->getCleanInput(self::$idPost, self::$userIdPost)); 
+	private function getPostFooter(){
+		 return "<a href='" . \core\Routes::getRoute('blogg', 'main') ."'> Tillbaka</a>"; 
+	}
 
+	public function getNewBloggPost(){
+		$bloggPost = new \blogg\model\blogg\ Post($this->getCleanInput(self::$idPost)); 
 		$bloggPost->setTitel($this->getCleanInput(self::$titelPost)); 
 		$bloggPost->setText($this->getCleanInput(self::$textPost)); 
 
@@ -55,6 +68,4 @@ class BloggView extends \core\ View{
 		 }
 		 return $ret; 
 	}
-	
-
 }

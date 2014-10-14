@@ -2,14 +2,14 @@
 
 namespace auth\controller; 
 
-class RegisterUserController extends \core\Controller{
+class RegisterController extends \core\Controller{
 	
 	private $registerUserView; 
 	private $registerUserModel;
 
 	public function __construct(){
 		$this->registerUserModel = new \auth\model\RegisterUserModel(); 
-		$this->registerUserView = new \auth\view\RegisterUserView($this->registerUserModel);
+		$this->registerUserView = new \auth\view\register\RegisterUserView($this->registerUserModel);
 	}
 	public function main(){
 		return $this->registerUserView->getRegisterForm(); 
@@ -20,7 +20,7 @@ class RegisterUserController extends \core\Controller{
 
 		if($newUser !== null && $this->registerUserModel->saveUser($newUser)){
 			$this->registerUserView->setSuccessMessage($newUser->getUserName()); 
-			\view\ViewBase::redirect();
+			\auth\view\ViewBase::redirect();
 			return; 
 		}
 		$this->registerUserView->setFailMessage(); 

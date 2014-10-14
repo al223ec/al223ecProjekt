@@ -1,28 +1,29 @@
 <?php
 
-namespace model; 
+namespace auth\model; 
 
-require_once('src/model/repository/user_repository.php'); 
-require_once('src/model/user.php'); 
-require_once('src/model/model_base.php'); 
-require_once('src/model/session_handler.php'); 
+class AuthModel extends \auth\model\ModelBase{
 
-class AuthModel extends ModelBase{
-
-	private $sessionLoginData = "AuthModel::LoggedInUser";
+	private $sessionLoginData = "AuthModel::LoggedInUserId";
 	private $sessionUserAgent = "AuthModel::UserAgent";
-
 
 	// Kontrollerar om sessions-varibeln är satt vilket betyder att en användare är inloggad.
 	public function userIsLoggedIn($userAgent){
-		return sessionHandler::getSession($this->sessionLoginData) !== "" && sessionHandler::getSession($this->sessionUserAgent) === $userAgent; 
+		return \auth\model\sessionHandler::getSession($this->sessionLoginData) !== "" && \auth\model\sessionHandler::getSession($this->sessionUserAgent) === $userAgent; 
 	}
 
 	// Hämtar vilken användare som är inloggad.
 	public function getLoggedInUser(){
-		return sessionHandler::getSession($this->sessionLoginData) !== "" ? sessionHandler::getSession($this->sessionLoginData) : null;
+		$id = $this->getLoggedInUserId(); 
+		if($id === null){
+			return null;
+		}
+		return $this->userRepository->getUserWithId($id); 
 	}
 
+	private function getLoggedInUserId(){
+		return \auth\model\sessionHandler::getSession($this->sessionLoginData) !== "" ? \auth\model\sessionHandler::getSession($this->sessionLoginData) : 0;
+	}
 	// Kontrollerar att inmatat användarnamn och lösenord stämmer vid eventuell inloggning.
 	/** 
 	* @return User or null 
@@ -44,8 +45,8 @@ class AuthModel extends ModelBase{
 	private function saveUserToSession($user, $userAgent){
 		$elements = array(
 			$this->sessionUserAgent => $userAgent,
-			$this->sessionLoginData => $user);	
-		sessionHandler::setSessionArray($elements); 
+			$this->sessionLoginData => $user->getUserID());	
+		\auth\model\sessionHandler::setSessionArray($elements); 
 	}
 
 	// Kontrollerar att inmatat användarnamn och lösenord stämmer vid eventuell inloggning + (med kakor och förfallodatumskontroll).
@@ -77,11 +78,11 @@ class AuthModel extends ModelBase{
 	* @return True om det finns en session
 	*/
 	public function logOut(){
-		$ret = sessionHandler::sessionKeyIsSet($this->sessionLoginData); 
+		$ret = \auth\model\sessionHandler::sessionKeyIsSet($this->sessionLoginData); 
 		if($ret){
-			$this->userRepository->resetCookieValues($this->getLoggedInUser()->getUserID()); 
+			$this->userRepository->resetCookieValues($this->getLoggedInUserId()); 
 		}
-		sessionHandler::unsetSessions(); 
+		\auth\model\sessionHandler::unsetSessions(); 
 		return $ret; 
 	}
 }

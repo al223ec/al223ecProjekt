@@ -15,15 +15,20 @@ class BloggModel {
 	}
 	public function getBloggPostById($id){
 		return $this->bloggRepository->getBloggPostById($id); 
+	}
 
+	public function delete($id){
+		return $this->bloggRepository->deletePost($id); 
 	}
 
 	public function saveBloggPost(\blogg\model\blogg\Post $post){
 		if(!$post->isValid()){
 			return false; 
 		}
-
-		return $this->bloggRepository->savePost($post); 
+		if($post->getId() === 0){
+			return $this->bloggRepository->savePost($post); 
+		}
+		return $this->bloggRepository->updatePost($post); 
 	}
 
 

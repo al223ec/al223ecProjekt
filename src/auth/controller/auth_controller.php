@@ -10,17 +10,15 @@ class AuthController extends \core\Controller{
 	private $authModel;
 
 	public function __construct(){
-		// Struktur för att få till MVC.
 		$this->authModel = new \auth\model\AuthModel();
-		$this->authView = new \auth\view\AuthView($this->authModel);
-		$this->helpers = new Helpers();
-		$this->userView = new \auth\view\UserView($this->authModel);
+		$this->authView = new \auth\view\auth\AuthView($this->authModel);
+		$this->userView = new \auth\view\auth\UserView($this->authModel);
 	}
 	/**
 	* Kontroller om användaren är inloggad
 	*/
 	public function main(){
-		$userAgent = $this->helpers->getUserAgent();
+		$userAgent = $this->getUserAgent();
 		if($this->authView->userIsRemembered() && !$this->authModel->userIsLoggedIn($userAgent)){
 			$loggedInUser = $this->authModel->checkLoginWithCookies($this->authView->getUsernameCookie(), $this->authView->getPasswordCookie(), $userAgent); 
 			
@@ -38,8 +36,12 @@ class AuthController extends \core\Controller{
 		return $this->authView->showLogin();
 	}
 
+	private function getUserAgent(){
+		return $_SERVER['HTTP_USER_AGENT'];
+	}
+
 	public function login(){
-		$userAgent = $this->helpers->getUserAgent();	
+		$userAgent = $this->getUserAgent();	
 		// Hämtar användarnamn och lösenord.
 		$clientUsername = $this->authView->getUsername();
 		$clientPassword = $this->authView->getPassword();		
@@ -49,6 +51,7 @@ class AuthController extends \core\Controller{
 		if($clientUsername !== ""){
 			$user = $this->authModel->checkLogin($clientUsername, $clientPassword, $userAgent);
 		}		
+
 		if($user !== null && $user->isValid()){
 			// Om "Håll mig inloggad" är ikryssad, spara i cookies.
 			if ($this->authView->RememberMeIsFilled()) {
@@ -58,7 +61,7 @@ class AuthController extends \core\Controller{
 				$this->userView->successfullLogIn();
 			}
 			//Lyckad inloggning
-			\auth\view\authView::redirect(); 
+			\auth\view\ViewBase::redirect();
 			exit();
 		} else if($clientUsername !== ""){
 			$this->authView->populateErrorMessage($user);
@@ -71,7 +74,7 @@ class AuthController extends \core\Controller{
 		$this->authView->setLogOutMessage(); 
 		$this->authModel->logOut();	
 
-		\auth\view\authView::redirect(); 	
+		\auth\view\ViewBase::redirect();	
 		exit();
 	}
 }

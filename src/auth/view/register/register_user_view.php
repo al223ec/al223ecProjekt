@@ -1,12 +1,8 @@
 <?php
 
-namespace view; 
+namespace auth\view\register; 
 
-require_once('src/model/user.php'); 
-require_once('src/config/config.php'); 
-require_once('src/view/view_base.php'); 
-
-class RegisterUserView extends ViewBase{
+class RegisterUserView extends \auth\view\ViewBase{
 
 	private $userName = 		"RegisterUserView::UserName";	
 	private $password = 		"RegisterUserView::Password";	
@@ -16,7 +12,7 @@ class RegisterUserView extends ViewBase{
 	const PasswordErrorKey = 	"PasswordError"; 
 	const UserNameErrorKey = 	"UserNameError"; 
 
-	public function __construct(\model\ RegisterUserModel $model){
+	public function __construct(\auth\model\ RegisterUserModel $model){
 		parent::__construct($model);
 		$this->errorMessages = array(); 
 	}
@@ -41,7 +37,7 @@ class RegisterUserView extends ViewBase{
 		}else if($this->model->ceckIfUserNameExists($ret)){
 			$this->errorMessages[self::UserNameErrorKey] = "Användarnamnet finns redan";
 			$ret = ""; 
-		}else if(strlen($ret) < \config\Config::UserNameMinLength){
+		}else if(strlen($ret) < \auth\config\Config::UserNameMinLength){
 			$this->errorMessages[self::UserNameErrorKey] = "Användarnamnet är för kort";
 			$ret = "";
 		}
@@ -57,7 +53,7 @@ class RegisterUserView extends ViewBase{
 		if ($ret !== $this->getCleanInput($this->repeatedPassword)) {
 			$this->errorMessages[self::PasswordErrorKey] = "Lösenorden stämmer inte överens";
 			$ret = "";	
-		}else if(strlen($ret) < \config\Config::PasswordMinLength){
+		}else if(strlen($ret) < \auth\config\Config::PasswordMinLength){
 			$this->errorMessages[self::PasswordErrorKey] = "Lösenordet är för kort!";
 			$ret = "";
 		}
@@ -65,13 +61,13 @@ class RegisterUserView extends ViewBase{
 	}
 
 	public function getRegisterForm(){
-		return "<a href='" . \router::$route['auth']['main'] . "'> <<< Tillbaka </a> 
+		return "<a href='" . \core\routes::getRoute('auth','main') . "'> <<< Tillbaka </a> 
 		
 				<h2>Ej inloggad, registrera ny användare!</h2>
 				<fieldset>
 				<legend>Registrera ny användare - skriv in användarnamn och lösenord</legend>
 				". $this->getMessage() . "
-				<form action='". \router::$route['register']['save'] . "' method='post' >
+				<form action='". \core\routes::getRoute('register','save') . "' method='post' >
 				<fieldset>
 					<label for='RegisterUserNameID' >Namn  :</label>
 					<input type='text' name='" . $this->userName . "' id='RegisterUserNameID' value=". $this->getCleanInput($this->userName) .">"

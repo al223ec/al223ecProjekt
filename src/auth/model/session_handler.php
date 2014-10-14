@@ -1,6 +1,6 @@
 <?php
 
-namespace model; 
+namespace auth\model; 
 
 class SessionHandler{
 

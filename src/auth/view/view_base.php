@@ -1,6 +1,6 @@
 <?php
 
-namespace view;
+namespace auth\view;
 
 abstract class ViewBase{
 	
@@ -13,7 +13,7 @@ abstract class ViewBase{
 	}
 
 	public static function redirect(){
-		header("Location: " . \config\Config::AppRoot);
+		header("Location: " . \auth\config\Config::AppRoot);
 	}
 	
 	protected function getMessage(){

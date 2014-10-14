@@ -1,13 +1,13 @@
 <?php
 
-namespace model; 
+namespace auth\model; 
 
 class ModelBase {
 	
 	protected $userRepository; 
 
 	public function __construct(){
-		$this->userRepository = new UserRepository();
+		$this->userRepository = new \auth\model\repository\UserRepository();
 	}
 	
 	public function setSessionReadOnceMessage($message){

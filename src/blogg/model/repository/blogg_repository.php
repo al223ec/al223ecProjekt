@@ -19,6 +19,7 @@ class BloggRepository extends \core\Repository{
 				$post->setTitel($postdbo['titel']); 
 				$post->setText($postdbo['text']); 
 				$post->setTime($postdbo['time']); 
+
 				$ret[] = $post; 
 			}
 		} 
@@ -26,14 +27,13 @@ class BloggRepository extends \core\Repository{
 	}
 
 	public function getBloggPostById($id){
-
 		$postdbo = $this->findBy('id', $id);
 		if($postdbo !== null){
 			$post = new \blogg\model\blogg\Post($postdbo['id'], $postdbo['user_id']); 
 			$post->setTitel($postdbo['titel']); 
 			$post->setText($postdbo['text']); 
 			$post->setTime($postdbo['time']); 
-			
+
 			return $post; 
 		}
 		return null;
@@ -57,7 +57,8 @@ class BloggRepository extends \core\Repository{
 		return $this->query($sql, $params, true);
 	}
 	
-	public function updatePost(blogg\model\blogg\Post $post){
+
+	public function updatePost(\blogg\model\blogg\Post $post){
 		$titel = $post->getTitel(); 
 		$text = $post->getText(); 
 		$time = $post->getTime(); 

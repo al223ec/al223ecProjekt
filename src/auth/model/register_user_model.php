@@ -1,14 +1,10 @@
 <?php
 
-namespace model; 
-require_once('src/model/repository/user_repository.php'); 
-require_once('src/model/user.php'); 
-require_once('src/model/model_base.php');
-require_once("src/model/session_handler.php");
+namespace auth\model; 
 
-class RegisterUserModel extends ModelBase{
+class RegisterUserModel extends \auth\model\ModelBase{
 
-	public function saveUser(\model\User $newUser){
+	public function saveUser(\auth\model\User $newUser){
 		if(!$this->ceckIfUserNameExists($newUser->getUserName())){
 			return $this->userRepository->addUser($newUser); 
 		}else{
