@@ -25,12 +25,9 @@ class InstagramModel {
 			$result = $this->fetchData("https://api.instagram.com/v1/users/" .$this->userid . "/media/recent/?access_token=" . $this->accessToken);
 			$result = json_decode($result);
 			
-			$ret = ""; 
+			$ret = []; 
 			foreach ($result->data as $post){
-
-				$ret .= "<img src=" . $post->images->thumbnail->url . ">"; 
-				$ret .= "<img src=" . $post->images->low_resolution->url . ">";
-				$ret .= "<img src=" . $post->images->standard_resolution->url . ">";
+				$ret[] = new \blogg\model\instagram\InstagramPost($post);
 			}
 			return $ret; 
 

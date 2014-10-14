@@ -27,7 +27,7 @@ class HTMLView{
 			          <ul class="nav navbar-nav navbar-right">
 			            <li class="active"><a href="'.  \core\Routes::getRoute('blogg', 'main'). '">Home</a></li>
 			            <li><a href="'.  \core\Routes::getRoute('instagram', 'main'). '"> Instagram</a></li>
-			            <li><a href="#contact">Contact</a></li>
+			            <li><a href="'.  \core\Routes::getRoute('twitter', 'main'). '"> Twitter</a></li>
 			          </ul>
 
 
@@ -36,22 +36,13 @@ class HTMLView{
 			    </div>
 
 				<div class="jumbotron">
-			      <div class="container">
-			        <h1>Hello, world!</h1>
-			        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-			      </div>
+				' . $masterPage->getPageHeader() .'
 			    </div>
 			    <div class="container">
 			      	<div class="row">
 						<div class="col-md-10">
-				    	'. $masterPage->getTwitterView() . '
-					    </div>
-
-						<div class="col-md-10">
-						 ' . $masterPage->getBloggView() . 
-							 $masterPage->getInstagramView() . ' 
-						</div>
-
+				    	'. $masterPage->getTwitterView() . $masterPage->getBloggView() . $masterPage->getInstagramView() . ' 
+				    	</div>
 	        			<div class="col-md-2">
 						'  . $masterPage->getAuthView() . ' 
 						</div>		

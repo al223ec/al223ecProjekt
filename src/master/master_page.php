@@ -60,6 +60,11 @@ class MasterPage {
 		return $this->bloggFormView; 
 	}
 
-
-
+	private $pageHeader; 
+	public function setPageHeader($pageHeader){
+		$this->pageHeader = $pageHeader; 
+	}
+	public function getPageHeader(){
+		return $this->pageHeader; 
+	}
 }

@@ -3,7 +3,7 @@
 namespace blogg\view\blogg; 
 
 class BloggView extends \core\View{
-
+	//TODO: Dela upp denna vyn
 	protected static $bloggPostId = "BloggPostID"; 
 
 	protected static $titelPost = "BloggView::titelPost"; 
@@ -14,6 +14,7 @@ class BloggView extends \core\View{
 
 	public function __construct(\model\Blogg $bloggModel = null){
 		$this->bloggModel = $bloggModel;
+		$this->setPageHeader("Bloggen"); 
 	}	
 
 	public function confirmDelete($post){

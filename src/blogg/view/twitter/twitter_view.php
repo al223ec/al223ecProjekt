@@ -4,6 +4,9 @@ namespace blogg\view\twitter;
 
 class TwitterView extends \core\View{
 
+	public function __construct(){
+		$this->setPageHeader("Twitter"); 
+	}
 	public function getTweetsHTML($tweets){
 		$ret = ""; 
 		if($tweets){

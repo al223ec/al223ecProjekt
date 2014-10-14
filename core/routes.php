@@ -25,6 +25,9 @@ class Routes{
 		),
 		'instagram' => array(
 			'main' => 'instagram/'
+		),
+		'twitter' => array(
+			'main' => 'twitter/'
 		)
 
 	);

@@ -1,11 +1,18 @@
 <?php
 
-namespace blogg\view\blogg; 
+namespace blogg\view\instagram; 
 
 class InstagramView extends \core\View{
-	private $instagramModel; 
 
-	public function __construct(\blogg\model\instagram\InstagramModel $instagramModel){
-		$this->instagramModel = $instagramModel; 
+	public function __construct(){
+		$this->setPageHeader("Instagram");
+	}
+
+	public function getInstagramImagesHTML($images){
+		$ret = ""; 
+		foreach ($images as $image) {
+			$ret .= '<img src="' . $image->getLowResolutionUrl() . '" alt="instagram image ">'; 
+		}
+		return $ret; 
 	}
 }

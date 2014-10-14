@@ -45,7 +45,14 @@ class View{
 		header('Location: ' . ROOT_PATH);
     }
 
-    public function pageHeader(){
+    protected function setPageHeader($header){
+    	$masterPage = \core\Loader::load('\\master\\MasterPage'); 
 
+    	$pageHeader = '<div class="container">
+				<h1>'. $header . '</h1>
+				</div>'; 
+
+    	$masterPage->setPageHeader($pageHeader); 
     }
+
 }
