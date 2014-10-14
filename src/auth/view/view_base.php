@@ -13,7 +13,7 @@ abstract class ViewBase{
 	}
 
 	public static function redirect(){
-		header("Location: " . \auth\config\Config::AppRoot);
+		header("Location: " . \Config::APP_ROOT);
 	}
 	
 	protected function getMessage(){
@@ -34,13 +34,6 @@ abstract class ViewBase{
     protected function setSession($message){
     	$this->model->setSessionMessage($this->sessionKey, $message); 
     }
-/*
-    private $userNameSessionKey = "ViewBase::NewUserNameSessionKey"; 
-    //"Fula" funktioner
-    protected function saveNewlyAddedUserName($userName){
-    	$this->model->setSessionMessage($this->userNameSessionKey, $userName); 
-    } */
-
     protected function getNewlyAddedUserName(){
     	return $this->model->readAndRemoveSessionMessage($this->sessionKey); 
     }

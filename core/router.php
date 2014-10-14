@@ -84,7 +84,8 @@ class Router{
 		$controller = '\\' . $namespace . '\\controller\\' . ucfirst($controller) . 'Controller'; //Alltid stor första bokstav på objekt
 		if (file_exists($controllerfile)){
 			require_once($controllerfile);
-			$app =  new $controller();
+
+			$app = \core\Loader::load($controller);
 			$app->setParams($params);
 
 			if(!method_exists($app, $action)){

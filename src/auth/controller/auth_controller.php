@@ -10,6 +10,8 @@ class AuthController extends \core\Controller{
 	private $authModel;
 
 	public function __construct(){
+      	parent::__construct();
+
 		$this->authModel = new \auth\model\AuthModel();
 		$this->authView = new \auth\view\auth\AuthView($this->authModel);
 		$this->userView = new \auth\view\auth\UserView($this->authModel);
@@ -31,9 +33,10 @@ class AuthController extends \core\Controller{
 		}
 
 		if($this->authModel->userIsLoggedIn($userAgent)){
-			return $this->userView->showUser();
+			$this->masterView->setAuthView($this->userView->showUser());
+			return;
 		}
-		return $this->authView->showLogin();
+		$this->masterView->setAuthView($this->authView->showLogin());
 	}
 
 	private function getUserAgent(){
@@ -66,7 +69,7 @@ class AuthController extends \core\Controller{
 		} else if($clientUsername !== ""){
 			$this->authView->populateErrorMessage($user);
 		}
-		return $this->authView->showLogin();
+		$this->masterView->setAuthView($this->authView->showLogin());
 	}
 
 	public function logout(){

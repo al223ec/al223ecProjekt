@@ -8,11 +8,13 @@ class RegisterController extends \core\Controller{
 	private $registerUserModel;
 
 	public function __construct(){
+      	parent::__construct();
+	      	
 		$this->registerUserModel = new \auth\model\RegisterUserModel(); 
 		$this->registerUserView = new \auth\view\register\RegisterUserView($this->registerUserModel);
 	}
 	public function main(){
-		return $this->registerUserView->getRegisterForm(); 
+		$this->masterView->setAuthView($this->registerUserView->getRegisterForm()); 
 	}
 
 	public function saveNewUser(){
@@ -24,7 +26,7 @@ class RegisterController extends \core\Controller{
 			return; 
 		}
 		$this->registerUserView->setFailMessage(); 
-		return $this->registerUserView->getRegisterForm(); 
+		$this->masterView->setAuthView($this->registerUserView->getRegisterForm()); 
 	}
 	//Flytta denna till vyn?? 
 	private function getNewUser(){

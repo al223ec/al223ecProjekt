@@ -1,8 +1,8 @@
 <?php
 
 class HTMLView{
-	public function echoHTML($body){
-		if($body === NULL){
+	public function echoHTML($masterView){
+		if($masterView === NULL){
 			throw new \Exception('HTMLView::echoHTML does not allow body to be null');
 		}
 
@@ -19,7 +19,7 @@ class HTMLView{
 			<body>
 				<div class="wrapper">
 					<h1>Projekt - ytterligare en blogg</h1>
-					' . $body . '
+					'  . $masterView->getAuthView() . $masterView->getBloggView() . $masterView->getBloggFormView() .'
 				</div>
 			</body>
 			</html>

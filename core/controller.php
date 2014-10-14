@@ -6,6 +6,12 @@ abstract class Controller {
 
 	protected $params; 
 
+	protected $masterView; 
+
+	public function __construct(){
+		$this->masterView = \core\Loader::load('\\master\\view\\MasterView'); 
+	}
+
 	public abstract function main(); 
 
 	public function setParams($params){

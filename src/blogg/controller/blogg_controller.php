@@ -2,7 +2,7 @@
 
 namespace blogg\controller; 
 
-class BloggController extends \core\Controller implements Icrud{
+class BloggController extends \core\Controller {
 
 	private $twitterModel; 
 	private $instagramModel; 
@@ -10,11 +10,12 @@ class BloggController extends \core\Controller implements Icrud{
 	private $bloggView; 
 	private $formView; 
 
-	private $masterView; 
-
 	public static $userIsloggedIn = true; 
 
-	public function __construct($authController = null){
+	private $currentView; 
+
+	public function __construct(){
+      	parent::__construct();
 
 		$this->twitterModel = new \blogg\model\Twitter(); 
 		$this->bloggModel = new \blogg\model\blogg\BloggModel(); 
@@ -23,24 +24,25 @@ class BloggController extends \core\Controller implements Icrud{
 		$this->socialMediaView = new \blogg\view\SocialMediaView($this->twitterModel, $this->instagramModel); 
 		$this->bloggView = new \blogg\view\blogg\BloggView(); 
 		$this->formView = new \blogg\view\blogg\BloggPostForm(); 
-		$this->masterView = new \blogg\view\MasterView($this->socialMediaView, $this->bloggView); 
 	}
 	
 	public function main(){
 		//$this->params[0], $this->params[1]
 	
-		return $this->bloggView->viewAllPosts($this->bloggModel->getBloggPosts()) .  $this->formView->getBloggPostAddEditForm();
+		$this->masterView->setBloggView($this->bloggView->viewAllPosts($this->bloggModel->getBloggPosts())); 
+		$this->masterView->setBloggFormView($this->formView->getBloggPostAddEditForm()); 
+		// .  $this->formView->getBloggPostAddEditForm();
 		// . $this->socialMediaView->getInstagramImages() . $this->socialMediaView->getTweets(); 
 	}
 
 	public function edit(){
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		return $this->formView->getBloggPostAddEditForm($this->bloggModel->getBloggPostById($id)); 
+		$this->masterView->setBloggFormView($this->formView->getBloggPostAddEditForm($this->bloggModel->getBloggPostById($id))); 
 	}
 
 	public function view(){
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		return $this->bloggView->viewBloggPost($this->bloggModel->getBloggPostById($id), true); 
+		$this->masterView->setBloggView($this->bloggView->viewBloggPost($this->bloggModel->getBloggPostById($id), true)); 
 	}
 
 
@@ -48,24 +50,25 @@ class BloggController extends \core\Controller implements Icrud{
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
 		$post = $this->bloggModel->getBloggPostById($id); 
 		
-		return $this->bloggView->confirmDelete($post); 
+		$this->masterView->setBloggFormView($this->bloggView->confirmDelete($post)); 
 	}
 	public function deleteConfirmed(){
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
 		$this->bloggModel->delete($id); 
 
-		return $this->main(); 
+		$this->main(); 
 	}
 
 
 	public function save(){
 		$post = $this->bloggView->getNewBloggPost(); 
 		if($post !== null && $this->bloggModel->saveBloggPost($post)){
-			return $this->bloggView->viewBloggPost($post, true); 
+			$this->masterView->setBloggView($this->bloggView->viewBloggPost($post, true));
+			return;  
 		}
 
 		//Något har gått fel
-		return $this->formView->getBloggPostAddEditForm($post); 
+		$this->masterView->setBloggFormView($this->formView->getBloggPostAddEditForm($post)); 
 	}
 
 }
