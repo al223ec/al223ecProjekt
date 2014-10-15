@@ -7,7 +7,7 @@ class MasterController extends \core\Controller {
 	private $bloggController; 	
 	private $instagramController; 
 	private $twitterController; 
-
+	private $currentView; 
 
 	public function __construct(){
 		$this->bloggController = new \blogg\controller\BloggController(); 

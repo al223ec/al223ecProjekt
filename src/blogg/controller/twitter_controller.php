@@ -16,4 +16,8 @@ class TwitterController extends \core\Controller{
 	public function main(){
 		$this->masterPage->setTwitterView($this->twitterView->getTweetsHTML($this->twitterModel->getTweets(3))); 
 	}
+
+	public function getTweets($numberOfTweets){
+
+	}
 }

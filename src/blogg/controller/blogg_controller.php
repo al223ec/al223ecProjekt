@@ -17,21 +17,15 @@ class BloggController extends \core\Controller {
       	self::$userIsloggedIn = $this->authController->userIsLoggedIn(); //WHY STATIC??  
 
 		$this->bloggModel = new \blogg\model\blogg\BloggModel(); 
-
 		$this->bloggView = new \blogg\view\blogg\BloggView(); 
-		$this->formView = new \blogg\view\blogg\BloggPostForm(); 
-
+		$this->formView = new \blogg\view\blogg\BloggPostForm();
 	}
 	
 	public function main(){
 		//$this->params[0], $this->params[1]
-
-	
-		$this->masterPage->setBloggView($this->bloggView->viewAllPosts($this->bloggModel->getBloggPosts()));
-		
+		$this->masterPage->setView($this->bloggView->viewAllPosts($this->bloggModel->getBloggPosts()));
 		if(self::$userIsloggedIn){ 
 			$this->masterPage->setBloggFormView($this->formView->getBloggPostAddEditForm()); 
-
 		}
 		// .  $this->formView->getBloggPostAddEditForm();
 		// . $this->socialMediaView->getInstagramImages() . $this->socialMediaView->getTweets(); 

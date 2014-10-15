@@ -211,3 +211,9 @@ Precondition
 10. Redigera sin Twitter nyckel via UI 
 
 
+Kommentarer
+-------------
+Har lagt väldigt mycket tid på applikationes själva ramverk och att få till detta på ett snyggt och effektivt sätt.
+Jag har också lagt mycket tid på att få till ordentliga testningsmöjligheter med automatiserade tester. 
+
+Jag har inte styrt projektet så mycket på gott och ont. Dock har jag kunnat testa att genomföra TDD. 

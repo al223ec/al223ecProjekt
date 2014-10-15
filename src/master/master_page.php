@@ -13,12 +13,23 @@ class MasterPage {
 
 	private $authController; 
 	private $bloggController; 
+	private $pageHeader; 
+
+	private $view; 
 
 	public function __construct(){} 
 
 	public function setInstagramView($instagramView){
 		$this->instagramView = $instagramView; 
+	}
+
+	public function setView($view){
+		$this->view = $view; 
 	}	
+
+	public function getView(){
+		return $this->view; 
+	}
 
 	public function setAuthView($authView){
 		$this->authView = $authView; 
@@ -60,7 +71,6 @@ class MasterPage {
 		return $this->bloggFormView; 
 	}
 
-	private $pageHeader; 
 	public function setPageHeader($pageHeader){
 		$this->pageHeader = $pageHeader; 
 	}

@@ -9,7 +9,7 @@ class BloggRepository extends \core\Repository{
 	}
 
 	public function getBloggPosts(){
-		$sql = "SELECT * FROM " .$this->table;  
+		$sql = "SELECT * FROM " .$this->table ." ORDER BY id DESC;";  
 		$ret = array(); 
 
 		if($response = $this->query($sql)){

@@ -60,9 +60,11 @@ class Post extends \core\BaseObject {
 	public function getTitel(){
 		return $this->titel; 
 	}
+
 	public function getText(){
 		return $this->text; 
 	}
+	
 	public function getTime(){
 		if(!$this->time){
 			$this->time = time(); 

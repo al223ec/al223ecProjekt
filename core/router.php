@@ -53,26 +53,27 @@ class Router{
 	}
 
 	public function dispatch(){
-		$controller = $this->getController();
+		$controllerName = $this->getController();
+
 		$action = $this->getAction();
 		$params = $this->getParams();
 
-		//Tar fram alla mappar i src mappen
 		if(!file_exists(SRC_DIR)){
 			throw new \Exception("Something wrong with the configuration of this project check global SRC_DIR in definer.php");
 		}
 
+		//Tar fram alla mappar i src mappen
 		$files = scandir(SRC_DIR, 1);
 		$controllerfile = "";
 		$namespace = ""; 
-		//Loopa dessa 
+		//Loopa dessa filer 
 		foreach ($files as $file) {
 			$controllerDir = SRC_DIR . $file . DS . 'controller';
 			if (file_exists($controllerDir)){ //Om man hittar controller mappen 
 				$filesInControllerDir = scandir($controllerDir, 1);//Hämta alla filnamn i den mappen 
 
 				foreach ($filesInControllerDir as $fileInControllerDir) { 
-					if (0 === strpos($fileInControllerDir, $controller)) {
+					if (0 === strpos($fileInControllerDir, $controllerName)) {
 						$controllerfile = SRC_DIR . $file . DS . 'controller' . DS . $fileInControllerDir; 
 						$namespace = $file; 
 						break; 
@@ -81,17 +82,19 @@ class Router{
 			}
 		}
 
-		$controller = '\\' . $namespace . '\\controller\\' . ucfirst($controller) . 'Controller'; //Alltid stor första bokstav på objekt
+		$controller = '\\' . $namespace . '\\controller\\' . ucfirst($controllerName) . 'Controller'; //Alltid stor första bokstav på objekt
 		if (file_exists($controllerfile)){
 			require_once($controllerfile);
 
-			$app = \core\Loader::load($controller);
+			$app = \core\Loader::load($controller); 
 			$app->setParams($params);
 
 			if(!method_exists($app, $action)){
 				throw new \Exception('Controller ' . $controller . ' does not have ' . $action . ' function');  
 			}
-			return $app->$action();
+			$vars = $app->$action();
+			\core\Render::renderAction($namespace, $controllerName , $action, $vars);
+			
 		} else {
 			throw new \Exception('Controller ' . $controller . ' not found');  
 		}

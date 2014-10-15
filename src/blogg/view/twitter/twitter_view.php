@@ -10,6 +10,7 @@ class TwitterView extends \core\View{
 	public function getTweetsHTML($tweets){
 		$ret = ""; 
 		if($tweets){
+
 			foreach ($tweets as $tweet) {
 		        $ret .='<div class="col-lg-4">
 			 			<img src="'. DS . 'img' . DS .'tweet.png" alt="tiwtter image">
@@ -19,7 +20,11 @@ class TwitterView extends \core\View{
 						</div>'; 
 			}
 		}
-		return $ret; 
+		return '<div class="row twitter">
+		'. $ret .'
+		</div>
+		<hr>
+		'; 
 	}
 
 }

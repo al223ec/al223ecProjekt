@@ -10,6 +10,6 @@ require_once ('./core/definer.php');
 
 $router = new \core\Router();  
 $router->dispatch(); 
-
+/*
 $view = new HTMLView();
-$view->echoHTML(\core\Loader::load('\\master\\MasterPage'));
+$view->echoHTML(\core\Loader::load('\\master\\MasterPage'));*/

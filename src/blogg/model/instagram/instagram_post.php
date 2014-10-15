@@ -9,10 +9,10 @@ class InstagramPost {
 	private $lowResolutionUrl;
 	private $standardResolutionUrl;
 
-	private $response; 
+	//private $response; 
 
 	public function __construct($response){
-		$this->response = $response; 
+		//$this->response = $response; 
 		$this->readResponse($response); 
 	}
 

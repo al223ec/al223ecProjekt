@@ -23,5 +23,17 @@ img{
 .jumbotron{
 	background-image: url('../img/bg.jpg');
 	color:white;
-
 }
+
+div{
+	/*outline: 1px solid blue;*/ 
+}
+
+div> .bloggpost:nth-child(even){
+	text-align: right; 
+	float: right;
+}
+/*
+.bloggpost:nth-child(odd) div {
+    background-color: red;
+}*/ 
