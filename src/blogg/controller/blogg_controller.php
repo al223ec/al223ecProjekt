@@ -14,7 +14,7 @@ class BloggController extends \core\Controller {
       	parent::__construct();
       	$this->authController = \core\Loader::load('\\auth\\controller\\AuthController'); 
 
-      	self::$userIsloggedIn = $this->authController->userIsLoggedIn(); //WHY STATIC??  
+      	self::$userIsloggedIn = true;//$this->authController->userIsLoggedIn(); //WHY STATIC??  
 
 		$this->bloggModel = new \blogg\model\blogg\BloggModel(); 
 		$this->bloggView = new \blogg\view\blogg\BloggView(); 
@@ -22,15 +22,15 @@ class BloggController extends \core\Controller {
 	}
 	
 	public function main(){
-		//$this->params[0], $this->params[1]
-		$this->masterPage->setView($this->bloggView->viewAllPosts($this->bloggModel->getBloggPosts()));
-		if(self::$userIsloggedIn){ 
-			$this->masterPage->setBloggFormView($this->formView->getBloggPostAddEditForm()); 
-		}
-		// .  $this->formView->getBloggPostAddEditForm();
-		// . $this->socialMediaView->getInstagramImages() . $this->socialMediaView->getTweets(); 
+		return array("posts" => $this->bloggModel->getBloggPosts(), "userIsLoggedIn" => self::$userIsloggedIn); 
 	}
 
+	public function create(){
+		if(!self::$userIsloggedIn){
+			return; 
+		}
+
+	}
 	public function edit(){
 		if(!self::$userIsloggedIn){
 			return; 
@@ -43,7 +43,7 @@ class BloggController extends \core\Controller {
 
 	public function view(){
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		$this->masterPage->setBloggView($this->bloggView->viewBloggPost($this->bloggModel->getBloggPostById($id), true)); 
+		return array("post" => $this->bloggModel->getBloggPostById($id), "userIsLoggedIn" => self::$userIsloggedIn);; 
 	}
 
 

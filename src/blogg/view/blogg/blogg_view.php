@@ -32,7 +32,6 @@ class BloggView extends \core\View{
 
 	private function getBloggPostHTML($post, $displayfull, $html = ""){
 		$text =  $displayfull ? $post->getText() : substr($post->getText(), 0, 120); 
-
 		return '
 				<div class="row bloggpost">
 					<div class="col-md-7">

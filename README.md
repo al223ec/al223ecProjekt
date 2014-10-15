@@ -217,3 +217,5 @@ Har lagt väldigt mycket tid på applikationes själva ramverk och att få till 
 Jag har också lagt mycket tid på att få till ordentliga testningsmöjligheter med automatiserade tester. 
 
 Jag har inte styrt projektet så mycket på gott och ont. Dock har jag kunnat testa att genomföra TDD. 
+
+Om jag designar om projektet måste auth hanteras på ett specielt sätt, kanske partial page variant
