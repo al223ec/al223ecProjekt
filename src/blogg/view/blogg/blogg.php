@@ -1,3 +1,3 @@
-<?php 
-	echo $layoutdata;
-?> 
+<?php
+  include(SRC_DIR . "templates" . DS  ."app.php"); 
+?>
