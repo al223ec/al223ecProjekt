@@ -14,7 +14,6 @@ class Post extends \core\BaseObject {
 	public function __construct($id = 0, $user_id = 1){
 		$id = intval($id); 
 		$user_id = intval($user_id); 
-
 		if($user_id <= 0){
 			throw new \Exception("Blogg::Model::Blogg::Post Argument exception __construct");
 		}

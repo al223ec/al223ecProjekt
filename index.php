@@ -8,7 +8,7 @@ define('ROOT_PATH', '/' . basename(dirname(__FILE__)) . '/');
 
 require_once ('./core/definer.php');
 
-$router = new \core\Router();  
+$router = \core\Loader::load('\core\Router');  
 $router->dispatch(); 
 /*
 $view = new HTMLView();

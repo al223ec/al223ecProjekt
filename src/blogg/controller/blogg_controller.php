@@ -2,48 +2,43 @@
 
 namespace blogg\controller; 
 
-class BloggController extends \core\Controller {
+class BloggController extends BaseController {
 
-	private $bloggView; 
-	private $formView; 
+	private $bloggModel; 
 
-	public static $userIsloggedIn = true; 
-	private $authController; 
-
+	//Den här kontrollern kan inte existera utan authcontroller just nu; 
 	public function __construct(){
-      	parent::__construct();
-      	$this->authController = \core\Loader::load('\\auth\\controller\\AuthController'); 
+		parent::__construct();
 
-      	self::$userIsloggedIn = true;//$this->authController->userIsLoggedIn(); //WHY STATIC??  
-
+      	$this->view = new \blogg\view\blogg\BloggView();
+		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		
 		$this->bloggModel = new \blogg\model\blogg\BloggModel(); 
-		$this->bloggView = new \blogg\view\blogg\BloggView(); 
-		$this->formView = new \blogg\view\blogg\BloggPostForm();
+
+		//Måste flytta detta till något vettigare ställe
+		$this->authController->main();
+		$authViewRender = $this->authController->getView()->render("auth", "auth", "main", false);
+		$this->view->setAuthRenderVar($authViewRender);  
 	}
 	
 	public function main(){
-		return array("posts" => $this->bloggModel->getBloggPosts(), "userIsLoggedIn" => self::$userIsloggedIn); 
+		$this->view->setPostsVar($this->bloggModel->getBloggPosts());
 	}
 
 	public function create(){
 		if(!self::$userIsloggedIn){
 			return; 
 		}
-
 	}
+
 	public function edit(){
 		if(!self::$userIsloggedIn){
 			return; 
 		}
-
-		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		$this->masterPage->setBloggView($this->bloggView->viewBloggPost($this->bloggModel->getBloggPostById($id)));
-		$this->masterPage->setBloggFormView($this->formView->getBloggPostAddEditForm($this->bloggModel->getBloggPostById($id))); 
+		$this->view->setPostVar($this->getBloggPostById());
 	}
 
 	public function view(){
-		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		return array("post" => $this->bloggModel->getBloggPostById($id), "userIsLoggedIn" => self::$userIsloggedIn);; 
+		$this->view->setPostVar($this->getBloggPostById());
 	}
 
 
@@ -51,20 +46,15 @@ class BloggController extends \core\Controller {
 		if(!self::$userIsloggedIn){
 			return; 
 		}
-		
-		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		$post = $this->bloggModel->getBloggPostById($id); 
+		$this->view->setPostVar($this->getBloggPostById());
 
-		$this->masterPage->setBloggFormView($this->bloggView->confirmDelete($post)); 
 	}
+
 	public function deleteConfirmed(){
 		if(!self::$userIsloggedIn){
-			return; 
+			return; //redirecta istället?  
 		}
-		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		$this->bloggModel->delete($id); 
-
-		$this->main(); 
+		$this->view->setPostVar($this->getBloggPostById());
 	}
 
 
@@ -73,18 +63,31 @@ class BloggController extends \core\Controller {
 			return; 
 		}
 
-		$post = $this->bloggView->getNewBloggPost(); 
+		$post = $this->view->getNewBloggPost(); 
 		if($post !== null && $post->getId() === 0){
 			$post->setUserId($this->authController->getCurrentUserId()); 
 		}
-
+		$this->view->setPostVar($post);
 		if($post !== null && $this->bloggModel->saveBloggPost($post)){
-			$this->masterPage->setBloggView($this->bloggView->viewBloggPost($post, true));
+			//Allt har lyckats 
+			$this->redirectTo();
 			return;  
 		}
+		$this->view->setSaveSuccessfullVar();  
 
+		var_dump("Fail BloggController::Save() rad 75"); 
+	}
+
+	private function getBloggPostById(){
+		$id = isset($this->params[0]) ? $this->params[0] : 0; 
+		$post = $this->bloggModel->getBloggPostById($id);
+		if($post !== null){
+			return $post;
+		}
+		var_dump("Fail BloggController::getBloggPostById() ");
+		die(); 
 		//Något har gått fel
-		$this->masterPage->setBloggFormView($this->formView->getBloggPostAddEditForm($post)); 
+		$this->redirectTo(); //error 404? 
 	}
 
 }

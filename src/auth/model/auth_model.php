@@ -49,30 +49,6 @@ class AuthModel extends \auth\model\ModelBase{
 		\auth\model\sessionHandler::setSessionArray($elements); 
 	}
 
-	// Kontrollerar att inmatat användarnamn och lösenord stämmer vid eventuell inloggning + (med kakor och förfallodatumskontroll).
-	public function checkLoginWithCookies($clientUsername, $cookieValue, $userAgent){
-		$user = $this->userRepository->getUserWithUserName($clientUsername); 
-		if($user === null){
-			return null; 
-		}
-		$user->validateByCookieValue($cookieValue); 
-		
-		if($user->getCookieTime() < time()){
-			return null; 
-		}
-		if($user->isValid()){
-			$this->saveUserToSession($user, $userAgent); 
-			return $user; 
-		}
-		return null; 
-	}
-
-	//Sparar aktuellt cookievaule och tid till dB
-	public function saveCookieValue($value, $cookieTime){
-		$userID = $this->getLoggedInUser() !== null ? $this->getLoggedInUser()->getUserID() : 0; 
-		$this->userRepository->saveCookieValue($userID, $value, $cookieTime); 
-	}
-
 	// Unsettar sessionsvariabeln 
 	/**
 	* @return True om det finns en session

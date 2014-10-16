@@ -2,7 +2,7 @@
 
 namespace blogg\model\repository; 
 
-class BloggRepository extends \core\Repository{
+class BloggRepository extends \core\db\Repository{
 	
 	public function __construct(){
 			$this->table = "bloggposts"; 

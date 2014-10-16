@@ -2,7 +2,7 @@
 
 namespace auth\model\repository;
 
-class UserRepository Extends \core\Repository{
+class UserRepository Extends \core\db\Repository{
 	
 	public function __construct(){
 		$this->table = "users"; 

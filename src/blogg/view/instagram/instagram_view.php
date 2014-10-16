@@ -2,17 +2,9 @@
 
 namespace blogg\view\instagram; 
 
-class InstagramView extends \core\View{
+class InstagramView extends \blogg\view\BaseView{
 
-	public function __construct(){
-		$this->setPageHeader("Instagram");
-	}
-
-	public function getInstagramImagesHTML($images){
-		$ret = ""; 
-		foreach ($images as $image) {
-			$ret .= '<img src="' . $image->getLowResolutionUrl() . '" alt="instagram image ">'; 
-		}
-		return $ret; 
+	public function setImages($images){
+		$this->setViewVar("images", $images); 
 	}
 }

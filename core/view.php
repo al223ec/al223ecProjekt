@@ -2,33 +2,9 @@
 
 namespace core; 
 
-class View{
-	/**
-	*otestad funktionalitet, 
-	*tänkt att fungera som grupperade felmeddelanden inspiation från Andreas
-	*/
-	protected static $messageError = 'error';
-	protected static $messageSuccess = 'success';
-	protected static $messageWarning = 'warning';
+class View {
 
-	protected $strMessagesKey = 'View::strMessagesKey';
-		
-	public function addMessage($strMessage, $strType){
-		$_SESSION[$this->strMessagesKey][$strType][] = $strMessage;
-	}
-	protected function renderFlash(){
-		$arrTypes = (isset($_SESSION[$this->strMessagesKey])) ? $_SESSION[$this->strMessagesKey] : array();
-		$messagesHtml = '';
-		foreach($arrTypes as $type => $arrMessages){
-			$strMessages = '';
-			foreach($arrMessages as $strMessage){
-				$strMessages .= '<span class="flash-message flash-' . $type . '">' . $strMessage . '</span>';
-			}
-			$messagesHtml .= '<p class="flash" />' . $strMessages . '</p>';
-		}
-		unset($_SESSION[$this->strMessagesKey]);
-		return $messagesHtml;
-	}
+	protected $viewVars = array();
 
 	protected function getInput($inputName){
 		return isset($_POST[$inputName]) ? $_POST[$inputName] : '';
@@ -39,20 +15,46 @@ class View{
 	protected function sanitize($input) {
         $temp = trim($input);
         return filter_var($temp, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
-    }		
-    //Flytta denna?? 
-    public function redirect(){
-		header('Location: ' . ROOT_PATH);
     }
 
-    protected function setPageHeader($header){
-    	$masterPage = \core\Loader::load('\\master\\MasterPage'); 
+    protected function setViewVar($key, $var){
+		$this->viewVars[$key] = $var; 
+	}
+	protected function setViewVars(array $vars){
+		foreach ($vars as $key => $var) {
+			$this->setViewVar($key, $var);
+		}
+	}
 
-    	$pageHeader = '<div class="container">
-				<h1>'. $header . '</h1>
-				</div>'; 
+	public function getViewVars(){
+		return $this->viewVars; 
+	}		
 
-    	$masterPage->setPageHeader($pageHeader); 
-    }
+	public function render($namespace, $controller, $action, $useTemplate = true){
+		if($this->viewVars !== null){ 
+			extract($this->viewVars);
+		}
+		ob_start();
+
+		$actionFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $action . ".php";
+
+		if (file_exists($actionFile)){
+			include_once($actionFile);
+		} else {
+			throw new \Exception("View '{$action}.php' is not found in $namespace/view/$controller directory.");
+		}
+		$layoutdata = ob_get_clean();
+		if($useTemplate){
+			$templateFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $controller . ".php";
+			
+			if (file_exists($templateFile)){
+				include_once($templateFile);
+			} else {
+				throw new \Exception("Templatefile '{$controller}.php' is not found in $namespace/view/$controller directory.");
+			}
+		} else{
+			return $layoutdata; 
+		}
+	}
 
 }

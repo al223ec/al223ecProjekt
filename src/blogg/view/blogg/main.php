@@ -3,7 +3,8 @@
 		include("view.php"); 
 	} 
 
-if($userIsLoggedIn === true){
+	if($userIsLoggedIn === true){
+		$post = null; 
 		include_once("create.php"); 
-}
+	}
 ?>

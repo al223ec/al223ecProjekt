@@ -2,7 +2,7 @@
 
 abstract class Config{
 	
-	const DEFAULT_CONTROLLER = "master";
+	const DEFAULT_CONTROLLER = "blogg";
 	const DEFAULT_ACTION = "main"; 
 	const ALLOWED_URL_CHARS = "/[^A-z0-9\/\^]/"; 
 	const DEBUG = true;

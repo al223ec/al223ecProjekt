@@ -5,12 +5,7 @@ namespace core;
 abstract class Controller {
 
 	protected $params; 
-
-	protected $masterPage; 
-	
-	public function __construct(){
-		$this->masterPage = \core\Loader::load('\\master\\MasterPage'); 
-	}
+	protected $view;
 
 	public abstract function main(); 
 
@@ -18,8 +13,13 @@ abstract class Controller {
 		$this->params = $params; 
 	}
 	
-	protected function redirectTo($controller = '', $action = ''){ //Bör lägga till möjligheter att skicka med args??
-		header('Location: ' . ROOT_PATH . $controller . '/' . $action);
+	public function getView(){
+		return $this->view;
+	}	
+	protected function redirectTo($controller = '', $action = '', $args = ''){ //Bör lägga till möjligheter att skicka med args??
+		//TODO: kontrollera args ska skunna vara en array också
+		//Bör ha en redirect to error också 
+		header('Location: ' . ROOT_PATH . $controller . '/' . $action . '/' . $args);
 		exit;
 	}
 }

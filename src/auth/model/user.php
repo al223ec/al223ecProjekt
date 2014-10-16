@@ -50,9 +50,6 @@ class User{
 		return $this->passwordHash; 
 	}
 	public function setUserName($userName){
-		if(strlen($userName) < \auth\config\Config::UserNameMinLength){
-			throw new \Exception("User::setUserName to short user name!"); 
-		} 
 		$this->userName = $userName;
 	}
 	
@@ -60,9 +57,6 @@ class User{
 		$this->passwordHash = $passwordHash; 
 	}
 	public function setPassword($password){
-		if(strlen($password) < \auth\config\Config::PasswordMinLength){
-			throw new \Exception("User::setPassword to short password!"); 
-		} 
 		if($this->userID === 0){
 			$this->passwordHash = $this->createHash($password); 
 

@@ -92,9 +92,10 @@ class Router{
 			if(!method_exists($app, $action)){
 				throw new \Exception('Controller ' . $controller . ' does not have ' . $action . ' function');  
 			}
-			$vars = $app->$action();
-			\core\Render::renderAction($namespace, $controllerName , $action, $vars);
-			
+			$app->$action();
+			$view = $app->getView();
+			$view->render($namespace, $controllerName, $action); 
+			//\core\Render::renderAction($namespace, $controllerName , $action, $view);	
 		} else {
 			throw new \Exception('Controller ' . $controller . ' not found');  
 		}
