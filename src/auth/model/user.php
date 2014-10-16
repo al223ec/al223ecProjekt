@@ -3,7 +3,7 @@
 namespace auth\model; 
 
 
-class User{
+class User {
 
 	private $userID; 
 	private $userName; 

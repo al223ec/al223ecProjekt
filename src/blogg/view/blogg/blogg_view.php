@@ -9,6 +9,7 @@ class BloggView extends \blogg\view\BaseView{
 	private $idPost = "BloggView::idPost"; 
 
 	public function __construct(){
+		$this->setPageTitel("Blogg");
 		$this->setViewVars(array(
 			"titelPost" => $this->titelPost,
 			"textPost" => $this->textPost, 
@@ -31,11 +32,6 @@ class BloggView extends \blogg\view\BaseView{
 	public function setPostsVar(array $posts){
 		$this->setViewVar("posts", $posts);
 	}
-
-	public function setUserLoggedInVar($userIsLoggedIn){
-		$this->setViewVar("userIsLoggedIn", $userIsLoggedIn);
-	}
-
 	public function setSaveSuccessfullVar(){
 		$this->setViewVar("saveSuccessfull", false); 
 	}

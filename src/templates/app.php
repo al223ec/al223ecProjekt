@@ -38,9 +38,20 @@
     </div>
 
 	<div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div clas="col-md-12">
+          <h1> 
+            <?php 
+              $titel = isset($titel) ? $titel : "Du har glömt att sätta titel";
+              echo $titel 
+            ?>
+          </h1>
+        </div>
+      </div>
+    </div>
     </div>
     <div class="container">
-    
     <?php echo $layoutdata; ?> 
 	</div>
 

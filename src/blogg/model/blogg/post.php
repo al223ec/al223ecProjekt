@@ -71,7 +71,6 @@ class Post extends \core\BaseObject {
 		return $this->time; 
 	}
 
-
 	public function getErrors(){
 		$ret = []; 
 		foreach ($this->getErrorsOnProperty('titel') as $error) {

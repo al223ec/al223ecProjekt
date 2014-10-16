@@ -45,7 +45,12 @@ class AuthView extends \auth\view\ViewBase{
 	}
 
 	public function setErrorMessageVar($errorMessage){
-		$this->setViewVar("errorMessage", $errorMessage); 
+		if(array_key_exists("errorMessage", $this->getViewVars())){
+			$value = $this->getViewVars()["errorMessage"] . " " . $errorMessage; 
+			$this->setViewVar("errorMessage", $value); 
+ 		}else {
+			$this->setViewVar("errorMessage", $errorMessage); 
+		}
 	}
 	public function setLogOutMessage(){
 		$this->model->setSessionReadOnceMessage("Du har nu loggat ut!");

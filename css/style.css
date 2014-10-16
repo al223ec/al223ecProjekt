@@ -20,6 +20,9 @@ img{
 	max-width: 100%;
 }
 
+.login{
+	padding: 10px;
+}
 .jumbotron{
 	background-image: url('../img/bg.jpg');
 	color:white;
@@ -29,9 +32,8 @@ div{
 	/*outline: 1px solid blue;*/ 
 }
 
-div> .bloggpost:nth-child(even){
-	text-align: right; 
-	float: right;
+div> .bloggpost:nth-child(even) div{
+	float:right;
 }
 /*
 .bloggpost:nth-child(odd) div {

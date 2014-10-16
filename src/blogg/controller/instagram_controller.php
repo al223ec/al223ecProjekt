@@ -11,7 +11,7 @@ class InstagramController extends BaseController{
 		$this->view = new \blogg\view\instagram\InstagramView(); 
 
 
-		//Måste flytta detta till något vettigare ställe
+		//Måste flytta detta till något vettigare ställe och göra detta på ett bättre sätt
 		$this->authController->main();
 		$authViewRender = $this->authController->getView()->render("auth", "auth", "main", false);
 		$this->view->setAuthRenderVar($authViewRender);  
