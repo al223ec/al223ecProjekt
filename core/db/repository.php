@@ -16,7 +16,6 @@ abstract class Repository{
 			}
 		} 
 		return $this->dbConnection; 
-
 	}
 	
 	protected function findBy($column, $value){
@@ -44,13 +43,12 @@ abstract class Repository{
 		}
 
 		if($insert){
-			return true; 
+			return $db->lastInsertId(); 
 		}
 		
 		if($response = $query->fetchAll()){
 			return $response; 
-		} 
-
+		}
 		return null;
 	}
 

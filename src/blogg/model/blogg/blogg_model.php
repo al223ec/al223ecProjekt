@@ -9,9 +9,12 @@ class BloggModel {
 		$this->bloggRepository = new \blogg\model\repository\BloggRepository();
 	
 	}
+	public function getNumberOfBloggPostsInDb(){
+		return $this->bloggRepository->getNumberOfBloggPostsInDb(); 
+	}
 	
-	public function getBloggPosts(){
-		return $this->bloggRepository->getBloggPosts(); 
+	public function getBloggPosts($startPost, $numberOfPosts){
+		return $this->bloggRepository->getBloggPosts($startPost, $numberOfPosts); 
 	}
 	public function getBloggPostById($id){
 		return $this->bloggRepository->getBloggPostById($id); 
@@ -20,16 +23,16 @@ class BloggModel {
 	public function delete($id){
 		return $this->bloggRepository->deletePost($id); 
 	}
-
+	/**
+	*	Returnerar id på posten 
+	*/
 	public function saveBloggPost(\blogg\model\blogg\Post $post){
 		if(!$post->isValid()){
-			return false; 
+			return; 
 		}
 		if($post->getId() === 0){
-			return $this->bloggRepository->savePost($post); 
+			return intval($this->bloggRepository->savePost($post));
 		}
-		return $this->bloggRepository->updatePost($post); 
+		return intval($this->bloggRepository->updatePost($post));
 	}
-
-
 }

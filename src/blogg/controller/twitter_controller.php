@@ -12,10 +12,7 @@ class TwitterController extends \blogg\controller\BaseController{
 
 		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		
 
-		//Måste flytta detta till något vettigare ställe
-		$this->authController->main();
-		$authViewRender = $this->authController->getView()->render("auth", "auth", "main", false);
-		$this->view->setAuthRenderVar($authViewRender);  
+		$this->initAuthController(); 
 	}
 
 	public function main(){

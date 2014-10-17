@@ -31,8 +31,6 @@
               </ul>
             </li>
           </ul>
-
-
         </div>
       </div>
     </div>
@@ -43,18 +41,26 @@
         <div clas="col-md-12">
           <h1> 
             <?php 
-              $titel = isset($titel) ? $titel : "Du har glömt att sätta titel";
-              echo $titel 
+              $pageTitel = isset($pageTitel) ? $pageTitel : "Du har glömt att sätta titel";
+              echo $pageTitel;
             ?>
           </h1>
         </div>
       </div>
     </div>
     </div>
-    <div class="container">
-    <?php echo $layoutdata; ?> 
-	</div>
-
+    <div class="container main">
+    <?php
+    if(isset($userIsLoggedIn) && $userIsLoggedIn === true){
+        include_once(SRC_DIR . "blogg" . DS . "view" . DS . "admin" . DS . "admin_nav.php"); 
+    }
+    echo $layoutdata; ?> 
+	 </div>
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

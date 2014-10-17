@@ -10,8 +10,8 @@
 
 		<?php if($userIsLoggedIn === true) {?>
 		<p>
-		    <a href="<?php echo \core\Routes::getRoute('blogg', 'deleteConfirmed') . $post->getId(); ?>"> Bekräfta borttagning! </a>;
-		    <a href="<?php echo \core\Routes::getRoute('blogg', 'main') ?>"> Avbryt </a>;
+		    <a href="<?php echo \core\Routes::getRoute('blogg', 'deleteConfirmed') . $post->getId(); ?>"> Bekräfta borttagning! </a>
+		    <a href="<?php echo \core\Routes::getRoute('blogg', 'main') ?>"> Avbryt </a>
         </p>
         <?php }?>
 

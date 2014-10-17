@@ -11,11 +11,6 @@ abstract class ViewBase extends \core\View{
 	public function __construct($model){
 		$this->model = $model;	
 	}
-
-	public static function redirect(){
-		header("Location: " . \Config::APP_ROOT);
-	}
-	
 	protected function getMessage(){
 		return $this->model->getSessionReadOnceMessage(); 
 	}

@@ -32,10 +32,24 @@ div{
 	/*outline: 1px solid blue;*/ 
 }
 
-div> .bloggpost:nth-child(even) div{
+div> .bloggpost:nth-child(odd) div{
 	float:right;
 }
 /*
 .bloggpost:nth-child(odd) div {
     background-color: red;
 }*/ 
+.bloggtextmin{
+	max-height: 100px;
+	overflow: hidden;
+}
+.bloggtext{
+
+}
+.main {
+	min-height: 600px;
+}
+.instagrampopup{
+	width: 600px;
+	margin: 30px auto;
+}

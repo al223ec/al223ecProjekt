@@ -6,12 +6,13 @@ class Routes{
 
 	public static $routes = array(
 		'blogg' => array(
-			'main' => 'blogg/',
+			'main' => 'blogg/main/',
 			'save' => 'blogg/save/',
 			'edit' => 'blogg/edit/',
 			'delete' => 'blogg/delete/',
 			'view' => 'blogg/view/',
-			'deleteConfirmed' => 'blogg/deleteConfirmed/'
+			'deleteConfirmed' => 'blogg/deleteConfirmed/',
+			'create' => 'blogg/create/'
 		),
 		'auth' => array(
 			'main' => 'auth/',

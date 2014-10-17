@@ -16,7 +16,6 @@ class View {
         $temp = trim($input);
         return filter_var($temp, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     }
-
     protected function setViewVar($key, $var){
 		$this->viewVars[$key] = $var; 
 	}
@@ -25,12 +24,15 @@ class View {
 			$this->setViewVar($key, $var);
 		}
 	}
-
 	public function getViewVars(){
 		return $this->viewVars; 
 	}		
 
-	public function render($namespace, $controller, $action, $useTemplate = true){
+	/**
+	* En view bör ju veta detta om sig själv finalRender bool? 
+	*
+ 	*/
+	public function render($namespace, $controller, $action, $finalRender = true, $useTemplate = false){
 		if($this->viewVars !== null){ 
 			extract($this->viewVars);
 		}
@@ -43,14 +45,29 @@ class View {
 		} else {
 			throw new \Exception("View '{$action}.php' is not found in $namespace/view/$controller directory.");
 		}
-		$layoutdata = ob_get_clean();
+
+		/*
 		if($useTemplate){
 			$templateFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $controller . ".php";
-			
+			$layoutdata = ob_get_clean();
+
 			if (file_exists($templateFile)){
 				include_once($templateFile);
 			} else {
 				throw new \Exception("Templatefile '{$controller}.php' is not found in $namespace/view/$controller directory.");
+			}
+		}else {
+			return ob_get_clean(); 
+		}*/
+
+		$layoutdata = ob_get_clean();
+		if($finalRender){
+			$app = SRC_DIR . "templates" . DS . "app.php";
+			
+			if (file_exists($app)){
+				include_once($app);
+			} else {
+				throw new \Exception("Final template file 'app.php' is not found in $app");
 			}
 		} else{
 			return $layoutdata; 

@@ -43,8 +43,8 @@ class AuthController extends \core\Controller{
 
 		if($user !== null && $user->isValid()){
 			$this->view->successfullLogIn();
-			\auth\view\ViewBase::redirect();
-			exit();
+			$this->redirectTo();
+
 		} else if($clientUsername !== ""){
 			$this->view->populateErrorMessage($user);
 		}
@@ -53,7 +53,8 @@ class AuthController extends \core\Controller{
 	public function logout(){
 		$this->view->setLogOutMessage(); 
 		$this->authModel->logOut();
-		\auth\view\ViewBase::redirect();
+		
+		$this->redirectTo();
 		exit();
 	}
 }

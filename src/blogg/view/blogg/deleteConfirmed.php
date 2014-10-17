@@ -6,7 +6,7 @@
 		</p>
 		<?php if($userIsLoggedIn === true) {?>
 		<p>
-		    <a href="<?php echo \core\Routes::getRoute('blogg', 'main') ?>"> Tillbaka</a>;
+		    <a href="<?php echo \core\Routes::getRoute('blogg', 'main') ?>"> Tillbaka</a>
         </p>
         <?php }?>
 	</div>

@@ -1,16 +1,22 @@
 <?php 
 	if(!isset($post)){
-		throw new Exception("Blogg::View.php $post is not defiend!");
-		
+		throw new \Exception("Blogg::View.php $post is not defiend!");
+	}
+	if(!isset($viewFullBloggPost)){
+		$viewFullBloggPost = true; 
 	}
 ?>
 
 <div class="row bloggpost">
 	<div class="col-md-7">
 		<h1> <a href="<?php echo \core\Routes::getRoute('blogg', 'view') . $post->getId(); ?>"> <?php echo $post->getTitel(); ?></a></h1>
-		<p>
+		<p class="<?php if(!$viewFullBloggPost){ echo "bloggtextmin"; } else { echo "bloggtext"; } ?>">
 			<?php 
-				echo $post->getText();
+				if($viewFullBloggPost){
+					echo $post->getText();
+				}else{
+					echo substr($post->getText(), 0, 120);
+				}
 			?>
 		</p>
 		<h5>Skrivet: <?php echo gmdate("Y-m-d H:i:s", $post->getTime()); ?></h5>

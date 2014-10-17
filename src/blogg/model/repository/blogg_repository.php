@@ -8,12 +8,17 @@ class BloggRepository extends \core\db\Repository{
 			$this->table = "bloggposts"; 
 	}
 
-	public function getBloggPosts(){
-		$sql = "SELECT * FROM " .$this->table ." ORDER BY id DESC;";  
-		$ret = array(); 
+	public function getBloggPosts($startPost, $numberOfPosts){
+		//FÅR INTE TILL DETTA MED PREPARE !! VERKAR VARA NÅGOT GENERAL FEL
+		$startPost = intval($startPost); 
+		$numberOfPosts = intval($numberOfPosts); 
+		//Användaren kan åtminståne endast injecta ints
+		$sql = "SELECT * FROM " .$this->table ." ORDER BY id DESC LIMIT $numberOfPosts OFFSET $startPost;";  
+		//$params = array(":startPost" => intval($startPost), ":numberOfPosts" => intval($numberOfPosts)); //DETTA FUNKAR INTE
 
+		$ret = array(); 
 		if($response = $this->query($sql)){
-			foreach ($response as $postdbo) {
+				foreach ($response as $postdbo) {
 
 				$post = new \blogg\model\blogg\Post($postdbo['id'], $postdbo['user_id']); 
 				$post->setTitel($postdbo['titel']); 
@@ -24,6 +29,14 @@ class BloggRepository extends \core\db\Repository{
 			}
 		} 
 		return $ret; 
+	}
+
+	public function getNumberOfBloggPostsInDb(){
+		$sql = "SELECT * FROM " .$this->table .";";
+		if($response = $this->query($sql)){
+			return count($response); 
+		}
+		return 0; //Throw exception?? ?
 	}
 
 	public function getBloggPostById($id){
@@ -54,10 +67,10 @@ class BloggRepository extends \core\db\Repository{
 
 		$sql = "INSERT INTO " . $this->table . "(titel, text, time, user_id) VALUES( :titel, :text, :time, :user_id);"; 
 		$params = array(":titel" => $titel, ":text" => $text, ':time' => $time, ':user_id' => $user_id); 
+		
 		return $this->query($sql, $params, true);
 	}
 	
-
 	public function updatePost(\blogg\model\blogg\Post $post){
 		$titel = $post->getTitel(); 
 		$text = $post->getText(); 
@@ -67,6 +80,7 @@ class BloggRepository extends \core\db\Repository{
  		$sql = "UPDATE " . $this->table . " SET titel = :titel, text = :text, time = :time WHERE id = :id"; 
 		$params = array(":titel" => $titel, ":text" => $text, ':time' => $time, ':id' => $id); 
 
-		return $this->query($sql, $params, true);
+		$this->query($sql, $params, true);
+		return $id; 
 	}
 }

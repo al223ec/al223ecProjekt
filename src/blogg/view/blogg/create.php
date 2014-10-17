@@ -5,7 +5,7 @@
 	$titel = "";
 	$postText = ""; 
 
-	if($post !== null){
+	if(isset($post) && $post !== null){
 		$errors = populateErrorList($post->getErrors()); 
 		$id = $post->getId();
 		$titel = $post->getTitel(); 
@@ -16,7 +16,7 @@
 	<div class="col-md-12">
 		<form action="<?php echo \core\Routes::getRoute('blogg', 'save');  ?>" method="post" enctype="multipart/form-data">
 			<fieldset>
-				<legend>Posta en post - Skriv in titel och text</legend>
+				<legend>Skapa en bloggpost - Skriv in titel och text</legend>
 				<?php echo $errors; ?>
 				<fieldset>
 					<label for="Titel" >Titel :</label>
