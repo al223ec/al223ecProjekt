@@ -2,7 +2,7 @@
 
 namespace blogg\model\blogg; 
 
-class Post extends \core\BaseObject {
+class Post extends \core\validation\ValidatableObject {
 
 	private $id; 
 	private $user_id; 
@@ -45,7 +45,10 @@ class Post extends \core\BaseObject {
 	}
 
 	public function setTime($time){
-		$this->time = $time; 
+		$this->time = intval($time);
+		if($this->time === 0){
+			throw new \Exception("Post::setTime Seems like you have sent an invalid value for time");			
+		} 
 	}
 
 	public function setUserId($userId){

@@ -63,7 +63,8 @@ class View {
 		$layoutdata = ob_get_clean();
 		if($finalRender){
 			$app = SRC_DIR . "templates" . DS . "app.php";
-			
+			$active = $controller; 
+
 			if (file_exists($app)){
 				include_once($app);
 			} else {

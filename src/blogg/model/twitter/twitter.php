@@ -1,6 +1,6 @@
 <?php
 
-namespace blogg\model; 
+namespace blogg\model\twitter; 
 
 class Twitter{
 
@@ -10,6 +10,11 @@ class Twitter{
 		    'consumer_key' => "cSU4oJkdSpjNeyO8XsLcpKbb4",
 		    'consumer_secret' => "TZwHg9mTVqTghtuMxhxEceUNkjgefep9p371pvtBfhdidnciPS"
 		);
+	public function __construct(){
+		echo $this->postTweet("Postat med PHP");
+		die();
+	}
+
 	/**
 	* TWITTER 
 	* http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1
@@ -40,4 +45,20 @@ class Twitter{
 		}
 		return $ret; 
 	}	
+
+	public function postTweet($tweet){
+		if(strlen($tweet) > 140){ //Fail
+			return; 
+		}
+		$postfields = array(
+		    'status' => $tweet,
+		);
+		$url = 'https://api.twitter.com/1.1/statuses/update.json';
+		$requestMethod = 'POST';
+
+		$twitter = new TwitterApiExchange($this->twitterSettings);
+		return $twitter->buildOauth($url, $requestMethod)
+		             ->setPostfields($postfields)
+		             ->performRequest();
+	}
 }

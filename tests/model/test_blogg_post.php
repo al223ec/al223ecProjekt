@@ -3,7 +3,7 @@
 namespace test\model; 
 
 
-require_once ('./core/base_object.php');
+require_once ('./core/validation/validatable_object.php');
 require_once ('./src/blogg/model/blogg/post.php');
 
 class TestBloggPost extends \PHPUnit_Framework_TestCase {

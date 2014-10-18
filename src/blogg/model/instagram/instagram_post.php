@@ -10,10 +10,9 @@ class InstagramPost {
 	private $standardResolutionUrl;
 	private $unique; 
 
-	private $response; 
+	private $time; 
 
 	public function __construct($response){
-		$this->response = $response; 
 		$this->readResponse($response); 
 	}
 
@@ -22,6 +21,11 @@ class InstagramPost {
 		$this->lowResolutionUrl = $response->images->low_resolution->url;
 		$this->standardResolutionUrl = $response->images->standard_resolution->url;
 		$this->unique = $response->created_time; //Tror att den är ganska uniq iaf
+		$this->time = $response->created_time; 
+	}
+
+	public function getTime(){
+		return intval($this->time);
 	}
 	public function getThumbnailUrl(){
 		return $this->thumbnailUrl; 

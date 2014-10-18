@@ -16,7 +16,6 @@ if(!array_key_exists('CORE_DIR', $GLOBALS)){
 require_once(ROOT_DIR . 'common' . DS . 'html_view.php');
 require_once(ROOT_DIR . 'core' . DS . 'autoload.php');
 require_once(ROOT_DIR . 'core' . DS . 'config.php');
-require_once(ROOT_DIR . 'core' . DS . 'base_object.php');
 require_once(ROOT_DIR . 'core' . DS . 'router.php'); 
 require_once(ROOT_DIR . 'core' . DS . 'routes.php'); 
 require_once(ROOT_DIR . 'core' . DS . 'controller.php');
@@ -24,4 +23,5 @@ require_once(ROOT_DIR . 'core' . DS . 'view.php');
 require_once(ROOT_DIR . 'core' . DS . 'loader.php'); 
 require_once(ROOT_DIR . 'core' . DS . 'db' . DS . 'repository.php'); 
 require_once(ROOT_DIR . 'core' . DS . 'validation' . DS . 'validation.php'); 
+require_once(ROOT_DIR . 'core' . DS . 'validation' . DS . 'validatable_object.php'); 
 

@@ -34,8 +34,9 @@ class BloggView extends \blogg\view\BaseView{
 	}
 
 	//Denna är unik för startsidan kanske flytta denna till en egen klass??
-	public function setPaging($startPost, $numberOfPostsPerPage, $numberOfPostsInDb){
+	public function setPagingVars($startPost, $numberOfPostsPerPage, $numberOfPostsInDb){
 		$this->setViewVar("numberOfPostsInDb", $numberOfPostsInDb);
+
 		$this->setViewVar("numberOfPostsPerPage", $numberOfPostsPerPage); 
 		$this->setViewVar("pagingNext", $startPost + $numberOfPostsPerPage);
 
@@ -44,7 +45,6 @@ class BloggView extends \blogg\view\BaseView{
 		}else{
 			$this->setViewVar("pagingPrev", $startPost - $numberOfPostsPerPage); 
 		}
-
 	}
 
 	public function setPostVar($post){
@@ -54,11 +54,12 @@ class BloggView extends \blogg\view\BaseView{
 	public function setPostsVar(array $posts){
 		$this->setViewVar("posts", $posts);
 	}
-	public function setSaveSuccessfullVar(){
+	public function setSaveFailedVar(){
 		$this->setViewVar("saveSuccessfull", false); 
 	}
 
 	public function setViewFullVar($bool){
 		$this->setViewVar("viewFullBloggPost", $bool); 
 	}
+
 }

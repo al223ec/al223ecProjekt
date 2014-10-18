@@ -7,11 +7,10 @@ class TwitterController extends \blogg\controller\BaseController{
 
 	public function __construct(){
 		parent::__construct();
-		$this->twitterModel = new \blogg\model\Twitter();
+		$this->twitterModel = new \blogg\model\twitter\Twitter();
 		$this->view = new \blogg\view\twitter\TwitterView(); 
 
 		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		
-
 		$this->initAuthController(); 
 	}
 

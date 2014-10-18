@@ -23,15 +23,15 @@ class BloggController extends BaseController {
 			$startPost = intval($this->params[0]); 
 		}
 		$this->view->setViewFullVar(false); 
-		$numberOfPostsInDb = $this->bloggModel->getNumberOfBloggPostsInDb(); 
 
-		$this->view->setPaging($startPost, $this->numberOfPostsPerPage, $numberOfPostsInDb); 
+		$numberOfPostsInDb = $this->bloggModel->getNumberOfBloggPostsInDb(); 
+		$this->view->setPagingVars($startPost, $this->numberOfPostsPerPage, $numberOfPostsInDb); 
 		$this->view->setPostsVar($this->bloggModel->getBloggPosts($startPost, $this->numberOfPostsPerPage));
 	}
 
 	public function create(){
 		if(!self::$userIsloggedIn){
-			return; 
+			$this->redirectTo();
 		}
       	//$instagramController = \core\Loader::load('\\blogg\\controller\\BloggController'); 
 		$this->view->setViewFullVar(true); 
@@ -39,7 +39,7 @@ class BloggController extends BaseController {
 
 	public function edit(){
 		if(!self::$userIsloggedIn){
-			return; 
+			$this->redirectTo();
 		}
 		$this->view->setViewFullVar(true);
 		$this->view->setPostVar($this->getBloggPostById());
@@ -53,7 +53,7 @@ class BloggController extends BaseController {
 
 	public function delete(){
 		if(!self::$userIsloggedIn){
-			return; 
+			$this->redirectTo();
 		}
 		$this->view->setPostVar($this->getBloggPostById());
 
@@ -61,7 +61,7 @@ class BloggController extends BaseController {
 
 	public function deleteConfirmed(){
 		if(!self::$userIsloggedIn){
-			return; //redirecta istället?  
+			$this->redirectTo();
 		}
 		$this->view->setPostVar($this->getBloggPostById());
 	}
@@ -69,7 +69,7 @@ class BloggController extends BaseController {
 
 	public function save(){
 		if(!self::$userIsloggedIn){
-			return; 
+			$this->redirectTo(); 
 		}
 
 		$post = $this->view->getNewBloggPost(); 
@@ -77,15 +77,16 @@ class BloggController extends BaseController {
 			$post->setUserId($this->authController->getCurrentUserId()); 
 		}
 		$this->view->setPostVar($post);
-		$postId = $this->bloggModel->saveBloggPost($post); 
-		
-		if($post !== null && $postId !== 0){
-			//$this->view->setSaveSuccessfullVar();  
-			$this->redirectTo("blogg", "view", $postId);
-			return;  
+		if($post !== null){
+			if($post->isValid()){
+				$postId = $this->bloggModel->saveBloggPost($post);
+				if($postId !== 0){ 
+					$this->redirectTo("blogg", "view", $postId);
+				}
+			}  
 		}
-		var_dump("Fail BloggController::Save() rad 75"); 
-		die(); 
+		//Något har gått fel
+		$this->view->setSaveFailedVar();
 	}
 
 	private function getBloggPostById(){
@@ -94,7 +95,7 @@ class BloggController extends BaseController {
 		if($post !== null){
 			return $post;
 		}
-		var_dump("Fail BloggController::getBloggPostById() ");
+		var_dump("Fail BloggController::getBloggPostById()");
 		die(); 
 		//Något har gått fel
 		$this->redirectTo(); //error 404? 

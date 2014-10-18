@@ -1,6 +1,6 @@
 <?php
 
-namespace blogg\model; 
+namespace blogg\model\twitter; 
 
 class Tweet {
 	private $name;
@@ -11,6 +11,8 @@ class Tweet {
 		$this->name = $name; 
 		$this->text = $text; 
 		$this->screenName = $screenName; 
+
+		
 	}
 
 	public function getText(){

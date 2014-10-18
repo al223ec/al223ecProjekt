@@ -29,7 +29,14 @@ class Routes{
 		),
 		'twitter' => array(
 			'main' => 'twitter/'
-		)
+		),
+		'admin' => array(
+			'main' => 'admin/'
+		),
+		'home' => array(
+			'main' => 'home/'
+			),
+
 
 	);
 	

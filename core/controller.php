@@ -22,4 +22,8 @@ abstract class Controller {
 		header('Location: ' . ROOT_PATH . $controller . '/' . $action . '/' . $args);
 		exit;
 	}
+
+	protected function finalRender(){ //Abstract+??? istället för att view sköter detta
+
+	}
 }

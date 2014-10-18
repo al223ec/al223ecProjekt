@@ -17,5 +17,3 @@
 	<?php } else{ ?>
 			Nästa sida
 	<?php } ?>
-
-	<?php echo \core\Routes::getRoute('blogg', 'main'); ?>

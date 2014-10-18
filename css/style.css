@@ -25,9 +25,12 @@ img{
 }
 .jumbotron{
 	background-image: url('../img/bg.jpg');
+	height: 400px;	
 	color:white;
 }
+.jumbotronhome{
 
+}
 div{
 	/*outline: 1px solid blue;*/ 
 }
@@ -39,12 +42,13 @@ div> .bloggpost:nth-child(odd) div{
 .bloggpost:nth-child(odd) div {
     background-color: red;
 }*/ 
-.bloggtextmin{
+
+.min{
 	max-height: 100px;
 	overflow: hidden;
 }
 .bloggtext{
-
+	margin-bottom: 20px;
 }
 .main {
 	min-height: 600px;
@@ -52,4 +56,10 @@ div> .bloggpost:nth-child(odd) div{
 .instagrampopup{
 	width: 600px;
 	margin: 30px auto;
+}
+.tweet{
+	text-align: center;
+}
+.padding_bottom {
+	padding-bottom: 20px;
 }

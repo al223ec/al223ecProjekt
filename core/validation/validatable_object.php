@@ -1,8 +1,8 @@
 <?php
 
-namespace core; 
+namespace core\validation; 
 
-abstract class BaseObject {
+abstract class ValidatableObject {
 
 	private $validation; 
 	

@@ -17,6 +17,7 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 		require_once ('./core/router.php');
 		require_once ('./core/definer.php');
 		require_once ('./core/config.php');
+		session_start();
  	}
 
 
@@ -93,6 +94,7 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 		$router = new \core\ Router($url);
 		$router->dispatch(); 
 	}
+
 	/**     * @expectedException Exception     */ 
 	public function testDispatchActionDoesntExists(){
 		$controller = \Config::DEFAULT_CONTROLLER . "/unknownAction"; 
