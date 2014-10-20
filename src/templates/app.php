@@ -31,7 +31,7 @@
             <ul class="dropdown-menu" role="menu">
               <li>
                 <div class="login">
-                <?php echo $authRenderVar; ?>
+                <?php if(isset($authRenderVar)) echo $authRenderVar; ?>
               </div>
               </li>
             </ul>

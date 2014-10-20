@@ -38,6 +38,17 @@ class View {
 		}
 		ob_start();
 
+		//pga namngivning, hitta alla stora bokstäver placer ett _ före och gör alla bokstäver små
+		preg_match_all( '/[A-Z]/', $action, $matches, PREG_OFFSET_CAPTURE );
+
+		if(!empty($matches)){
+			for($i=0; $i < count($matches[0]); $i++){
+				if(!empty($matches[0][$i])){
+					$m = $matches[0][$i];
+					$action = substr_replace($action, '_' . strToLower($m[0]), $m[1] + $i, 1);
+				}
+			}
+		}
 		$actionFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $action . ".php";
 
 		if (file_exists($actionFile)){
@@ -46,19 +57,6 @@ class View {
 			throw new \Exception("View '{$action}.php' is not found in $namespace/view/$controller directory.");
 		}
 
-		/*
-		if($useTemplate){
-			$templateFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $controller . ".php";
-			$layoutdata = ob_get_clean();
-
-			if (file_exists($templateFile)){
-				include_once($templateFile);
-			} else {
-				throw new \Exception("Templatefile '{$controller}.php' is not found in $namespace/view/$controller directory.");
-			}
-		}else {
-			return ob_get_clean(); 
-		}*/
 
 		$layoutdata = ob_get_clean();
 		if($finalRender){

@@ -10,6 +10,7 @@ class BloggView extends \blogg\view\BaseView{
 
 	public function __construct(){
 		$this->setPageTitel("Blogg");
+
 		$this->setViewVars(array(
 			"titelPost" => $this->titelPost,
 			"textPost" => $this->textPost, 
@@ -19,19 +20,19 @@ class BloggView extends \blogg\view\BaseView{
 
 	public function getNewBloggPost(){
 		$post = new \blogg\model\blogg\Post(intval($this->getCleanInput($this->idPost))); 
-		$post->setText($this->getInputWithBrTags($this->textPost));
+		$post->setText($this->getCleanInput($this->textPost));
 		$post->setTitel($this->getCleanInput($this->titelPost)); 
 
 		return $post; 
 	}
-
+/*
 	private function getInputWithBrTags($inputName){
 		$ret = $this->getInput($inputName); 
 		$ret = str_replace(array("\r", "\n"), "temporaryPlaceholderForBrTag", $ret);
 //		$ret = filter_var($ret, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW); //Ta bort ev script taggar etc funkar inte att göra på detta sätt vid redigering
 		$ret = str_replace("temporaryPlaceholderForBrTag", "<br>", $ret);
 		return $ret; 
-	}
+	}*/
 
 	//Denna är unik för startsidan kanske flytta denna till en egen klass??
 	public function setPagingVars($startPost, $numberOfPostsPerPage, $numberOfPostsInDb){
@@ -58,8 +59,15 @@ class BloggView extends \blogg\view\BaseView{
 		$this->setViewVar("saveSuccessfull", false); 
 	}
 
-	public function setViewFullVar($bool){
-		$this->setViewVar("viewFullBloggPost", $bool); 
+	public function setViewFullVar($viewFullBloggPost){
+		$this->setViewVar("viewFullBloggPost", $viewFullBloggPost); 
 	}
 
+	public function setAdminLoggedInVar($adminIsLoggedIn){
+		$this->setViewVar("adminIsLoggedIn", $adminIsLoggedIn); 
+	}
+
+	public function setLoggedInUserId($loggedInUserId){
+		$this->setViewVar("loggedInUserId", $loggedInUserId); 
+	}
 }

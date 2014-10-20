@@ -4,6 +4,12 @@ namespace blogg\model\admin;
 
 class AdminModel{
 
+	private $userRepository; 
+
+	public function __construct(){
+		$this->userRepository = new \auth\model\repository\UserRepository();
+	}
+
 	public function loadSettings(){
 		
 	}
@@ -33,5 +39,23 @@ class AdminModel{
 	    // save XML as string or file 
 	    $test1 = $dom->saveXML(); // put string in test1
 	    $dom->save('test1.xml'); // save as file
+	}
+
+	public function saveUser($newUser){
+		if(!$this->ceckIfUserNameExists($newUser->getUserName())){
+			return $this->userRepository->addUser($newUser); 
+		}else{
+			return false; 
+		}
+	}
+	/**
+	* @return True if exists
+	*/
+	public function ceckIfUserNameExists($userName){
+		return $this->userRepository->getUserWithUserName($userName) !== null;
+	}
+
+	public function getUserWithId($id){
+		return $this->userRepository->getUserWithId($id); 
 	}
 }

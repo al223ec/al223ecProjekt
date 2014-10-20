@@ -18,7 +18,7 @@ class BloggRepository extends \core\db\Repository{
 
 		$ret = array(); 
 		if($response = $this->query($sql)){
-				foreach ($response as $postdbo) {
+			foreach ($response as $postdbo) {
 
 				$post = new \blogg\model\blogg\Post($postdbo['id'], $postdbo['user_id']); 
 				$post->setTitel($postdbo['titel']); 

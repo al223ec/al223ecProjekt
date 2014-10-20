@@ -12,6 +12,15 @@ class AuthModel extends \auth\model\ModelBase{
 		return \auth\model\sessionHandler::getSession($this->sessionLoginData) !== "" && \auth\model\sessionHandler::getSession($this->sessionUserAgent) === $userAgent; 
 	}
 
+	public function isLoggedInUserAdmin(){
+		$user = $this->getLoggedInUser() ; 
+		return $user !== null ? $user->getIsAdmin() : false; 
+	}
+
+	public function getLoggedInUserName(){
+		$user = $this->getLoggedInUser() ; 
+		return $user !== null ? $user->getUserName() : ""; 
+	}
 	// Hämtar vilken användare som är inloggad.
 	public function getLoggedInUser(){
 		$id = $this->getLoggedInUserId(); 
@@ -55,9 +64,6 @@ class AuthModel extends \auth\model\ModelBase{
 	*/
 	public function logOut(){
 		$ret = \auth\model\sessionHandler::sessionKeyIsSet($this->sessionLoginData); 
-		if($ret){
-			$this->userRepository->resetCookieValues($this->getLoggedInUserId()); 
-		}
 		\auth\model\sessionHandler::unsetSessions(); 
 		return $ret; 
 	}

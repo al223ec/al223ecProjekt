@@ -7,17 +7,29 @@ class BloggModel {
 
 	public function __construct(){
 		$this->bloggRepository = new \blogg\model\repository\BloggRepository();
-	
 	}
+
 	public function getNumberOfBloggPostsInDb(){
 		return $this->bloggRepository->getNumberOfBloggPostsInDb(); 
 	}
 	
 	public function getBloggPosts($startPost, $numberOfPosts){
-		return $this->bloggRepository->getBloggPosts($startPost, $numberOfPosts); 
+		$userRepository = new \auth\model\repository\UserRepository();
+
+		$posts = $this->bloggRepository->getBloggPosts($startPost, $numberOfPosts); 
+
+		foreach ($posts as $post) {
+			$post->setAuthor($userRepository->getUserNameById($post->getUserID())); 
+		}
+		return $posts; 
 	}
 	public function getBloggPostById($id){
-		return $this->bloggRepository->getBloggPostById($id); 
+		$userRepository = new \auth\model\repository\UserRepository();
+
+		$post = $this->bloggRepository->getBloggPostById($id); 
+		$post->setAuthor($userRepository->getUserNameById($post->getUserID())); 
+		
+		return $post; 
 	}
 
 	public function delete($id){

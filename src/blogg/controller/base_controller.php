@@ -4,15 +4,13 @@ namespace blogg\controller;
 
 
 abstract class BaseController extends \core\Controller {
-	
-	public static $userIsloggedIn; 
+	protected static $userIsloggedIn; 
 	protected $authController; 	
 
 	public function __construct(){
       	$this->authController = \core\Loader::load('\\auth\\controller\\AuthController'); 
       	self::$userIsloggedIn = $this->authController->userIsLoggedIn(); //WHY STATIC?? 
 	}
-
 	public function initAuthController(){
 		if(!isset($this->authController)){
 			throw new \Exception("Blogg::BaseController initAuthController, authController är inte definerad, kallar du på BaseControllers construct??");

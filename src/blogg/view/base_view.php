@@ -13,7 +13,7 @@ class BaseView extends \core\View{
 		$this->setViewVar("userIsLoggedIn", $userIsLoggedIn);
 	}
 
-	public function setPageTitel($pageTitel){
+	protected function setPageTitel($pageTitel){
 		$this->setViewVar("pageTitel", $pageTitel); 
 
 	}

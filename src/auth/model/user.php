@@ -10,6 +10,7 @@ class User {
 	private $passwordHash; 
 	private $cookieValue; 
 	private $cookieTime; 
+	private $isAdmin; 
 
 	private $valid; 
 
@@ -49,6 +50,13 @@ class User {
 	public function getPasswordHash(){
 		return $this->passwordHash; 
 	}
+	public function getIsAdmin(){
+		return $this->isAdmin; 
+	}
+	public function setIsAdmin($isAdmin){
+		$this->isAdmin = $isAdmin; 
+	}
+
 	public function setUserName($userName){
 		$this->userName = $userName;
 	}

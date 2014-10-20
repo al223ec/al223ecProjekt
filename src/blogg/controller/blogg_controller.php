@@ -6,6 +6,7 @@ class BloggController extends BaseController {
 
 	private $bloggModel; 
 	private $numberOfPostsPerPage  = 15; 
+	protected static $adminIsLoggedIn;
 
 	//Den här kontrollern kan inte existera utan authcontroller just nu; 
 	public function __construct(){
@@ -13,27 +14,31 @@ class BloggController extends BaseController {
       	$this->view = new \blogg\view\blogg\BloggView();
 		$this->bloggModel = new \blogg\model\blogg\BloggModel(); 
 
-		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		
+		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		  	
 		$this->initAuthController(); 
+		
+		self::$adminIsLoggedIn = $this->authController->isAdminLoggedIn();
+
+		$this->view->setAdminLoggedInVar(self::$adminIsLoggedIn);
+		$this->view->setLoggedInUserId($this->authController->getCurrentUserId()); 
 	}
 	
 	public function main(){
-		$startPost = 0; 
-		if(isset($this->params[0])){// && isset($this->params[1])){
-			$startPost = intval($this->params[0]); 
-		}
+		$startPost = isset($this->params[0]) ? intval($this->params[0]) : 0;		
 		$this->view->setViewFullVar(false); 
 
 		$numberOfPostsInDb = $this->bloggModel->getNumberOfBloggPostsInDb(); 
 		$this->view->setPagingVars($startPost, $this->numberOfPostsPerPage, $numberOfPostsInDb); 
 		$this->view->setPostsVar($this->bloggModel->getBloggPosts($startPost, $this->numberOfPostsPerPage));
+		
+		$this->view->setLoggedInUserId($this->authController->getCurrentUserId()); 
 	}
+
 
 	public function create(){
 		if(!self::$userIsloggedIn){
 			$this->redirectTo();
 		}
-      	//$instagramController = \core\Loader::load('\\blogg\\controller\\BloggController'); 
 		$this->view->setViewFullVar(true); 
 	}
 
@@ -41,18 +46,26 @@ class BloggController extends BaseController {
 		if(!self::$userIsloggedIn){
 			$this->redirectTo();
 		}
-		$this->view->setViewFullVar(true);
-		$this->view->setPostVar($this->getBloggPostById());
+		$post = $this->getBloggPostById(); 
+		//Bara hen som har gjort inlägget eller admin får redigera
+		if(self::$adminIsLoggedIn || $post->getUserId() === $authcontroller->getCurrentUserId()){
+			$this->view->setViewFullVar(true);
+			$this->view->setPostVar($this->getBloggPostById());
+
+		}else{
+			$this->redirectTo();
+		}
 	}
 
 	public function view(){
 		$this->view->setViewFullVar(true);
 		$this->view->setPostVar($this->getBloggPostById());
+
 	}
 
 
 	public function delete(){
-		if(!self::$userIsloggedIn){
+		if(!self::$adminIsLoggedIn){
 			$this->redirectTo();
 		}
 		$this->view->setPostVar($this->getBloggPostById());
@@ -60,7 +73,7 @@ class BloggController extends BaseController {
 	}
 
 	public function deleteConfirmed(){
-		if(!self::$userIsloggedIn){
+		if(!self::$adminIsLoggedIn){
 			$this->redirectTo();
 		}
 		$this->view->setPostVar($this->getBloggPostById());
@@ -90,11 +103,13 @@ class BloggController extends BaseController {
 	}
 
 	private function getBloggPostById(){
-		$id = isset($this->params[0]) ? $this->params[0] : 0; 
+		$id = isset($this->params[0]) ? intval($this->params[0]) : 0; //Detta är ju egentligen lite osnyggt platsberoende
 		$post = $this->bloggModel->getBloggPostById($id);
+		
 		if($post !== null){
 			return $post;
 		}
+
 		var_dump("Fail BloggController::getBloggPostById()");
 		die(); 
 		//Något har gått fel

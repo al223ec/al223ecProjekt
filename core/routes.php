@@ -19,11 +19,6 @@ class Routes{
 			'login' => 'auth/login/',
 			'logout' => 'auth/logout/'
 		),
-		'register' => array(
-			'main' => 'register/',
-			'register' => 'register/',
-			'save' => 'register/saveNewUser/' 
-		),
 		'instagram' => array(
 			'main' => 'instagram/'
 		),
@@ -31,7 +26,9 @@ class Routes{
 			'main' => 'twitter/'
 		),
 		'admin' => array(
-			'main' => 'admin/'
+			'main' => 'admin/',
+			'saveNewUser' => 'admin/saveUser'
+
 		),
 		'home' => array(
 			'main' => 'home/'

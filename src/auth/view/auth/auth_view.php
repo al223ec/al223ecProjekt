@@ -8,8 +8,18 @@ class AuthView extends \auth\view\ViewBase{
 	private $userNamePost = "LoginView::Username";		// Användarnamnets kakas namn.
 	private $passwordPost = "LoginView::Password";		// Lösenordets kakas namn.
 	
+
+	private $errorMessages; 
+	const PasswordErrorKey = 	"PasswordError"; 
+	const UserNameErrorKey = 	"UserNameError"; 
+
+
+
 	public function __construct(\auth\model\AuthModel $model){
 		parent::__construct($model);
+		
+		$errorMessage = array(); 
+
 		$this->setViewVars(array(
 			"userNamePost" => $this->userNamePost,
 			"passwordPost" => $this->passwordPost
@@ -66,6 +76,10 @@ class AuthView extends \auth\view\ViewBase{
 
 	public function successFullLogin(){
 		$this->model->setSessionReadOnceMessage("Du har loggat in!"); 
+	}
+
+	public function setLoggedInUserNameVar($loggedInUserName){
+		$this->setViewVar("loggedInUserName", $loggedInUserName); 
 	}
 
 }

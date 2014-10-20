@@ -11,10 +11,9 @@ class Twitter{
 		    'consumer_secret' => "TZwHg9mTVqTghtuMxhxEceUNkjgefep9p371pvtBfhdidnciPS"
 		);
 	public function __construct(){
-		echo $this->postTweet("Postat med PHP");
-		die();
+		//echo $this->postTweet("Postat med PHP");
+		//die();
 	}
-
 	/**
 	* TWITTER 
 	* http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1

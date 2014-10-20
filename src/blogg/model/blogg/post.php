@@ -11,6 +11,8 @@ class Post extends \core\validation\ValidatableObject {
 	private $text; 
 	private $time; 
 
+	private $author; 
+
 	public function __construct($id = 0, $user_id = 1){
 		$id = intval($id); 
 		$user_id = intval($user_id); 
@@ -30,6 +32,14 @@ class Post extends \core\validation\ValidatableObject {
 
 	public function getUserId(){
 		return $this->user_id; 
+	}
+
+	public function setAuthor($author){
+		$this->author = $author; 
+
+	}
+	public function getAuthor(){
+		return $this->author; 
 	}
 
 	public function getId(){

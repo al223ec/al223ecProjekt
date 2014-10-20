@@ -9,6 +9,10 @@ class AuthController extends \core\Controller{
 	public function userIsLoggedIn(){
 		return $this->authModel->userIsLoggedIn($this->getUserAgent()); 
 	} 
+	public function isAdminLoggedIn(){
+		//TODO: få till detta på ett vettigt sätt
+		return $this->authModel->isLoggedInUserAdmin(); 
+	}
 	public function getCurrentUserId(){
 		return $this->authModel->getLoggedInUserId();
 	}
@@ -21,6 +25,7 @@ class AuthController extends \core\Controller{
 	public function main(){
 		$userAgent = $this->getUserAgent();
 		$this->view->setUserIsLoggedInVar($this->authModel->userIsLoggedIn($userAgent));
+		$this->view->setLoggedInUserNameVar($this->authModel->getLoggedInUserName()); 
 		$this->view->setMessageVar();
 	}
 	

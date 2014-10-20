@@ -7,7 +7,6 @@
 	}
 ?>
 <div class="row bloggpost"> 
-
 	<div class="<?php if($viewFullBloggPost) echo "col-md-10"; else echo "col-md-7";?>">
 		<h1> <a href="<?php echo \core\Routes::getRoute('blogg', 'view') . $post->getId(); ?>"> <?php echo $post->getTitel(); ?></a></h1>
 		<p class="bloggtext <?php if(!$viewFullBloggPost){ echo "min"; } ?>">
@@ -19,12 +18,17 @@
 				}
 			?>
 		</p>
-		<h5 >Skrivet: <?php echo gmdate("Y-m-d H:i:s", $post->getTime()); ?></h5>
+		<h5 >Skrivet: <?php echo gmdate("Y-m-d H:i:s", $post->getTime()) . " av: " . $post->getAuthor(); ?></h5>
 
 		<?php if($userIsLoggedIn === true) {?>
 		<p>
-			<a href="<?php echo \core\Routes::getRoute('blogg', 'edit') . $post->getId(); ?>"> Redigera</a>
-            <a href="<?php echo \core\Routes::getRoute('blogg', 'delete') . $post->getId(); ?>"> Ta bort</a>
+			<?php if($loggedInUserId == $post->getUserId() || $adminIsLoggedIn) {?>
+				<a href="<?php echo \core\Routes::getRoute('blogg', 'edit') . $post->getId(); ?>"> Redigera</a>
+			<?php }?>
+
+			<?php if($adminIsLoggedIn) {?>  
+            	<a href="<?php echo \core\Routes::getRoute('blogg', 'delete') . $post->getId(); ?>"> Ta bort</a>
+            <?php }?>
         </p>
         <?php }?>
 
@@ -32,7 +36,6 @@
 	<div class="<?php if($viewFullBloggPost) echo "col-md-2"; else echo "col-md-5";?>">
 		<img src="<?php echo ROOT_PATH; ?>img/blogg.png" alt="blogg image">
 	</div>
-
 	<div class="col-md-12">
 		<hr>
 	</div>

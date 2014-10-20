@@ -19,11 +19,7 @@ abstract class Controller {
 	protected function redirectTo($controller = '', $action = '', $args = ''){ //Bör lägga till möjligheter att skicka med args??
 		//TODO: kontrollera args ska skunna vara en array också
 		//Bör ha en redirect to error också 
-		header('Location: ' . ROOT_PATH . $controller . '/' . $action . '/' . $args);
+		header('Location: ' . rtrim(ROOT_PATH . $controller . '/' . $action . '/' . $args, '/') .  '/');
 		exit;
-	}
-
-	protected function finalRender(){ //Abstract+??? istället för att view sköter detta
-
 	}
 }
