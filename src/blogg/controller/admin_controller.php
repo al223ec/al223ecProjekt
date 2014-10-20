@@ -14,10 +14,12 @@ class AdminController extends BaseController{
 
 		$this->initAuthController();
 		$this->isAdminLoggedIn = $this->authController->isAdminLoggedIn(); 
+
+		$this->adminModel->saveSettings();
 	}
 
 	public function main(){
-		
+		$this->view->setUserArray($this->adminModel->getAllUsers()); 
 	}
 	 
 	public function saveUser(){

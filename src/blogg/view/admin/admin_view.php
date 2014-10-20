@@ -87,4 +87,7 @@ class AdminView extends \blogg\view\BaseView {
 		$this->setViewVar("user" ,$user); 
 	}
 
+	public function setUserArray($userArray){
+		$this->setViewVar("userArray", $userArray); 
+	}
 }

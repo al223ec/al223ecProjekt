@@ -6,8 +6,14 @@ class AdminModel{
 
 	private $userRepository; 
 
+	private $settingsModel; 
+
+	private $filePath; 
+
 	public function __construct(){
 		$this->userRepository = new \auth\model\repository\UserRepository();
+		$this->filePath = SRC_DIR . "blogg" . DS . "model " . DS . "admin" . DS . 'test1.xml'; 
+		//$this->settingsModel = new \\
 	}
 
 	public function loadSettings(){
@@ -17,7 +23,7 @@ class AdminModel{
 	public function saveSettings(){
 		 //Creates XML string and XML document using the DOM 
 		
-	    $dom = new DomDocument('1.0', 'UTF-8'); 
+	    $dom = new \DomDocument('1.0', 'UTF-8'); 
 
 	    //add root
 	    $root = $dom->appendChild($dom->createElement('Root'));
@@ -37,8 +43,8 @@ class AdminModel{
 	    $dom->formatOutput = true; // set the formatOutput attribute of domDocument to true
 
 	    // save XML as string or file 
-	    $test1 = $dom->saveXML(); // put string in test1
-	    $dom->save('test1.xml'); // save as file
+	    //$test1 = $dom->saveXML(); // put string in test1
+	    $dom->save($this->filePath); // save as file
 	}
 
 	public function saveUser($newUser){
@@ -57,5 +63,9 @@ class AdminModel{
 
 	public function getUserWithId($id){
 		return $this->userRepository->getUserWithId($id); 
+	}
+
+	public function getAllUsers(){
+		return $this->userRepository->getAllUsers(); 
 	}
 }

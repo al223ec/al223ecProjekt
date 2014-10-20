@@ -51,7 +51,7 @@ class User {
 		return $this->passwordHash; 
 	}
 	public function getIsAdmin(){
-		return $this->isAdmin; 
+		return isset($this->isAdmin) ? $this->isAdmin : false; 
 	}
 	public function setIsAdmin($isAdmin){
 		$this->isAdmin = $isAdmin; 
