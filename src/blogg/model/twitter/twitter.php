@@ -5,8 +5,8 @@ namespace blogg\model\twitter;
 class Twitter{
 
 	private $twitterSettings = array(
-		    'oauth_access_token' => "2817132410-MZ6wqr0FQiTrES1tDWWTPI3u1mlcBDvsj77MKcV",
-		    'oauth_access_token_secret' => "t4J1iWhOt3kPUOETGptyjs0gqYjGajMRdwdaqRLMkGyRd",
+		    'oauth_access_token' => "2817132410-euMdEPUEClDiJsDDxejHzOlCzJUZ6RyDUkl0VC7",
+		    'oauth_access_token_secret' => "U9GmdIhEFnzk3oVLaNeoQTXQMEldoRa77PjamD61VtKzF",
 		    'consumer_key' => "cSU4oJkdSpjNeyO8XsLcpKbb4",
 		    'consumer_secret' => "TZwHg9mTVqTghtuMxhxEceUNkjgefep9p371pvtBfhdidnciPS"
 		);
@@ -19,7 +19,7 @@ class Twitter{
 	* http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1
 	* https://github.com/J7mbo/twitter-api-php
 	*///$json = fetchData("https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=2817132410&screen_name=al223ec"); //getting the file content
-	public function getTweets($numberOfTweets){
+	public function getTweets($numberOfTweets = 0){
 		$ret = array();
 		$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 		$getfield = '?screen_name=al223ec';
@@ -36,7 +36,7 @@ class Twitter{
 					$ret[] = new Tweet($value['user']['name'], $value['text'], $value['user']['screen_name']); 
 				}
 				$index += 1; 
-				if($index > $numberOfTweets){
+				if($numberOfTweets !== 0 && $index > $numberOfTweets){
 					break; 
 				}
 

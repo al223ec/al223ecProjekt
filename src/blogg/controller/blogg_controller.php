@@ -11,14 +11,10 @@ class BloggController extends BaseController {
 	//Den här kontrollern kan inte existera utan authcontroller just nu; 
 	public function __construct(){
 		parent::__construct();
-      	$this->view = new \blogg\view\blogg\BloggView();
+      	$this->setView(new \blogg\view\blogg\BloggView());
 		$this->bloggModel = new \blogg\model\blogg\BloggModel(); 
 
-		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		  	
-		$this->initAuthController(); 
-		
 		self::$adminIsLoggedIn = $this->authController->isAdminLoggedIn();
-
 		$this->view->setAdminLoggedInVar(self::$adminIsLoggedIn);
 		$this->view->setLoggedInUserId($this->authController->getCurrentUserId()); 
 	}
@@ -27,11 +23,11 @@ class BloggController extends BaseController {
 		$startPost = isset($this->params[0]) ? intval($this->params[0]) : 0;		
 		$this->view->setViewFullVar(false); 
 
+
 		$numberOfPostsInDb = $this->bloggModel->getNumberOfBloggPostsInDb(); 
 		$this->view->setPagingVars($startPost, $this->numberOfPostsPerPage, $numberOfPostsInDb); 
+
 		$this->view->setPostsVar($this->bloggModel->getBloggPosts($startPost, $this->numberOfPostsPerPage));
-		
-		$this->view->setLoggedInUserId($this->authController->getCurrentUserId()); 
 	}
 
 
@@ -51,7 +47,6 @@ class BloggController extends BaseController {
 		if(self::$adminIsLoggedIn || $post->getUserId() === $authcontroller->getCurrentUserId()){
 			$this->view->setViewFullVar(true);
 			$this->view->setPostVar($this->getBloggPostById());
-
 		}else{
 			$this->redirectTo();
 		}
@@ -60,7 +55,6 @@ class BloggController extends BaseController {
 	public function view(){
 		$this->view->setViewFullVar(true);
 		$this->view->setPostVar($this->getBloggPostById());
-
 	}
 
 
@@ -69,7 +63,6 @@ class BloggController extends BaseController {
 			$this->redirectTo();
 		}
 		$this->view->setPostVar($this->getBloggPostById());
-
 	}
 
 	public function deleteConfirmed(){
@@ -78,7 +71,6 @@ class BloggController extends BaseController {
 		}
 		$this->view->setPostVar($this->getBloggPostById());
 	}
-
 
 	public function save(){
 		if(!self::$userIsloggedIn){
@@ -98,22 +90,20 @@ class BloggController extends BaseController {
 				}
 			}  
 		}
-		//Något har gått fel
+
 		$this->view->setSaveFailedVar();
 	}
 
 	private function getBloggPostById(){
 		$id = isset($this->params[0]) ? intval($this->params[0]) : 0; //Detta är ju egentligen lite osnyggt platsberoende
-		$post = $this->bloggModel->getBloggPostById($id);
-		
-		if($post !== null){
-			return $post;
+		try{
+			$post = $this->bloggModel->getBloggPostById($id);
+			if($post !== null){
+				return $post;
+			}
+			throw new \Exception("BloggController::getBloggPostById Ett oväntat fel har inträffat användaren har inte kunnat hittats");	
+		}catch(\Exception $e){
+			$this->redirectToError($e);
 		}
-
-		var_dump("Fail BloggController::getBloggPostById()");
-		die(); 
-		//Något har gått fel
-		$this->redirectTo(); //error 404? 
 	}
-
 }

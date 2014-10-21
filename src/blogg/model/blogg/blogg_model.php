@@ -17,12 +17,12 @@ class BloggModel {
 		$userRepository = new \auth\model\repository\UserRepository();
 
 		$posts = $this->bloggRepository->getBloggPosts($startPost, $numberOfPosts); 
-
 		foreach ($posts as $post) {
 			$post->setAuthor($userRepository->getUserNameById($post->getUserID())); 
 		}
 		return $posts; 
 	}
+
 	public function getBloggPostById($id){
 		$userRepository = new \auth\model\repository\UserRepository();
 

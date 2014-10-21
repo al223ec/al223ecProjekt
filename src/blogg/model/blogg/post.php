@@ -81,7 +81,7 @@ class Post extends \core\validation\ValidatableObject {
 		if(!$this->time){
 			$this->time = time(); 
 		}
-		return $this->time; 
+		return intval($this->time); 
 	}
 
 	public function getErrors(){

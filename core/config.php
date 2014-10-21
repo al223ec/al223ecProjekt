@@ -13,4 +13,5 @@ abstract class Config{
 	const DB_CONNECTION_STRING = "mysql:host=127.0.0.1;dbname=project";
 	
 	const APP_ROOT = "/al223ecProjekt/"; 	 
+	const MAIN_TEMPLATE = "app.php"; 
 }

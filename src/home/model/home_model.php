@@ -13,9 +13,19 @@ class HomeModel {
 	}
 
 	public function getBloggAndInstagramFlow($numberOfPosts){
+
 		$flow = $this->bloggModel->getBloggPosts(0, $numberOfPosts); 
-		$flow = array_merge($flow, $this->instagramModel->getInstagramImages($numberOfPosts));
-		//Sorteringsfunktionen
+		$instagramFlow = $this->instagramModel->getInstagramImages($numberOfPosts); 
+		$flow = array_merge($flow, $instagramFlow); 
+		$ret = array(); 
+		foreach ($flow as $value) {
+			$ret[$value->getTime()] = $value; 
+		}
+
+		 arsort($ret); 
+		 return $ret; 
+		//Sorteringsfunktionen fungerar inte alls och jag vet inte varför 
+		
 		usort($flow, function($a, $b) {
 			$aTime = $a->getTime(); 
 			$bTime = $b->getTime(); 
@@ -26,7 +36,7 @@ class HomeModel {
 			return ($aTime < $bTime) ? 1 : -1;
 		});
 
-		//$flow = array_slice($flow, 0, $numberOfPosts, true);
-		return $flow; 
+
+		return $flow;
 	}
 }

@@ -4,12 +4,14 @@ namespace blogg\view\admin;
 
 class AdminView extends \blogg\view\BaseView {
 
-	private $userNamePost = 		"RegisterUserView::UserName";	
-	private $passwordPost = 		"RegisterUserView::Password";	
-	private $repeatedPasswordPost = "RegisterUserView::RepeatedPassword";	
-	private $model; 
+	protected $userNamePost = 		"AdminView::UserName";	
+	protected $passwordPost = 		"AdminView::Password";	
+	protected $repeatedPasswordPost = "AdminView::RepeatedPassword";	
 
-	private $errorMessages; 
+	protected $isAdminCheckBox = "AdminView::isAdminCheckBox";	
+	protected $model; 
+
+	protected $errorMessages; 
 	const PasswordErrorKey = 	"PasswordError"; 
 	const UserNameErrorKey = 	"UserNameError"; 
 
@@ -21,12 +23,32 @@ class AdminView extends \blogg\view\BaseView {
 			"adminIsLoggedIn" => $adminIsLoggedIn,
 			"userNamePost" => $this->userNamePost, 
 			"passwordPost" => $this->passwordPost,
-			"repeatedPasswordPost" => $this->repeatedPasswordPost
+			"repeatedPasswordPost" => $this->repeatedPasswordPost,
+			"isAdminCheckBox" => $this->isAdminCheckBox, 
 			)
 		);
-
 		$this->setPageTitel("Admin page!");
-	}	
+	}		
+
+	protected function getIsAdmin(){
+		return isset($_POST[$this->isAdminCheckBox]); 
+	}
+	protected function getUserId(){
+		return intval($this->getCleanInput($this->userIdPost)); 
+	}
+
+	protected function setErrorVar(){
+		$this->setViewVar("errorMessages", $this->errorMessages); 
+	}
+
+	public function setUserVar($user){
+		$this->setViewVar("user" ,$user); 
+	}
+
+	public function setUserArray($userArray){
+		$this->setViewVar("userArray", $userArray); 
+	}
+
 
 	private function getUserName(){
 		$ret = $this->getCleanInput($this->userNamePost);
@@ -70,24 +92,13 @@ class AdminView extends \blogg\view\BaseView {
 		if($userName !== "" && $password !== ""){
 			$user = new \auth\model\User();
 			$user->setUserName($userName); 
-			$user->setPassword($password);  
+			$user->setPassword($password);
+			$user->setIsAdmin($this->getIsAdmin());  
 
 			return $user; 
 		} else {
 			$this->setErrorVar(); 
 		}
 		return null; 
-	}
-
-	private function setErrorVar(){
-		$this->setViewVar("errorMessages", $this->errorMessages); 
-	}
-
-	public function setSavedUserVar($user){
-		$this->setViewVar("user" ,$user); 
-	}
-
-	public function setUserArray($userArray){
-		$this->setViewVar("userArray", $userArray); 
 	}
 }

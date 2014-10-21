@@ -1,13 +1,22 @@
-admin view
 <?php 
-	if($adminIsLoggedIn){?>
+
+if($adminIsLoggedIn){?>
+<div class="col-md-12">
+	<h3>Användar inställningar</h3>
+	<hr>
 	<ul>
-		<?php
+	<?php
 		foreach ($userArray as $user) {?>
-			<li><?php echo $user; ?></li> 
+			<li>	
+				<?php echo $user; if($user->getIsAdmin()) echo " Administratör"; ?>
+				<a class="btn btn-danger" href="<?php echo \core\Routes::getRoute('admin', 'deleteUser') . $user->getUserID(); ?>"> Ta bort</a>
+			</li> 
 		<?php } ?>
 	</ul>
-		<?php
-		include_once('new_user_form.php'); 
+	<hr>
+	</div>
+	<?php
+	include_once('new_user_form.php'); 
 	}
 ?>
+

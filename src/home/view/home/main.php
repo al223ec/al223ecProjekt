@@ -20,7 +20,13 @@ foreach ($flow as $flowPost) {
 	
 	<div class="col-md-4">
 		<?php if(get_class($flowPost) == "blogg\model\instagram\InstagramPost"){?>
-			<a href="" data-toggle="modal" data-target=".<?php echo $flowPost->getUnique(); ?>"><img src="<?php echo $flowPost->getLowResolutionUrl(); ?>" alt="Instagram image"></a>
+			<a href="" data-toggle="modal" data-target=".<?php echo $flowPost->getUnique(); ?>">
+			<img src="<?php echo $flowPost->getLowResolutionUrl(); ?>" alt="Instagram image">
+			</a>
+			<p>	
+				Postat: 
+				 <?php echo gmdate("Y-m-d H:i:s", $flowPost->getTime()); ?>
+			<p>
 				<div class="modal fade <?php echo $flowPost->getUnique(); ?>" tabindex="-1" role="dialog" aria-hidden="true">
 				  <div class="instagrampopup">
 				    <div class="">

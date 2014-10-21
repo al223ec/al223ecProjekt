@@ -13,7 +13,6 @@ if(!array_key_exists('CORE_DIR', $GLOBALS)){
 }
 
 
-require_once(ROOT_DIR . 'common' . DS . 'html_view.php');
 require_once(ROOT_DIR . 'core' . DS . 'autoload.php');
 require_once(ROOT_DIR . 'core' . DS . 'config.php');
 require_once(ROOT_DIR . 'core' . DS . 'router.php'); 

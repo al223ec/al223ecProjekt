@@ -27,14 +27,14 @@ class Routes{
 		),
 		'admin' => array(
 			'main' => 'admin/',
-			'saveNewUser' => 'admin/saveUser'
-
+			'saveUser' => 'admin/saveUser',
+			'deleteUser' => 'admin/deleteUser/',
+			'deleteConfirmed' => 'admin/deleteConfirmed/',
+			'settings' => 'admin/settings/'
 		),
 		'home' => array(
 			'main' => 'home/'
 			),
-
-
 	);
 	
 	public static function getRoute($controller, $action){

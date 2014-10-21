@@ -9,16 +9,12 @@ class HomeController extends \blogg\controller\BaseController{
 
 	private $lengthOfFlow = 12; 
 
-
 	public function __construct(){
 		parent::__construct(); 
 
 		$this->twitterModel = new \blogg\model\twitter\Twitter();
 		$this->homeModel = new \home\model\HomeModel(); 
-
-		$this->view = new \home\view\home\HomeView(); 
-		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		
-      	$this->initAuthController(); 
+		$this->setView(new \home\view\home\HomeView());
 	}
 
 	public function main(){

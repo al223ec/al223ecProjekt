@@ -46,7 +46,7 @@ class AuthController extends \core\Controller{
 			$user = $this->authModel->checkLogin($clientUsername, $clientPassword, $userAgent);
 		}		
 
-		if($user !== null && $user->isValid()){
+		if($user !== null && $user->isValidPassword()){
 			$this->view->successfullLogIn();
 			$this->redirectTo();
 
@@ -60,6 +60,5 @@ class AuthController extends \core\Controller{
 		$this->authModel->logOut();
 		
 		$this->redirectTo();
-		exit();
 	}
 }

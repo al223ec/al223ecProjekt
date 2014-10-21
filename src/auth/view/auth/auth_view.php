@@ -8,13 +8,6 @@ class AuthView extends \auth\view\ViewBase{
 	private $userNamePost = "LoginView::Username";		// Användarnamnets kakas namn.
 	private $passwordPost = "LoginView::Password";		// Lösenordets kakas namn.
 	
-
-	private $errorMessages; 
-	const PasswordErrorKey = 	"PasswordError"; 
-	const UserNameErrorKey = 	"UserNameError"; 
-
-
-
 	public function __construct(\auth\model\AuthModel $model){
 		parent::__construct($model);
 		
@@ -30,7 +23,7 @@ class AuthView extends \auth\view\ViewBase{
 	public function populateErrorMessage($user){
 		if($user === null){ 
 			$this->setErrorMessageVar("Felaktigt användarnamn"); 	
-		} else if(!$user->isValid()){
+		} else if(!$user->isValidPassword()){
 			$this->setErrorMessageVar("Felaktigt lösenord"); 
 		}
 	}

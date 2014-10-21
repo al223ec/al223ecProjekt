@@ -57,16 +57,15 @@ class View {
 			throw new \Exception("View '{$action}.php' is not found in $namespace/view/$controller directory.");
 		}
 
-
 		$layoutdata = ob_get_clean();
 		if($finalRender){
-			$app = SRC_DIR . "templates" . DS . "app.php";
+			$app = SRC_DIR . "templates" . DS . \Config::MAIN_TEMPLATE;
 			$active = $controller; 
 
 			if (file_exists($app)){
 				include_once($app);
 			} else {
-				throw new \Exception("Final template file 'app.php' is not found in $app");
+				throw new \Exception("Final template file '". \Config::MAIN_TEMPLATE  ."' is not found in $app");
 			}
 		} else{
 			return $layoutdata; 

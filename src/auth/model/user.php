@@ -8,8 +8,6 @@ class User {
 	private $userID; 
 	private $userName; 
 	private $passwordHash; 
-	private $cookieValue; 
-	private $cookieTime; 
 	private $isAdmin; 
 
 	private $valid; 
@@ -19,7 +17,7 @@ class User {
 		$this->valid = false; 
 	}
 	
-	public function validate($password){
+	public function validateByPassword($password){
 		if(crypt($password, $this->passwordHash) === $this->passwordHash ){
 			$this->valid = true; 
 		} else{
@@ -38,7 +36,7 @@ class User {
 		return crypt($password, $salt);
 	}
 
-	public function isValid(){
+	public function isValidPassword(){
 		return $this->valid; 
 	}
 	public function getUserID(){
@@ -65,33 +63,11 @@ class User {
 		$this->passwordHash = $passwordHash; 
 	}
 	public function setPassword($password){
-		if($this->userID === 0){
-			$this->passwordHash = $this->createHash($password); 
-
-		}else {
-			throw new Exception("User::setPassword can only be used on new User objects!"); 
-		}
+		$this->passwordHash = $this->createHash($password); 
 	}
 
-	public function validateByCookieValue($cookieValue){
-		$this->valid = $this->cookieValue === $cookieValue && $this->cookieTime > time(); 
-		return $this->valid; 
-
-	}
-	
 	public function __toString(){
 		return $this->userName;
     }
 
-    public function setCookieTime($cookieTime){
-    	$this->cookieTime = $cookieTime; 
-    }
-
-    public function setCookieValue($cookieValue){
-    	$this->cookieValue = $cookieValue; 
-    }
-
-    public function getCookieTime(){
-    	return $this->cookieTime; 
-    }
 }

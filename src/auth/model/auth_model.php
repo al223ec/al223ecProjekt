@@ -41,9 +41,9 @@ class AuthModel extends \auth\model\ModelBase{
 		//Hämta användare från DB
 		$user = $this->userRepository->getUserWithUserName($clientUsername); 
 		if($user !== null){
-			$user->validate($clientPassword); 
+			$user->validateByPassword($clientPassword); 
 		}
-		if($user !== null && $user->isValid()){
+		if($user !== null && $user->isValidPassword()){
 			// Sparar ner den inloggad användaren till sessionen.
 			$this->saveUserToSession($user, $userAgent); 
 	

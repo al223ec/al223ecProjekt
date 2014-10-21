@@ -11,8 +11,6 @@ class Tweet {
 		$this->name = $name; 
 		$this->text = $text; 
 		$this->screenName = $screenName; 
-
-		
 	}
 
 	public function getText(){
