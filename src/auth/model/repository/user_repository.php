@@ -79,7 +79,8 @@ class UserRepository Extends \core\db\Repository{
 	public function deleteUser($id){
 		$sql = "DELETE FROM " . $this->table . " WHERE id = :id"; 
 		$params = array(":id" => $id); 
-		
-		return $this->query($sql, $params, true);
+
+		$this->query($sql, $params, true);
+		return true; 
 	}
 }

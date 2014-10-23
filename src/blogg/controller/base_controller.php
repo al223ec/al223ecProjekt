@@ -18,12 +18,18 @@ abstract class BaseController extends \core\Controller {
 		if(!isset($this->authController)){
 			throw new \Exception("Blogg::BaseController initAuthController, authController är inte definerad, kallar du på BaseControllers construct??");
 		}
-		
 		$this->authController->main();
-		$authViewRender = $this->authController->getView()->render("auth", "auth", "main", false);
+
+		//En fix för att undvika att behöva rendera om auth vyn
+		if(isset($this->view)){
+			$view->setAuthRenderVar($this->view->getAuthRender()); 
+		}else{
+			$authViewRender = $this->authController->getView()->render("auth", "auth", "main", false);
+			$view->setAuthRenderVar($authViewRender); 
+		}
 
 		$this->view = $view; 
-		$this->view->setUserLoggedInVar(self::$userIsloggedIn);		  
-		$this->view->setAuthRenderVar($authViewRender); 
+		$view->setUserLoggedInVar(self::$userIsloggedIn);		  
+
 	}
 }

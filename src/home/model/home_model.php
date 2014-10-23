@@ -3,12 +3,10 @@
 namespace home\model; 
 
 class HomeModel {
-	
-	private $twitterModel; 
 	private $bloggModel; 
 
-	public function __construct(){
-		$this->instagramModel = new \blogg\model\instagram\InstagramModel();  
+	public function __construct($instagramSettings){
+		$this->instagramModel = new \blogg\model\instagram\InstagramModel($instagramSettings);  
 		$this->bloggModel = new \blogg\model\blogg\BloggModel();
 	}
 

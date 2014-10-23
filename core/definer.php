@@ -12,7 +12,6 @@ if(!array_key_exists('CORE_DIR', $GLOBALS)){
 	define('CORE_DIR', ROOT_DIR . 'core' . DS);
 }
 
-
 require_once(ROOT_DIR . 'core' . DS . 'autoload.php');
 require_once(ROOT_DIR . 'core' . DS . 'config.php');
 require_once(ROOT_DIR . 'core' . DS . 'router.php'); 

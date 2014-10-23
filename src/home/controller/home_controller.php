@@ -12,8 +12,8 @@ class HomeController extends \blogg\controller\BaseController{
 	public function __construct(){
 		parent::__construct(); 
 
-		$this->twitterModel = new \blogg\model\twitter\Twitter();
-		$this->homeModel = new \home\model\HomeModel(); 
+		$this->twitterModel = new \blogg\model\twitter\Twitter($this->settings->getTwitterSettings());
+		$this->homeModel = new \home\model\HomeModel($this->settings->getInstagramSettings()); 
 		$this->setView(new \home\view\home\HomeView());
 	}
 

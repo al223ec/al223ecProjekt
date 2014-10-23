@@ -17,4 +17,8 @@ class BaseView extends \core\View{
 		$this->setViewVar("pageTitel", $pageTitel); 
 
 	}
+
+	public function getAuthRender(){
+		return isset($this->getViewVars()["authRenderVar"]) ?  $this->getViewVars()["authRenderVar"] : "not rendered yet"; 
+	}
 }

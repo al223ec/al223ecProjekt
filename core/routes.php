@@ -30,7 +30,9 @@ class Routes{
 			'saveUser' => 'admin/saveUser',
 			'deleteUser' => 'admin/deleteUser/',
 			'deleteConfirmed' => 'admin/deleteConfirmed/',
-			'settings' => 'admin/settings/'
+			'settings' => 'admin/settings/',
+			'saveSettings' => 'admin/saveSettings',
+			'resetSettings' => 'admin/resetSettings'
 		),
 		'home' => array(
 			'main' => 'home/'

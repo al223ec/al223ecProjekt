@@ -5,7 +5,7 @@ namespace blogg\controller;
 class BloggController extends BaseController {
 
 	private $bloggModel; 
-	private $numberOfPostsPerPage  = 15; 
+	private $numberOfPostsPerPage; 
 	protected static $adminIsLoggedIn;
 
 	//Den här kontrollern kan inte existera utan authcontroller just nu; 
@@ -17,6 +17,8 @@ class BloggController extends BaseController {
 		self::$adminIsLoggedIn = $this->authController->isAdminLoggedIn();
 		$this->view->setAdminLoggedInVar(self::$adminIsLoggedIn);
 		$this->view->setLoggedInUserId($this->authController->getCurrentUserId()); 
+
+		$this->numberOfPostsPerPage = $this->settings->getBloggSettings()->bloggNumberOfBloggPostsPerPage; 
 	}
 	
 	public function main(){
@@ -96,14 +98,11 @@ class BloggController extends BaseController {
 
 	private function getBloggPostById(){
 		$id = isset($this->params[0]) ? intval($this->params[0]) : 0; //Detta är ju egentligen lite osnyggt platsberoende
-		try{
-			$post = $this->bloggModel->getBloggPostById($id);
-			if($post !== null){
-				return $post;
-			}
-			throw new \Exception("BloggController::getBloggPostById Ett oväntat fel har inträffat användaren har inte kunnat hittats");	
-		}catch(\Exception $e){
-			$this->redirectToError($e);
+
+		$post = $this->bloggModel->getBloggPostById($id);
+		if($post !== null){
+			return $post;
 		}
+		throw new \Exception("BloggController::getBloggPostById Ett oväntat fel har inträffat användaren har inte kunnat hittats");	
 	}
 }

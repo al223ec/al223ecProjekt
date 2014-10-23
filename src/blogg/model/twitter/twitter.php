@@ -4,13 +4,15 @@ namespace blogg\model\twitter;
 
 class Twitter{
 
-	private $twitterSettings = array(
-		    'oauth_access_token' => "2817132410-euMdEPUEClDiJsDDxejHzOlCzJUZ6RyDUkl0VC7",
-		    'oauth_access_token_secret' => "U9GmdIhEFnzk3oVLaNeoQTXQMEldoRa77PjamD61VtKzF",
-		    'consumer_key' => "cSU4oJkdSpjNeyO8XsLcpKbb4",
-		    'consumer_secret' => "TZwHg9mTVqTghtuMxhxEceUNkjgefep9p371pvtBfhdidnciPS"
-		);
-	public function __construct(){
+	private $twitterSettings; 
+	public function __construct($settings){
+		
+		$this->twitterSettings = array(
+			"oauth_access_token" => $settings->oauthAccessToken, 
+			"oauth_access_token_secret" => $settings->oauthAccessTokenSecret,
+			"consumer_key" => $settings->consumerKey, 
+			"consumer_secret" => $settings->consumerSecret
+			); 
 		//echo $this->postTweet("Postat med PHP");
 		//die();
 	}

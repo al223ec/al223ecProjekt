@@ -86,18 +86,50 @@ class Router{
 		if (file_exists($controllerfile)){
 			require_once($controllerfile);
 
-			$app = \core\Loader::load($controller); 
-			$app->setParams($params);
+			try{
+				$app = \core\Loader::load($controller); 
+				$app->setParams($params);
 
-			if(!method_exists($app, $action)){
-				throw new \Exception('Controller ' . $controller . ' does not have ' . $action . ' function');  
+				if(!method_exists($app, $action)){
+					throw new \Exception('Controller ' . $controller . ' does not have ' . $action . ' function');  
+				}
+				
+				$app->$action();
+				$view = $app->getView();
+				$view->render($namespace, $controllerName, $action);
+			}catch(\PDOException $e){
+				$this->redirectToAdminSettings($e); 
+			}catch(\Exception $e){
+				$this->redirectToError($e); 
 			}
-			$app->$action();
-			$view = $app->getView();
-			$view->render($namespace, $controllerName, $action); 
-			//\core\Render::renderAction($namespace, $controllerName , $action, $view);	
+
 		} else {
 			throw new \Exception('Controller ' . $controller . ' not found');  
 		}
 	} 
+
+	private function redirectToError($exception){
+		if(\Config::DEBUG){
+			echo "<pre>"; 
+			echo debug_print_backtrace(); 
+			echo $exception; 
+			echo "</pre>";
+			die(); 
+		} else{
+			ob_start();
+			debug_print_backtrace();
+			$errorLog = ob_get_clean();
+			$errorLog .= $exception; 
+			file_put_contents(\Config::ERROR_LOG, $errorLog , FILE_APPEND);
+
+			include_once(ROOT_DIR . 'error.php');
+			$layoutdata =  ob_get_clean(); 
+			include_once(SRC_DIR . "templates" . DS . \Config::MAIN_TEMPLATE); 
+			die();
+		}
+	}
+	//TODO::
+	private function redirectToAdminSettings($exception){
+		$this->redirectToError($exception); 
+	}
 }

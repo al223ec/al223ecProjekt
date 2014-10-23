@@ -32,7 +32,7 @@
               <li>
                 <div class="login">
                 <?php 
-                if(isset($authRenderVar)) echo $authRenderVar;
+                  if(isset($authRenderVar)) echo $authRenderVar;
                 ?>
               </div>
               </li>

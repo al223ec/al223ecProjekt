@@ -27,10 +27,10 @@
 				<label for="Text" >Text  :</label>
 				<textarea name="<?php echo $textPost; ?>" id="Text"><?php echo $postText; ?> </textarea>
 				</fieldset>
-					<input type="submit" name=""  value="Posta post" />
+					<input class="btn btn-default" type="submit" name=""  value="Posta post" /> | <a class="btn btn-warning" href="<?php echo \core\Routes::getRoute('blogg', 'main'); ?>"> Tillbaka</a>
 			</fieldset>
 		</form>
-		<a href="<?php echo \core\Routes::getRoute('blogg', 'main'); ?>"> Tillbaka</a>
+		
 	</div>
 </div>
 

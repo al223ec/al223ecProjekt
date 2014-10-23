@@ -4,8 +4,13 @@ namespace blogg\model\instagram;
 
 class InstagramModel { 
 	
-		private $userid = "1501720516";
-		private $accessToken = "1501720516.ab103e5.0ece8fdbfaef4174a54e42f4c3b2bfb2";
+		private $userid; 
+		private $accessToken; 
+
+		public function __construct($instagramSettings){
+			$this->userid =  $instagramSettings->instagramUserId;
+			$this->accessToken = $instagramSettings->accessToken;
+		}
 
 		private function fetchData($url){
 		     $ch = curl_init();
@@ -31,7 +36,7 @@ class InstagramModel {
 					$ret[] = new \blogg\model\instagram\InstagramPost($post);
 				} 
 			} else {
-				$index = 0; 
+				$index = 1; 
 				foreach ($result->data as $post){
 					$ret[] = new \blogg\model\instagram\InstagramPost($post);
 					$index += 1; 

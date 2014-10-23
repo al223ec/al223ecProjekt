@@ -12,7 +12,6 @@ class AdminController extends BaseController{
 		$this->adminModel = new \blogg\model\admin\AdminModel(); 
 		$this->isAdminLoggedIn = $this->authController->isAdminLoggedIn(); 
 		$this->setView(new \blogg\view\admin\AdminView($this->authController->isAdminLoggedIn(), $this->adminModel));
-		//$this->settings->saveSettings();
 	}
 
 	public function main(){	
@@ -23,18 +22,15 @@ class AdminController extends BaseController{
 		if(!$this->isAdminLoggedIn){
 			$this->redirectTo(); 
 		}
-		try{			
-			$user = $this->view->getNewUser(); 
-			if($user !== null){
-				$userId = $this->adminModel->saveUser($user); 
-				if($userId != 0){
-					$this->redirectTo("admin", "userSaved", $userId); 
-				} else {
-					throw new \Exception("AdminController::saveUser Ett oväntat fel har inträffat, användaren har inte kunnat sparats");
-				}
+	
+		$user = $this->view->getNewUser(); 
+		if($user !== null){
+			$userId = $this->adminModel->saveUser($user); 
+			if($userId != 0){
+				$this->redirectTo("admin", "userSaved", $userId); 
+			} else {
+				throw new \Exception("AdminController::saveUser Ett oväntat fel har inträffat, användaren har inte kunnat sparats");
 			}
-		}catch(\Exception $e){
-			$this->redirectToError($e); 
 		}
 	}
 
@@ -42,16 +38,12 @@ class AdminController extends BaseController{
 		if(!$this->isAdminLoggedIn){
 			$this->redirectTo(); 
 		}
-		try{
-			$id = isset($this->params[0]) ? $this->params[0] : 0; 
-			$user = $this->adminModel->getUserWithId($id);
-			if($user !== null){
-				 $this->view->setUserVar($user); 
-			} else {
-				throw new \Exception("AdminController::userSaved Ett oväntat fel har inträffat, användaren har inte hittats i databasen");
-			}
-		}catch(\Exception $e){
-			$this->redirectToError($e); 
+		$id = isset($this->params[0]) ? $this->params[0] : 0; 
+		$user = $this->adminModel->getUserWithId($id);
+		if($user !== null){
+			 $this->view->setUserVar($user); 
+		} else {
+			throw new \Exception("AdminController::userSaved Ett oväntat fel har inträffat, användaren har inte hittats i databasen");
 		}
 	}
 
@@ -61,25 +53,37 @@ class AdminController extends BaseController{
 		}
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
 		$user = $this->adminModel->getUserWithId($id);
-		$this->view->setUserVar($user); 
+		if($user !== null){
+			$this->view->setUserVar($user); 
+		}else {
+			throw new \Exception("AdminController::deleteUser Ett oväntat fel har inträffat, användaren har inte hittats i databasen");
+		}
 	}
 
 	public function deleteConfirmed(){
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
-		try{
-			$user = $this->adminModel->getUserWithId($id);
-			$this->view->setUserVar($user); 
-			if($this->adminModel->deleteUser($user)){
-				return; 
-			} 
+
+		$user = $this->adminModel->getUserWithId($id);
+		$this->view->setUserVar($user); 
+		if($this->adminModel->deleteUser($user)){
+			return; 
+		} else{
 			//ett fel har inträffat
 			throw new \Exception("AdminController::deleteConfirmed Ett oväntat fel har inträffat, användaren har inte kunnat tagits bort");
-		}catch(\Exception $e){
-			$this->redirectToError($e); 
 		}
 	}
 
 	public function settings(){
-		
+		$this->setView(new \blogg\view\admin\SettingsView($this->settings));
+	}
+
+	public function saveSettings(){
+		$this->setView(new \blogg\view\admin\SettingsView($this->settings));
+		$this->view->saveSettings(); 
+		$this->view->setSaveMessage($this->settings->saveSettings()); 
+	}
+
+	public function resetSettings(){
+		$this->settings = new \blogg\model\admin\Settings(true); 
 	}
 }

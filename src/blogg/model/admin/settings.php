@@ -3,20 +3,51 @@
 namespace blogg\model\admin; 
 
 class Settings {	
+	private $twitterSettingsKey = 'twitterSettings';
+	private $bloggSettingsKey = 'bloggSettings'; 
+	private $instagramSettingsKey = 'instagramSettings' ; 
 
-	public static $NUMBER_OF_BLOGGPOSTS_PER_PAGE = 10; 
-	public static $TWITTER_NUMBER_OF_POSTS = 15; 
+	private $bloggSettings; 
+	private $settingObjects = array(); 
 
 	private $filePath; 
-	private $fileName = 'blogg_settings.xml';
+	private $fileName = 'settings.xml';
 
-	public function __construct(){
-		$this->loadSettings();
-		$this->filePath = SRC_DIR . "blogg" . DS . "model " . DS . "admin" . DS . $this->fileName; 
+	public function __construct($resetSettings = false){
+		$this->filePath = SRC_DIR . "blogg" . DS . "model" . DS . "admin" . DS . $this->fileName; 
+		
+		$this->bloggSettings = new \blogg\model\admin\BloggSettings();
+		$this->settingObjects[$this->bloggSettingsKey] = $this->bloggSettings; 
+		$this->settingObjects[$this->twitterSettingsKey] = new \blogg\model\admin\TwitterSettings();
+		$this->settingObjects[$this->instagramSettingsKey] = new \blogg\model\admin\InstagramSettings();
+
+		if($resetSettings){
+			$this->saveSettings(); 
+			$this->loadSettings(); 
+		}else{
+			$this->loadSettings(); 
+		}
+	}
+
+	public function getTwitterSettings(){
+		return $this->settingObjects[$this->twitterSettingsKey]; 
+	}
+
+	public function getInstagramSettings(){
+		return $this->settingObjects[$this->instagramSettingsKey]; 
+	}
+	public function getBloggsettings(){
+		return $this->bloggSettings;
 	}
 
 	public function loadSettings(){
+		$xml = \simplexml_load_file($this->filePath); 
+		
+		foreach ($this->settingObjects as $object) {
 
+			$elementName = $object->getElementName(); 
+			$object->loadSettings($xml->$elementName); 
+		}
 	}
 
 	public function saveSettings(){
@@ -26,19 +57,12 @@ class Settings {
 	    //add root
 	    $settings = $dom->appendChild($dom->createElement('settings'));
 		
-		$reflection = new \ReflectionClass($this); 
-        $staticProperties = $reflection->getStaticProperties(); 
-		foreach ($staticProperties as $staticPropertie => $staticPropertieValue) {
-			$settings->appendChild($this->createSettingsElement($dom, $staticPropertie, $staticPropertieValue));
+		foreach ($this->settingObjects as $object) {
+			$settings->appendChild($object->saveSettings($dom)); 
 		}
+
 	    $dom->formatOutput = true; 
 	    $dom->save($this->filePath);
-	}
-
-	private function createSettingsElement($dom, $property, $value){
-		$node = $dom->createElement($property); 
-		$node->appendChild($dom->createTextNode($value)); 
-
-		return $node; 
+	    return true; //Allt har gått väl
 	}
 }

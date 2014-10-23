@@ -2,7 +2,7 @@
 
 namespace core\db; 
 
-abstract class Repository{
+abstract class Repository {
 	private $dbConnection; 
 	protected $table;
 	/**
@@ -10,7 +10,10 @@ abstract class Repository{
 	*/
 	protected function connection(){
 		if($this->dbConnection == null){
-			$this->dbConnection = new \PDO(\Config::DB_CONNECTION_STRING, \Config::DB_USERNAME, \Config::DB_PASSWORD);
+			$settings = \core\Loader::load('blogg\model\admin\Settings'); 
+			$settings = $settings->getBloggSettings(); 
+
+			$this->dbConnection = new \PDO($settings->connectionString, $settings->dbUserName, $settings->dbPassword);
 			if(\Config::DEBUG){
 				$this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 			}
