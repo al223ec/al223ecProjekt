@@ -15,6 +15,9 @@ class AdminController extends BaseController{
 	}
 
 	public function main(){	
+		if(!$this->isAdminLoggedIn){
+			$this->redirectTo(); 
+		}
 		$this->view->setUserArray($this->adminModel->getAllUsers()); 
 	}
 	 
@@ -61,6 +64,9 @@ class AdminController extends BaseController{
 	}
 
 	public function deleteConfirmed(){
+		if(!$this->isAdminLoggedIn){
+			$this->redirectTo(); 
+		}
 		$id = isset($this->params[0]) ? $this->params[0] : 0; 
 
 		$user = $this->adminModel->getUserWithId($id);
@@ -74,16 +80,26 @@ class AdminController extends BaseController{
 	}
 
 	public function settings(){
+		if(!$this->isAdminLoggedIn){
+			$this->redirectTo(); 
+		}
 		$this->setView(new \blogg\view\admin\SettingsView($this->settings));
 	}
 
 	public function saveSettings(){
+		if(!$this->isAdminLoggedIn){
+			$this->redirectTo(); 
+		}
 		$this->setView(new \blogg\view\admin\SettingsView($this->settings));
 		$this->view->saveSettings(); 
 		$this->view->setSaveMessage($this->settings->saveSettings()); 
 	}
 
 	public function resetSettings(){
-		$this->settings = new \blogg\model\admin\Settings(true); 
+		if(!$this->isAdminLoggedIn){
+			$this->redirectTo(); 
+		}	
+		$this->setView(new \blogg\view\admin\SettingsView($this->settings));
+		$this->settings->resetSettings(); 
 	}
 }

@@ -219,3 +219,5 @@ Jag har också lagt mycket tid på att få till ordentliga testningsmöjligheter
 Jag har inte styrt projektet så mycket på gott och ont. Dock har jag kunnat testa att genomföra TDD. 
 
 Om jag designar om projektet måste auth hanteras på ett specielt sätt, kanske partial page variant
+
+En stor nakdel med denna design är att undantag som kastas i vy filerna inte görs att applikationen avbryts

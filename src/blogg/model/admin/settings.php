@@ -7,26 +7,19 @@ class Settings {
 	private $bloggSettingsKey = 'bloggSettings'; 
 	private $instagramSettingsKey = 'instagramSettings' ; 
 
-	private $bloggSettings; 
 	private $settingObjects = array(); 
 
 	private $filePath; 
 	private $fileName = 'settings.xml';
 
-	public function __construct($resetSettings = false){
+	public function __construct(){
 		$this->filePath = SRC_DIR . "blogg" . DS . "model" . DS . "admin" . DS . $this->fileName; 
 		
-		$this->bloggSettings = new \blogg\model\admin\BloggSettings();
-		$this->settingObjects[$this->bloggSettingsKey] = $this->bloggSettings; 
+		$this->settingObjects[$this->bloggSettingsKey] =  new \blogg\model\admin\BloggSettings();
 		$this->settingObjects[$this->twitterSettingsKey] = new \blogg\model\admin\TwitterSettings();
 		$this->settingObjects[$this->instagramSettingsKey] = new \blogg\model\admin\InstagramSettings();
 
-		if($resetSettings){
-			$this->saveSettings(); 
-			$this->loadSettings(); 
-		}else{
-			$this->loadSettings(); 
-		}
+		$this->loadSettings(); 
 	}
 
 	public function getTwitterSettings(){
@@ -37,14 +30,13 @@ class Settings {
 		return $this->settingObjects[$this->instagramSettingsKey]; 
 	}
 	public function getBloggsettings(){
-		return $this->bloggSettings;
+		return $this->settingObjects[$this->bloggSettingsKey];
 	}
 
 	public function loadSettings(){
 		$xml = \simplexml_load_file($this->filePath); 
-		
-		foreach ($this->settingObjects as $object) {
 
+		foreach ($this->settingObjects as $object) {
 			$elementName = $object->getElementName(); 
 			$object->loadSettings($xml->$elementName); 
 		}
@@ -64,5 +56,13 @@ class Settings {
 	    $dom->formatOutput = true; 
 	    $dom->save($this->filePath);
 	    return true; //Allt har gått väl
+	}
+
+	public function resetSettings(){
+		$this->settingObjects[$this->bloggSettingsKey] =  new \blogg\model\admin\BloggSettings();
+		$this->settingObjects[$this->twitterSettingsKey] = new \blogg\model\admin\TwitterSettings();
+		$this->settingObjects[$this->instagramSettingsKey] = new \blogg\model\admin\InstagramSettings();
+		$this->saveSettings(); 
+		$this->loadSettings(); 
 	}
 }

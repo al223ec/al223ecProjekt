@@ -92,7 +92,7 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 		$controller = "somecontrollerthatdosentexists"; 
 		$url = $controller . "/";
 		$router = new \core\ Router($url);
-		$router->dispatch(); 
+		$router->dispatch(true); 
 	}
 
 	/**     * @expectedException Exception     */ 
@@ -101,7 +101,7 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 		$url = $controller . "/";
 		
 		$router = new \core\ Router($url);
-		$router->dispatch(); 
+		$router->dispatch(true); 
 	}
 
 /*
@@ -110,11 +110,6 @@ class RouterTest  extends \PHPUnit_Framework_TestCase {
 		//Kommer nog i framtiden att returnera någon form av view objekt 
 		$this->assertTrue(is_string ($router->dispatch())); 
 	}*/
-
-
-
-
-
 
 	public function testStaticRoutes(){
 		//Svårtestad

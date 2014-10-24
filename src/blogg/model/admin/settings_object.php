@@ -43,27 +43,18 @@ class SettingsObject {
         if (isset($this->data[$name])) {
             return $this->data[$name];
         } else {
-            // non-existant property
-            // => up to you to decide what to do
+            throw new \Exception("SettingsObject::__get '$name' trying to read non existing property '$name'");
+            
         }
     }
 
     public function __set($name, $value) {
     	//kolla issset 
-    	$this->data[$name] = $value; 
-        if ($name === 'numberOfPosts') {
-        //    throw new Exception("not allowed : $name");
+        if (isset($this->data[$name])) {
+            $this->data[$name] = $value; 
         } else {
-            // => up to you to decide what to do
+            throw new \Exception("SettingsObject::__set '$name' trying to set non existing porperty '$name'");
         }
     }
 
-    public function getDisplayInput($property){
-
-    } 
-
-    public function getDisplayName($property){
-    	return "!" . $property; 
-
-    }
 }

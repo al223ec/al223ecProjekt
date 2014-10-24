@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-
 	<link href="<?php echo ROOT_PATH; ?>css/bootstrap.min.css" rel="stylesheet" />
 	<link href="<?php echo ROOT_PATH; ?>css/style.css" rel="stylesheet" />
+  <link href="<?php echo ROOT_PATH; ?>css/animate.css" rel="stylesheet" />
 	<title> Projekt </title>
 </head>
 <body>
@@ -42,23 +42,21 @@
       </div>
     </div>
   </div>
-
-
 	<div class="jumbotron">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h1> 
+        <div class="col-md-8 col-md-offset-2 text-center inner">
+            <h1 class="animated fadeInDown">Antons <span> blogg</span></h1>
+            <p class="animated fadeInUp delay-05s">
             <?php 
               $pageTitel = isset($pageTitel) ? $pageTitel : "";
               echo $pageTitel;
             ?>
-          </h1>
+          </p>
         </div>
       </div>
     </div>
     </div>
-    <div class="container main">
     <?php
       if(isset($userIsLoggedIn) && $userIsLoggedIn === true){
           include_once(SRC_DIR . "templates" . DS . "admin" . DS . "admin_nav.php"); 
@@ -68,7 +66,6 @@
       }
       echo $layoutdata; 
     ?> 
-	 </div>
     <div class="footer">
       <div class="container">
         <p class="text-muted">Place sticky footer content here.</p>

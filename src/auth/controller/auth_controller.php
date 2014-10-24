@@ -14,7 +14,7 @@ class AuthController extends \core\Controller{
 		return $this->authModel->isLoggedInUserAdmin(); 
 	}
 	public function getCurrentUserId(){
-		return $this->authModel->getLoggedInUserId();
+		return intval($this->authModel->getLoggedInUserId());
 	}
 
 	public function __construct(){

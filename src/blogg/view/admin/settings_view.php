@@ -37,10 +37,6 @@ class SettingsView extends \blogg\view\BaseView {
 	<?php } ?>
 	*/
 	public function __construct($settings){
-		$this->twitterSettings = $settings->getTwitterSettings(); 
-		$this->bloggSettings = $settings->getBloggSettings(); 
-		$this->instagramSettings = $settings->getInstagramSettings(); 
-
 		$this->settingObjects[] = $settings->getTwitterSettings(); 
 		$this->settingObjects[] = $settings->getBloggSettings(); 
 		$this->settingObjects[] = $settings->getInstagramSettings(); 

@@ -11,7 +11,7 @@ class TwitterController extends \blogg\controller\BaseController{
 		
 		$this->twitterModel = new \blogg\model\twitter\Twitter($this->settings->getTwitterSettings());
 		$this->setView(new \blogg\view\twitter\TwitterView()); 
-		$this->numberOfTweets = $this->settings->getTwitterSettings()->numberOfPosts; 
+		$this->numberOfTweets = $this->settings->getTwitterSettings()->twitterNumberOfPosts; 
 	}
 
 	public function main(){

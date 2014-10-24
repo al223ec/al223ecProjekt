@@ -8,7 +8,6 @@ class BloggController extends BaseController {
 	private $numberOfPostsPerPage; 
 	protected static $adminIsLoggedIn;
 
-	//Den här kontrollern kan inte existera utan authcontroller just nu; 
 	public function __construct(){
 		parent::__construct();
       	$this->setView(new \blogg\view\blogg\BloggView());
@@ -46,7 +45,7 @@ class BloggController extends BaseController {
 		}
 		$post = $this->getBloggPostById(); 
 		//Bara hen som har gjort inlägget eller admin får redigera
-		if(self::$adminIsLoggedIn || $post->getUserId() === $authcontroller->getCurrentUserId()){
+		if(self::$adminIsLoggedIn || $post->getUserId() === $this->authController->getCurrentUserId()){
 			$this->view->setViewFullVar(true);
 			$this->view->setPostVar($this->getBloggPostById());
 		}else{

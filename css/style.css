@@ -28,8 +28,11 @@ img{
 	height: 400px;	
 	color:white;
 }
-.jumbotronhome{
-
+.jumbotron_home{
+	height: 800px;	
+}
+.inner { 
+	padding-top: 170px; 
 }
 div{
 	/*outline: 1px solid blue;*/ 
@@ -63,3 +66,57 @@ div> .bloggpost:nth-child(odd) div{
 .padding_bottom {
 	padding-bottom: 20px;
 }
+h1 a{
+	text-decoration: none; 
+	color:black;
+}
+
+h1.arrow { 
+	font-size: 15px; 
+	text-transform: uppercase; 
+	color: #353535; 
+	letter-spacing: 1px; 
+	background: url('../img/h1-bg.png') no-repeat center bottom; 
+	padding-bottom: 30px; 
+	font-weight: bold; 
+}
+
+h1.bloggTitle {
+	font-size: 15px; 
+	color: #353535; 
+	letter-spacing: 1px; 
+	padding-bottom: 30px; 
+	font-weight: bold; 
+}
+.swag { 
+	background: url('../img/plants-bg.jpg') no-repeat center center; 
+	-webkit-background-size: cover; 
+	-moz-background-size: cover; 
+	-o-background-size: cover; 
+	background-size: cover; 
+	background-attachment: 
+	fixed; 
+	padding: 50px 0; 
+}
+.swag h1 { 
+	color: #fff; 
+	font-size: 40px; 
+	text-transform: 
+	uppercase; 
+	letter-spacing: 5px; 
+}
+.swag h1 span { 
+	display: block; 
+	font-size: 25px; 
+	margin-top: 20px; 
+}
+
+section {
+	margin-top: 40px; 
+}
+
+.blogg_image{
+
+}
+
+.blogg

@@ -19,7 +19,7 @@ class InstagramModel {
 		     curl_setopt($ch, CURLOPT_URL, $url);
 		     //curl_setopt($ch, CURLOPT_POSTFIELDS, "POST"); 
 		     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		     curl_setopt($ch, CURLOPT_TIMEOUT, 20); 
+		     curl_setopt($ch, CURLOPT_TIMEOUT, 200); 
 		     $result = curl_exec($ch);
 		     curl_close($ch); 
 		     return $result;
@@ -37,14 +37,16 @@ class InstagramModel {
 				} 
 			} else {
 				$index = 1; 
-				foreach ($result->data as $post){
-					$ret[] = new \blogg\model\instagram\InstagramPost($post);
-					$index += 1; 
-					
-					if($index > $numberOfposts){
-						break; 
-					}
-				} 
+				if(isset($result)){
+					foreach ($result->data as $post){
+						$ret[] = new \blogg\model\instagram\InstagramPost($post);
+						$index += 1; 
+						
+						if($index > $numberOfposts){
+							break; 
+						}
+					} 
+				}
 			}
 			return $ret; 
 

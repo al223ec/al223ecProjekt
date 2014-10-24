@@ -32,11 +32,16 @@ class View {
 	* En view bör ju veta detta om sig själv finalRender bool? 
 	*
  	*/
-	public function render($namespace, $controller, $action, $finalRender = true, $useTemplate = false){
+	public function render($action, $finalRender = true, $useTemplate = false){
 		if($this->viewVars !== null){ 
 			extract($this->viewVars);
 		}
 		ob_start();
+
+		$reflection = new \ReflectionClass($this);
+		$namespaceParts = explode('\\', $reflection->getNamespaceName());
+		$namespace = $namespaceParts[0]; 
+		$controller = $namespaceParts[2]; 
 
 		//pga namngivning, hitta alla stora bokstäver placer ett _ före och gör alla bokstäver små
 		preg_match_all( '/[A-Z]/', $action, $matches, PREG_OFFSET_CAPTURE );
@@ -48,6 +53,16 @@ class View {
 					$action = substr_replace($action, '_' . strToLower($m[0]), $m[1] + $i, 1);
 				}
 			}
+		}
+		if($useTemplate){
+			$templateFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . ".php";
+
+			if (file_exists($templateFile)){
+				include_once($templateFile);
+			} else {
+				throw new \Exception("View, default template '{$controller}.php' is not found in $namespace/view/$controller directory.");
+			}
+
 		}
 		$actionFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $action . ".php";
 

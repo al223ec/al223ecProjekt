@@ -1,3 +1,6 @@
+<section>
+	<div class="container">
+
 <?php 
 $index = 0; 
 
@@ -26,3 +29,5 @@ foreach ($images as $image) {
 	}
 } ?>
 
+</div>
+</section>

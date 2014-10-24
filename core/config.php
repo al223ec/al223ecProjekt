@@ -5,13 +5,8 @@ abstract class Config{
 	const DEFAULT_CONTROLLER = "home";
 	const DEFAULT_ACTION = "main"; 
 	const ALLOWED_URL_CHARS = "/[^A-z0-9\/\^]/"; 
-	const DEBUG = false;
+	const DEBUG = true;
 	const ERROR_LOG = "myerrors.log"; 
-
-	const DB_PASSWORD = "";
-	const DB_USERNAME = "root";
-	const DB_CONNECTION_STRING = "mysql:host=127.0.0.1;dbname=project";
-	
-	const APP_ROOT = "/al223ecProjekt/"; 	 
+	 
 	const MAIN_TEMPLATE = "app.php"; 
-}
+}//TheBl4ckD4lia

@@ -16,7 +16,7 @@ abstract class BaseController extends \core\Controller {
 
 	protected function setView($view){
 		if(!isset($this->authController)){
-			throw new \Exception("Blogg::BaseController initAuthController, authController är inte definerad, kallar du på BaseControllers construct??");
+			throw new \Exception("Blogg::BaseController setView, authController är inte definerad, kallar du på BaseControllers construct??");
 		}
 		$this->authController->main();
 
@@ -24,12 +24,11 @@ abstract class BaseController extends \core\Controller {
 		if(isset($this->view)){
 			$view->setAuthRenderVar($this->view->getAuthRender()); 
 		}else{
-			$authViewRender = $this->authController->getView()->render("auth", "auth", "main", false);
+			$authViewRender = $this->authController->getView()->render("main", false);
 			$view->setAuthRenderVar($authViewRender); 
 		}
 
 		$this->view = $view; 
 		$view->setUserLoggedInVar(self::$userIsloggedIn);		  
-
 	}
 }

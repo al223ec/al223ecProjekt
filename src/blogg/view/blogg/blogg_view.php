@@ -8,13 +8,16 @@ class BloggView extends \blogg\view\BaseView{
 	private $textPost = "BloggView::textPost"; 
 	private $idPost = "BloggView::idPost"; 
 
+	private $sessionKey = "BloggView::SessionKey"; 
+
 	public function __construct(){
 		$this->setPageTitel("Blogg");
 
 		$this->setViewVars(array(
 			"titelPost" => $this->titelPost,
 			"textPost" => $this->textPost, 
-			"idPost" => $this->idPost
+			"idPost" => $this->idPost,
+			"sessionMessage" => \core\lib\SessionHandler::readAndRemoveSession($this->sessionKey)
 			)); 
 	}
 
@@ -25,15 +28,6 @@ class BloggView extends \blogg\view\BaseView{
 
 		return $post; 
 	}
-/*
-	private function getInputWithBrTags($inputName){
-		$ret = $this->getInput($inputName); 
-		$ret = str_replace(array("\r", "\n"), "temporaryPlaceholderForBrTag", $ret);
-//		$ret = filter_var($ret, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW); //Ta bort ev script taggar etc funkar inte att göra på detta sätt vid redigering
-		$ret = str_replace("temporaryPlaceholderForBrTag", "<br>", $ret);
-		return $ret; 
-	}*/
-
 	//Denna är unik för startsidan kanske flytta denna till en egen klass??
 	public function setPagingVars($startPost, $numberOfPostsPerPage, $numberOfPostsInDb){
 		$this->setViewVar("numberOfPostsInDb", $numberOfPostsInDb);
@@ -55,6 +49,9 @@ class BloggView extends \blogg\view\BaseView{
 	public function setPostsVar(array $posts){
 		$this->setViewVar("posts", $posts);
 	}
+	public function setSaveSuccessfull(){
+		 \core\lib\SessionHandler::setSession($this->sessionKey, "Blogginlägget har sparats! "); 
+	}
 	public function setSaveFailedVar(){
 		$this->setViewVar("saveSuccessfull", false); 
 	}
@@ -70,4 +67,5 @@ class BloggView extends \blogg\view\BaseView{
 	public function setLoggedInUserId($loggedInUserId){
 		$this->setViewVar("loggedInUserId", $loggedInUserId); 
 	}
+
 }

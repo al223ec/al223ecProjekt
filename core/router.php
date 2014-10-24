@@ -52,7 +52,7 @@ class Router{
 	    return $this->params;  
 	}
 
-	public function dispatch(){
+	public function dispatch($testing = false){
 		$controllerName = $this->getController();
 
 		$action = $this->getAction();
@@ -75,7 +75,7 @@ class Router{
 				foreach ($filesInControllerDir as $fileInControllerDir) { 
 					if (0 === strpos($fileInControllerDir, $controllerName)) {
 						$controllerfile = SRC_DIR . $file . DS . 'controller' . DS . $fileInControllerDir; 
-						$namespace = $file; 
+						$namespace = $file; //Hitttat rätt fil
 						break; 
 					}
 				}	
@@ -85,7 +85,6 @@ class Router{
 		$controller = '\\' . $namespace . '\\controller\\' . ucfirst($controllerName) . 'Controller'; //Alltid stor första bokstav på objekt
 		if (file_exists($controllerfile)){
 			require_once($controllerfile);
-
 			try{
 				$app = \core\Loader::load($controller); 
 				$app->setParams($params);
@@ -96,10 +95,17 @@ class Router{
 				
 				$app->$action();
 				$view = $app->getView();
-				$view->render($namespace, $controllerName, $action);
+				$view->render($action);
+
 			}catch(\PDOException $e){
+				if($testing){
+					throw new $e; 
+				}
 				$this->redirectToAdminSettings($e); 
 			}catch(\Exception $e){
+				if($testing){
+					throw new $e; 
+				}
 				$this->redirectToError($e); 
 			}
 

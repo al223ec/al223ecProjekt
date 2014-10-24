@@ -13,14 +13,12 @@ class Twitter{
 			"consumer_key" => $settings->consumerKey, 
 			"consumer_secret" => $settings->consumerSecret
 			); 
-		//echo $this->postTweet("Postat med PHP");
-		//die();
 	}
 	/**
-	* TWITTER 
+	* TWITTER hämta tweets 
 	* http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1
 	* https://github.com/J7mbo/twitter-api-php
-	*///$json = fetchData("https://api.twitter.com/1.1/statuses/user_timeline.json?user_id=2817132410&screen_name=al223ec"); //getting the file content
+	*/
 	public function getTweets($numberOfTweets = 0){
 		$ret = array();
 		$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
@@ -41,12 +39,13 @@ class Twitter{
 				if($numberOfTweets !== 0 && $index > $numberOfTweets){
 					break; 
 				}
-
 			}
 		}
 		return $ret; 
 	}	
-
+	/**
+	*	För att posta med php 
+	*/
 	public function postTweet($tweet){
 		if(strlen($tweet) > 140){ //Fail
 			return; 

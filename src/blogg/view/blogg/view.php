@@ -5,10 +5,13 @@
 	if(!isset($viewFullBloggPost)){
 		$viewFullBloggPost = false; 
 	}
-?>
+	if($viewFullBloggPost){?>
+	<section>
+		<div class="container">
+<?php } ?>
 <div class="row bloggpost"> 
 	<div class="<?php if($viewFullBloggPost) echo "col-md-10"; else echo "col-md-7";?>">
-		<h1> <a href="<?php echo \core\Routes::getRoute('blogg', 'view') . $post->getId(); ?>"> <?php echo $post->getTitel(); ?></a></h1>
+		<h1 class="bloggTitle"> <a href="<?php echo \core\Routes::getRoute('blogg', 'view') . $post->getId(); ?>"> <?php echo $post->getTitel(); ?></a></h1>
 		<p class="bloggtext <?php if(!$viewFullBloggPost){ echo "min"; } ?>">
 			<?php 
 				if($viewFullBloggPost){
@@ -27,10 +30,10 @@
 			<?php }?>
 
 			<?php if($adminIsLoggedIn) {?>  
-            	<a href="<?php echo \core\Routes::getRoute('blogg', 'delete') . $post->getId(); ?>"> Ta bort</a>
-            <?php }?>
-        </p>
-        <?php }?>
+	        	<a href="<?php echo \core\Routes::getRoute('blogg', 'delete') . $post->getId(); ?>"> Ta bort</a>
+	        <?php }?>
+	    </p>
+	    <?php }?>
 
 	</div>
 	<div class="<?php if($viewFullBloggPost) echo "col-md-2"; else echo "col-md-5";?>">
@@ -40,3 +43,7 @@
 		<hr>
 	</div>
 </div>
+<?php if($viewFullBloggPost){?>
+		</div>
+	</section>
+<?php } ?>

@@ -12,9 +12,23 @@ class HomeModel {
 
 	public function getBloggAndInstagramFlow($numberOfPosts){
 
-		$flow = $this->bloggModel->getBloggPosts(0, $numberOfPosts); 
+		$bloggFlow = $this->bloggModel->getBloggPosts(0, $numberOfPosts); 
 		$instagramFlow = $this->instagramModel->getInstagramImages($numberOfPosts); 
-		$flow = array_merge($flow, $instagramFlow); 
+	
+		$flow = array(); 
+		for ($i=0; $i < $numberOfPosts/2; $i+=2) { 
+			if(isset($bloggFlow[$i]) && isset($bloggFlow[$i+1])){
+				$flow[] = $bloggFlow[$i]; 
+				$flow[] = $bloggFlow[$i+1];
+			}
+			if(isset($instagramFlow[$i]) && isset($instagramFlow[$i+1])){
+				$flow[] = $instagramFlow[$i]; 
+				$flow[] = $instagramFlow[$i+1];
+			}  
+		}
+
+		return $flow; 
+/*
 		$ret = array(); 
 		foreach ($flow as $value) {
 			$ret[$value->getTime()] = $value; 
@@ -35,6 +49,6 @@ class HomeModel {
 		});
 
 
-		return $flow;
+		return $flow;*/
 	}
 }

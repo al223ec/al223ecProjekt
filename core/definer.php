@@ -19,7 +19,9 @@ require_once(ROOT_DIR . 'core' . DS . 'routes.php');
 require_once(ROOT_DIR . 'core' . DS . 'controller.php');
 require_once(ROOT_DIR . 'core' . DS . 'view.php'); 
 require_once(ROOT_DIR . 'core' . DS . 'loader.php'); 
-require_once(ROOT_DIR . 'core' . DS . 'db' . DS . 'repository.php'); 
+require_once(ROOT_DIR . 'core' . DS . 'db' . DS . 'repository.php');
+require_once(ROOT_DIR . 'core' . DS . 'lib' . DS . 'session_handler.php'); 
+
 require_once(ROOT_DIR . 'core' . DS . 'validation' . DS . 'validation.php'); 
 require_once(ROOT_DIR . 'core' . DS . 'validation' . DS . 'validatable_object.php'); 
 
