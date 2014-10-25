@@ -1,3 +1,5 @@
+<section>
+<div class="container">
 <?php 
 	$errors = ""; 
 
@@ -7,6 +9,7 @@
 		}
 	}
 ?>
+
 <div class="col-md-12" >
 	<h4>Registrera nya användare - </h4>
 	<fieldset>
@@ -39,3 +42,5 @@
 		<input class="btn btn-primary" type='submit' value='Registrera'>
 	</form>
 </div>
+</div>
+</section>

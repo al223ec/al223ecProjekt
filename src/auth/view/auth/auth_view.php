@@ -49,7 +49,8 @@ class AuthView extends \auth\view\ViewBase{
 
 	public function setErrorMessageVar($errorMessage){
 		if(array_key_exists("errorMessage", $this->getViewVars())){
-			$value = $this->getViewVars()["errorMessage"] . " " . $errorMessage; 
+			$vars = $this->getViewVars(); 
+			$value = $vars["errorMessage"] . " " . $errorMessage; 
 			$this->setViewVar("errorMessage", $value); 
  		}else {
 			$this->setViewVar("errorMessage", $errorMessage); 

@@ -9,14 +9,14 @@
     <connectionString>mysql:host=127.0.0.1;dbname=project</connectionString>
   </bloggSettings>
   <twitterSettings>
-    <twitterNumberOfPosts>50</twitterNumberOfPosts>
+    <twitterNumberOfPosts>40</twitterNumberOfPosts>
     <oauthAccessToken>2817132410-euMdEPUEClDiJsDDxejHzOlCzJUZ6RyDUkl0VC7</oauthAccessToken>
     <oauthAccessTokenSecret>U9GmdIhEFnzk3oVLaNeoQTXQMEldoRa77PjamD61VtKzF</oauthAccessTokenSecret>
     <consumerKey>cSU4oJkdSpjNeyO8XsLcpKbb4</consumerKey>
     <consumerSecret>TZwHg9mTVqTghtuMxhxEceUNkjgefep9p371pvtBfhdidnciPS</consumerSecret>
   </twitterSettings>
   <instagramSettings>
-    <numberOfImages>50</numberOfImages>
+    <numberOfImages>10</numberOfImages>
     <instagramUserId>1501720516</instagramUserId>
     <accessToken>1501720516.ab103e5.0ece8fdbfaef4174a54e42f4c3b2bfb2</accessToken>
   </instagramSettings>

@@ -15,10 +15,10 @@ class BaseView extends \core\View{
 
 	protected function setPageTitel($pageTitel){
 		$this->setViewVar("pageTitel", $pageTitel); 
-
 	}
 
 	public function getAuthRender(){
-		return isset($this->getViewVars()["authRenderVar"]) ?  $this->getViewVars()["authRenderVar"] : "not rendered yet"; 
+		$vars = $this->getViewVars(); 
+		return isset($vars["authRenderVar"]) ?  $vars["authRenderVar"] : "not rendered yet"; 
 	}
 }

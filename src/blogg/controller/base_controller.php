@@ -2,7 +2,6 @@
 
 namespace blogg\controller;
 
-
 abstract class BaseController extends \core\Controller {
 	protected static $userIsloggedIn; 
 	protected $authController; 	

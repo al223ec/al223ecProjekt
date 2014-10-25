@@ -55,10 +55,6 @@ class SettingsView extends \blogg\view\BaseView {
    				"bloggSettings" => $settings->getBloggSettings(),
    				"instagramSettings" => $settings->getInstagramSettings()
    				)); 
-
-   		$this->setViewVar(
-   			"displayNames", $this->displayNames); 
-
 	}
 
 	public function saveSettings(){	

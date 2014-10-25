@@ -30,7 +30,7 @@ class InstagramModel {
 			$result = $this->fetchData("https://api.instagram.com/v1/users/" .$this->userid . "/media/recent/?access_token=" . $this->accessToken);
 			$result = json_decode($result);
 			
-			$ret = []; 
+			$ret = array(); 
 			if($numberOfposts === 0){
 				foreach ($result->data as $post){
 					$ret[] = new \blogg\model\instagram\InstagramPost($post);

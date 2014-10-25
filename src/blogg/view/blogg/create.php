@@ -12,6 +12,9 @@
 		$postText = $post->getText(); 
 	}
 ?>
+<section>
+	<div class="container">
+
 <div class="row">
 	<div class="col-md-12">
 		<form action="<?php echo \core\Routes::getRoute('blogg', 'save');  ?>" method="post" enctype="multipart/form-data">
@@ -49,3 +52,6 @@ function populateErrorList($errors){
 	return $ret; 
 }
 ?>
+
+</div>
+</section>

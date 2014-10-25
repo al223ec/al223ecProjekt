@@ -85,7 +85,7 @@ class Post extends \core\validation\ValidatableObject {
 	}
 
 	public function getErrors(){
-		$ret = []; 
+		$ret = array(); 
 		foreach ($this->getErrorsOnProperty('titel') as $error) {
 			$ret[] = $error;  
 		}

@@ -70,7 +70,15 @@ class BloggController extends BaseController {
 		if(!self::$adminIsLoggedIn){
 			$this->redirectTo();
 		}
-		$this->view->setPostVar($this->getBloggPostById());
+		$post =$this->getBloggPostById(); 
+
+		if($post !== null){
+			$this->view->setPostVar($post);
+		 	$this->bloggModel->delete($post->getId()); 
+		} else {
+			$this->view->setDeleteFailed(); 
+		}
+	
 	}
 
 	public function save(){

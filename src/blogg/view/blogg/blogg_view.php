@@ -68,4 +68,7 @@ class BloggView extends \blogg\view\BaseView{
 		$this->setViewVar("loggedInUserId", $loggedInUserId); 
 	}
 
+	public function setDeleteFailed(){
+		$this->setViewVar("deleteFailed", "Ett oväntat fel har inträffat posten har inte kunnat tagits bort eftersom den inte hittats i databasen"); 
+	}
 }

@@ -1,7 +1,4 @@
 <?php
-
-
-
 //define('CONTROLLER_DIR', ROOT_DIR . 'src' . DS . 'controller' . DS); //Tillfällig fix, måste tänka ut ett sätt att lösa detta
 //define('VIEW_DIR', ROOT_DIR . 'src' . DS . 'view' . DS);
 //define('MODEL_DIR', ROOT_DIR . 'src' . DS . 'model' . DS);

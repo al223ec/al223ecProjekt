@@ -27,8 +27,9 @@ class BloggModel {
 		$userRepository = new \auth\model\repository\UserRepository();
 
 		$post = $this->bloggRepository->getBloggPostById($id); 
-		$post->setAuthor($userRepository->getUserNameById($post->getUserID())); 
-		
+		if($post !== null){
+			$post->setAuthor($userRepository->getUserNameById($post->getUserID())); 
+		}
 		return $post; 
 	}
 
