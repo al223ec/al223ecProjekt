@@ -7,7 +7,7 @@
     	    <label for="db_password" class="col-sm-2 control-label">Databas lösenord:</label>
     	    <div class="col-sm-6">
     	      <input type="text" class="form-control" id="db_password" name="<?php echo $dbPassword; ?>"  
-            placeholder="Databas lösenord" value="<?php echo $bloggSettings->dbPassword; ?>" >
+            placeholder="Databas lösenord" value="" >
     	    </div>
     	</div>
     	<div class="form-group">

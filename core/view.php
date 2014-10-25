@@ -2,7 +2,7 @@
 
 namespace core; 
 
-class View {
+abstract class View {
 
 	protected $viewVars = array();
 
@@ -12,7 +12,7 @@ class View {
 	protected function getCleanInput($inputName) {
 		return isset($_POST[$inputName]) ? $this->sanitize($_POST[$inputName]) : '';
 	}
-	protected function sanitize($input) {
+	private function sanitize($input) {
         $temp = trim($input);
         return filter_var($temp, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
     }
@@ -32,7 +32,7 @@ class View {
 	* En view bör ju veta detta om sig själv finalRender bool? 
 	*
  	*/
-	public function render($action, $finalRender = true, $useTemplate = false){
+	public function render($action, $finalRender = true){
 		if($this->viewVars !== null){ 
 			extract($this->viewVars);
 		}
@@ -53,16 +53,6 @@ class View {
 					$action = substr_replace($action, '_' . strToLower($m[0]), $m[1] + $i, 1);
 				}
 			}
-		}
-		if($useTemplate){
-			$templateFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . ".php";
-
-			if (file_exists($templateFile)){
-				include_once($templateFile);
-			} else {
-				throw new \Exception("View, default template '{$controller}.php' is not found in $namespace/view/$controller directory.");
-			}
-
 		}
 		$actionFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . DS . $action . ".php";
 
@@ -88,3 +78,15 @@ class View {
 	}
 
 }
+
+
+		/*
+		if($useTemplate){
+			$templateFile = SRC_DIR . $namespace . DS . "view" . DS . $controller . ".php";
+
+			if (file_exists($templateFile)){
+				include_once($templateFile);
+			} else {
+				throw new \Exception("View, default template '{$controller}.php' is not found in $namespace/view/$controller directory.");
+			}
+		}*/

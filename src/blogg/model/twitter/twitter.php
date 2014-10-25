@@ -44,8 +44,9 @@ class Twitter{
 		return $ret; 
 	}	
 	/**
-	*	För att posta med php 
+	*	För att posta med php används ej
 	*/
+	/*
 	public function postTweet($tweet){
 		if(strlen($tweet) > 140){ //Fail
 			return; 
@@ -60,5 +61,5 @@ class Twitter{
 		return $twitter->buildOauth($url, $requestMethod)
 		             ->setPostfields($postfields)
 		             ->performRequest();
-	}
+	}*/
 }

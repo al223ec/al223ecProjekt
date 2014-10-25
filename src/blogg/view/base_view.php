@@ -2,7 +2,7 @@
 
 namespace blogg\view; 
 
-class BaseView extends \core\View{
+abstract class BaseView extends \core\View{
 	//Dessa variablar ska finnas tillgängliaga i all vy filer i blogg/view/
 
 	public function setAuthRenderVar($render){

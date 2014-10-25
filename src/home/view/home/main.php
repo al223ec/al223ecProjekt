@@ -1,4 +1,4 @@
-<secion>
+<section>
 	<div class="container">
 		<div class="row text-center ">
 		<h1 class="arrow"> Twitter feed </h1>
@@ -14,7 +14,7 @@
 		<?php } ?>
 		</div>
 	</div>
-</secion>
+</section>
 <section class="swag text-center">
   <div class="container">
     <div class="row">
@@ -71,6 +71,7 @@
 		<div class="col-md-12">
 			<hr>
 		</div>
+	</div>
 	</div>
 </section>
 

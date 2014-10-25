@@ -1,6 +1,9 @@
 <section>
 	<div class="container">
 		<div class="row text-center">
+
+		<h1 class="arrow"> Twitter </h1>
+		<hr>
 		<?php
 		foreach ($tweets as $tweet) {?>
 			<div class="col-md-4 wp2 delay-2s animated fadeInUp">

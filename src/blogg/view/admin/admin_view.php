@@ -61,11 +61,7 @@ class AdminView extends \blogg\view\BaseView {
 		}else if($this->model->ceckIfUserNameExists($ret)){
 			$this->errorMessages[self::UserNameErrorKey] = "Användarnamnet finns redan";
 			$ret = ""; 
-		}/*else if(strlen($ret) < \config\Config::UserNameMinLength){
-			$this->errorMessages[self::UserNameErrorKey] = "Användarnamnet är för kort";
-			$ret = "";
-		}*/
-
+		}
 		return $ret; 
 	}
 

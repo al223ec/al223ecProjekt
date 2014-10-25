@@ -1,5 +1,8 @@
 <section>
 	<div class="container">
+	<div class="row text-center ">
+		<h1 class="arrow"> Instagram </h1>
+		<hr>
 	<?php 
 	$index = 0; 
 
@@ -27,6 +30,6 @@
 			?> </div> <?php
 		}
 	} ?>
-
+	</div>
 	</div>
 </section>

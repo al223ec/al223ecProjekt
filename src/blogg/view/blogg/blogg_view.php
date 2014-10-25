@@ -20,7 +20,9 @@ class BloggView extends \blogg\view\BaseView{
 			"sessionMessage" => \core\lib\SessionHandler::readAndRemoveSession($this->sessionKey)
 			)); 
 	}
-
+	/**
+	* @return post
+	*/
 	public function getNewBloggPost(){
 		$post = new \blogg\model\blogg\Post(intval($this->getCleanInput($this->idPost))); 
 		$post->setText($this->getCleanInput($this->textPost));
@@ -41,11 +43,15 @@ class BloggView extends \blogg\view\BaseView{
 			$this->setViewVar("pagingPrev", $startPost - $numberOfPostsPerPage); 
 		}
 	}
-
+	/**
+	* @param post
+	*/
 	public function setPostVar($post){
 		$this->setViewVar("post", $post); 
 	}
-
+	/**
+	* @param array Posts
+	*/
 	public function setPostsVar(array $posts){
 		$this->setViewVar("posts", $posts);
 	}
@@ -56,14 +62,22 @@ class BloggView extends \blogg\view\BaseView{
 		$this->setViewVar("saveSuccessfull", false); 
 	}
 
+	/**
+	* @param Bool
+	*/
 	public function setViewFullVar($viewFullBloggPost){
 		$this->setViewVar("viewFullBloggPost", $viewFullBloggPost); 
 	}
 
+	/**
+	* @param Bool
+	*/
 	public function setAdminLoggedInVar($adminIsLoggedIn){
 		$this->setViewVar("adminIsLoggedIn", $adminIsLoggedIn); 
 	}
-
+	/**
+	* @param Int
+	*/
 	public function setLoggedInUserId($loggedInUserId){
 		$this->setViewVar("loggedInUserId", $loggedInUserId); 
 	}
