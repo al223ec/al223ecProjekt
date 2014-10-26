@@ -15,12 +15,19 @@ http://antonledstrom.se/projekt/tests/
 Installation
 -----------------
 Förändra lösen, användarnamn och adressen till databasen i "settings.xml" i applikationens root.
+    
+    <dbPassword></dbPassword>
+    <dbUserName>root</dbUserName>
+    <dbName>project</dbName>
+    <dbIpAddress>127.0.0.1</dbIpAddress>
+
 Om man vill att undantag ska visas måste man förändra config.php i core, DE_BUG = true, annars sparas dessa till myerrors.log.  
 
-För att applikationen ska fungera måste dessa tabeller finnas. 
+För att applikationen ska fungera måste dessa tabeller finnas: 
 
 
 UserTable
+-----------------
 CREATE TABLE IF NOT EXISTS `users` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -31,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 		) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 BloggPostTable
+-----------------
 CREATE TABLE IF NOT EXISTS `bloggposts` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `titel` varchar(100)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -56,4 +64,5 @@ Varit ganska dålig på att dokumentera mina tester. Skulle också ha kunnat skr
 
 Har inte riktigt haft tid att skriva så mycket tester som jag önskat, spenderade mycket tid på att få till och testa core biten för applikationen. 
 
+Skulle också vilja lägga mer tid på felhantering och bättre användarvänlighet. 
 
