@@ -29,8 +29,7 @@ abstract class View {
 	}		
 
 	/**
-	* En view bör ju veta detta om sig själv finalRender bool? 
-	*
+	* @param $action vilken funktion som har kallats på i kontrollern, alla funktioner har en tillhörande view fil
  	*/
 	public function render($action, $finalRender = true){
 		if($this->viewVars !== null){ 
@@ -38,12 +37,13 @@ abstract class View {
 		}
 		ob_start();
 
+		//För att hitta rätt fil behöver man läsa vilka namespaces som klassen tillhör, kan skötas mycket snyggare.
 		$reflection = new \ReflectionClass($this);
 		$namespaceParts = explode('\\', $reflection->getNamespaceName());
 		$namespace = $namespaceParts[0]; 
 		$controller = $namespaceParts[2]; 
 
-		//pga namngivning, hitta alla stora bokstäver placer ett _ före och gör alla bokstäver små
+		//pga namngivning, hitta alla stora bokstäver placerar ett _ före och gör alla bokstäver små
 		preg_match_all( '/[A-Z]/', $action, $matches, PREG_OFFSET_CAPTURE );
 
 		if(!empty($matches)){
@@ -64,7 +64,10 @@ abstract class View {
 
 		$layoutdata = ob_get_clean();
 		if($finalRender){
+
 			$app = SRC_DIR . "templates" . DS . \Config::MAIN_TEMPLATE;
+			//Detta är också ganska osnyggt men för att app.php ska veta vilken kontroller som är aktiv just nu. 
+			//$active används i app.php
 			$active = $controller; 
 
 			if (file_exists($app)){

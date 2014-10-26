@@ -94,6 +94,8 @@ class Router{
 				}
 				
 				$app->$action();
+				//Denna delen bör förändras, men vet inte exakt hur jag ska göra och vilket objekt som ska ansvara för renderingen
+
 				$view = $app->getView();
 				$view->render($action);
 
@@ -115,6 +117,7 @@ class Router{
 	} 
 
 	private function redirectToError($exception){
+
 		if(\Config::DEBUG){
 			echo "<pre>"; 
 			echo debug_print_backtrace(); 

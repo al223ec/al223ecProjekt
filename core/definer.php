@@ -1,7 +1,8 @@
 <?php
-//define('CONTROLLER_DIR', ROOT_DIR . 'src' . DS . 'controller' . DS); //Tillfällig fix, måste tänka ut ett sätt att lösa detta
-//define('VIEW_DIR', ROOT_DIR . 'src' . DS . 'view' . DS);
-//define('MODEL_DIR', ROOT_DIR . 'src' . DS . 'model' . DS);
+//Inkluderar all core filer
+/**
+* Dessa två if satser är endast för att undvika warningar som skrivs ut när de automatiserade testerna körs
+*/
 if(!array_key_exists('SRC_DIR', $GLOBALS)){
 	define('SRC_DIR', ROOT_DIR . 'src' . DS);
 }
