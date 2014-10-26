@@ -9,7 +9,8 @@ class AuthModel extends \auth\model\ModelBase{
 
 	// Kontrollerar om sessions-varibeln är satt vilket betyder att en användare är inloggad.
 	public function userIsLoggedIn($userAgent){
-		return \auth\model\sessionHandler::getSession($this->sessionLoginData) !== "" && \auth\model\sessionHandler::getSession($this->sessionUserAgent) === $userAgent; 
+		$user = $this->getLoggedInUser(); 
+		return $user !== null && \auth\model\sessionHandler::getSession($this->sessionLoginData) !== "" && \auth\model\sessionHandler::getSession($this->sessionUserAgent) === $userAgent; 
 	}
 
 	public function isLoggedInUserAdmin(){
@@ -24,7 +25,7 @@ class AuthModel extends \auth\model\ModelBase{
 	// Hämtar vilken användare som är inloggad.
 	public function getLoggedInUser(){
 		$id = $this->getLoggedInUserId(); 
-		if($id === null){
+		if($id === 0){
 			return null;
 		}
 		return $this->userRepository->getUserWithId($id); 

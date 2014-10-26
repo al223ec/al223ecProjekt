@@ -2,7 +2,7 @@
 
 namespace blogg\model\admin; 
 
-class SettingsObject {
+abstract class SettingsObject {
 
 	protected $data = array(); 
 	protected $elementName; 

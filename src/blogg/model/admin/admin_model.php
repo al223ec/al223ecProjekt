@@ -3,13 +3,7 @@
 namespace blogg\model\admin; 
 
 class AdminModel{
-
-	private $userRepository; 
-
-	private $settingsModel; 
-
-	private $filePath; 
-
+	private $userRepository;
 	public function __construct(){
 		$this->userRepository = new \auth\model\repository\UserRepository();
 	}

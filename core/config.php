@@ -1,6 +1,7 @@
 <?php
 
 abstract class Config{	
+	
 	const DEFAULT_CONTROLLER = "home";
 	const DEFAULT_ACTION = "main"; 
 	const ALLOWED_URL_CHARS = "/[^A-z0-9\/\^]/"; 

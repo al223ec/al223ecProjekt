@@ -3,7 +3,7 @@
 namespace blogg\model\admin; 
 
 class BloggSettings extends SettingsObject{
-
+//De för bestämda värdena används för att återställa detta objekt
 	protected $data = array(
 		"bloggNumberOfBloggPostsPerPage" => 10,
 		"dbPassword" => "",

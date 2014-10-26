@@ -1,5 +1,5 @@
 <?php
-//Andreas funktion
+//Andreas funktion laddar filer automagiskt
 function AutoLoadClasses($class){
 
 	$class = ltrim($class, '\\');	

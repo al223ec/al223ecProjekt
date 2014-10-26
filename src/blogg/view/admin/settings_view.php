@@ -65,6 +65,7 @@ class SettingsView extends \blogg\view\BaseView {
 	    		$settingObject->$property = $cleanInput !== "" ? $cleanInput : $settingObject->$property;  
 	    	}
 		}
+		return $this->settingObjects; 
 	}
 
 	public function setSaveMessage($bool){

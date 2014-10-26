@@ -91,8 +91,7 @@ class AdminController extends BaseController{
 			$this->redirectTo(); 
 		}
 		$this->setView(new \blogg\view\admin\SettingsView($this->settings));
-		$this->view->saveSettings(); 
-		$this->view->setSaveMessage($this->settings->saveSettings()); 
+		$this->view->setSaveMessage($this->settings->saveSettings($this->view->saveSettings())); 
 	}
 
 	public function resetSettings(){

@@ -13,7 +13,7 @@ class Settings {
 	private $fileName = 'settings.xml';
 
 	public function __construct(){
-		$this->filePath = SRC_DIR . "blogg" . DS . "model" . DS . "admin" . DS . $this->fileName; 
+		$this->filePath = ROOT_DIR . $this->fileName; 
 		
 		$this->settingObjects[$this->bloggSettingsKey] =  new \blogg\model\admin\BloggSettings();
 		$this->settingObjects[$this->twitterSettingsKey] = new \blogg\model\admin\TwitterSettings();
@@ -42,14 +42,16 @@ class Settings {
 		}
 	}
 
-	public function saveSettings(){
+	public function saveSettings($settingObjects = null){
 		 //Creates XML string and XML document using the DOM 
 	    $dom = new \DomDocument('1.0', 'UTF-8'); 
 	   
 	    //add root
 	    $settings = $dom->appendChild($dom->createElement('settings'));
-		
-		foreach ($this->settingObjects as $object) {
+		if($settingObjects == null){
+			$settingObjects = $this->settingObjects; 
+		}
+		foreach ($settingObjects as $object) {
 			$settings->appendChild($object->saveSettings($dom)); 
 		}
 

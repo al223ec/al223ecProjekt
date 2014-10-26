@@ -30,23 +30,24 @@ class InstagramModel {
 			$result = $this->fetchData("https://api.instagram.com/v1/users/" .$this->userid . "/media/recent/?access_token=" . $this->accessToken);
 			$result = json_decode($result);
 			
-			$ret = array(); 
-			if($numberOfposts === 0){
-				foreach ($result->data as $post){
-					$ret[] = new \blogg\model\instagram\InstagramPost($post);
-				} 
-			} else {
-				$index = 1; 
-				if(isset($result)){
+			$ret = array();
+			 
+			if(isset($result) && $result->meta->code == 200){
+				if($numberOfposts === 0){
 					foreach ($result->data as $post){
 						$ret[] = new \blogg\model\instagram\InstagramPost($post);
-						$index += 1; 
-						
-						if($index > $numberOfposts){
-							break; 
-						}
 					} 
-				}
+				} else {
+					$index = 1; 
+						foreach ($result->data as $post){
+							$ret[] = new \blogg\model\instagram\InstagramPost($post);
+							$index += 1; 
+							
+							if($index > $numberOfposts){
+								break; 
+							}
+						} 
+					}
 			}
 			return $ret; 
 

@@ -3,26 +3,27 @@
     <h3> Blogginställningar </h3>
     <form class="form-horizontal" action="<?php echo \core\Routes::getRoute('admin', 'saveSettings');  ?>" method="post" enctype="multipart/form-data" role="form">
     <legend>Blogg</legend>
+    <p>Dessa har jag inte hunnit utveckla färdigt, tanken är att detta formuläret också kan användas till en första installation av bloggen</p>
     	<div class="form-group">
     	    <label for="db_password" class="col-sm-2 control-label">Databas lösenord:</label>
     	    <div class="col-sm-6">
     	      <input type="text" class="form-control" id="db_password" name="<?php echo $dbPassword; ?>"  
-            placeholder="Databas lösenord" value="" >
+            placeholder="Databas lösenord" value="" disabled>
     	    </div>
     	</div>
     	<div class="form-group">
         <label for="db_user_name" class="col-sm-2 control-label">Databas användare:</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" id="db_user_name" name="<?php echo $dbUserName; ?>" 
-           placeholder="Databas användare" value="<?php echo $bloggSettings->$dbUserName; ?>">
+           placeholder="Databas användare" value="<?php echo $bloggSettings->$dbUserName; ?>" disabled>
         </div>
       </div>
 
     	<div class="form-group">
-        <label for="db_name" class="col-sm-2 control-label">Databas namn:</label>
+        <label for="db_name"  class="col-sm-2 control-label">Databas namn:</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" id="db_name" name="<?php echo $dbName; ?>" 
-           placeholder="Databas namn" value="<?php echo $bloggSettings->$dbName; ?>">
+           placeholder="Databas namn" value="<?php echo $bloggSettings->$dbName; ?>" disabled>
         </div>
       </div>
 
@@ -30,7 +31,7 @@
         <label for="db_ip_address" class="col-sm-2 control-label">Databas adress:</label>
         <div class="col-sm-6">
           <input type="text" class="form-control" id="db_ip_address" name="<?php echo $dbIpAddress; ?>"  
-          placeholder="Databas Ip-adress" value="<?php echo $bloggSettings->$dbIpAddress; ?>">
+          placeholder="Databas Ip-adress" value="<?php echo $bloggSettings->$dbIpAddress; ?>" disabled>
         </div>
       </div>
     	<div class="form-group">
