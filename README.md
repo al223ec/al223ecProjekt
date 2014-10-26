@@ -7,6 +7,8 @@ https://docs.google.com/document/d/1Ajvv6el25APgUmSdfPb31AG7uhWWeE9iaKLg3c5faE0/
 UMLDesign 
 -----------------
 http://antonledstrom.se/projekt/ProjektUML.png
+Alla klasser och attribut är inte med, har fokuserat på att försöka visa MVC designen av applikationen. 
+Största delen som saknas är routing klassesn. 
 
 Automatiserad testrapport
 -----------------
@@ -14,6 +16,9 @@ http://antonledstrom.se/projekt/tests/
 
 Installation
 -----------------
+Användarnamn "admin" och pw: "password" användare med administratör behörighet. 
+Användarnamn "user" och pw: "p" en vanlig användare. 
+
 Förändra lösen, användarnamn och adressen till databasen i "settings.xml" i applikationens root.
     
     <dbPassword></dbPassword>
@@ -47,6 +52,11 @@ CREATE TABLE IF NOT EXISTS `bloggposts` (
 		  `user_id` int(11) NOT NULL,
 		  PRIMARY KEY (`id`)
 		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76;
+
+
+En användare med admin behörighet. un: Admin pw: password.
+INSERT INTO `users` (`id`, `user_name`, `password_hash`, `is_admin`) VALUES
+(4, 'Admin', '$2a$10$XDcs46VyIvI6r2KVnwztLuz5HbyV9zI2/3U58i6pjjFhvIW9BS/wm', 1)
 
 
 Kommentarer
