@@ -9,9 +9,5 @@ define('ROOT_PATH', '/' . basename(dirname(__FILE__)) . '/');
 require_once ('./core/definer.php');
 
 \core\Loader::load('blogg\model\admin\Settings'); //börja med att läsa in inställningar
-
 $router = \core\Loader::load('\core\Router');  
 $router->dispatch(); 
-/*
-$view = new HTMLView();
-$view->echoHTML(\core\Loader::load('\\master\\MasterPage'));*/
